@@ -10,10 +10,13 @@
 .color_header_menu_1{
     background-color: #CFD8DC;
 }
+.Thanh_menu_Ngang{
+    background-color: #1976D2;
+}
 /* Hết bổ sung css */
 
 /* Search box */
-.search
+/* .search
 {
     box-sizing: border-box;
 }
@@ -54,7 +57,7 @@
     border: none;
     border-radius: 50%;
     font-size: 15px;
-}
+} */
 /*Hết Search box */
 
 /* Hết Trang chủ - Trần Quốc Gia Huy */
