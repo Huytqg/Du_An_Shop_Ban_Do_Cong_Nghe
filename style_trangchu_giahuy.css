@@ -4,6 +4,12 @@
 .fl{
     float: left;
 }
+.color_white{
+    color: white;
+}
+.bold{
+    font-weight: bold;
+}
 .color_blue{
     color: blue;
 }
