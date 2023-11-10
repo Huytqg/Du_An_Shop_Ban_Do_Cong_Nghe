@@ -1,6 +1,9 @@
 /* 1. Trang chủ - Trần Quốc Gia Huy */
 
 /* Bổ sung css */
+:root{
+    --green : green;
+}
 .fl{
     float: left;
 }
