@@ -1,0 +1,67 @@
+/* 1. Trang chủ - Trần Quốc Gia Huy */
+
+/* Bổ sung css */
+*{
+    font-family: roboto;
+}
+:root{
+    --green : green;
+    --red : red;
+    --white : white;
+}
+.fl{
+    float: left;
+}
+.color_white{
+    color: var(--white);
+}
+.color_red{
+    color: var(--red);
+}
+.bold{
+    font-weight: bold;
+}
+.margin_top_2-5px{
+    margin-top: 2.5px;
+}
+.margin_top_5px{
+    margin-top: 5px;
+}
+.margin_top_10px{
+    margin-top: 10px;
+}
+.margin_top_40px{
+    margin-top: 40px;
+}
+.margin_top_50px{
+    margin-top: 50px;
+}
+.margin_10px{
+    margin: 10px;
+}
+.margin_20px{
+    margin: 20px;
+}
+.color_blue{
+    color: blue;
+}
+.color_header_menu_1{
+    background-color: #CFD8DC;
+}
+.Thanh_menu_Ngang{
+    background-color: #1976D2;
+}
+.Chinh_anh_banner img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 600px;
+}
+/* Hết bổ sung css */
+
+/* Search box */
+
+/*Hết Search box */
+
+/* Hết Trang chủ - Trần Quốc Gia Huy */
