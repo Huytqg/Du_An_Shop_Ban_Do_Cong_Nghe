@@ -11,3 +11,8 @@ function Onedm_name($name)
     return pdo_query_one($sql);
 
 }
+
+function alldm(){
+    $sql = "SELECT * FROM danh_muc order by id DESC";
+    return pdo_query($sql);
+}

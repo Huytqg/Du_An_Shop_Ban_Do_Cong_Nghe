@@ -19,6 +19,11 @@ if (isset($_GET['act'])) {
             include "danh_muc/add.php";
             break;
 
+        case 'listdm':
+            $list_dm = alldm();
+            include "danh_muc/list.php";
+            break;
+
         default:
 
             break;
