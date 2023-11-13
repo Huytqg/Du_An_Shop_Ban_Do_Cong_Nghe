@@ -441,7 +441,7 @@ header h1 {
 
 .admin-content-right .admin-content-right-category input {
     height: 30px;
-    width: 500px;
+    width: 100%;
     padding-left: 12px;
 }
 
