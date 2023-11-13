@@ -9,7 +9,7 @@
 }
 
 :root {
-    --blue: blue;
+    --blue: #1976D2;
     --text: black;
     --bg: white;
 }
@@ -23,7 +23,7 @@ body {
 }
 
 .container {
-    max-width: 1080px;
+    max-width: 1320px;
     margin: auto;
     width: 100%;
 }
@@ -99,7 +99,7 @@ header {
 }
 
 .cart-product-title {
-    font-size: 1rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
 
 }
@@ -146,10 +146,14 @@ header {
     border: none;
     background: var(--blue);
     color: var(--bg);
-    font-style: 1rem;
+    font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
     border-radius: 5px;
+}
+
+.btn-buy a{
+    color: var(--bg);
 }
 
 .btn-buy:hover {
@@ -173,6 +177,10 @@ header {
     font-weight: 600;
     text-align: center;
     margin-bottom: 1.5rem;
+    background-color: var(--blue);
+    padding: 15px 0;
+    color: var(--bg);
+    text-transform: uppercase;
 }
 
 .shop {
@@ -187,11 +195,14 @@ header {
 
 .product-box {
     position: relative;
-    ;
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 5px;
+    object-fit: cover;
 }
 
 .product-box:hover {
-    padding: 10px;
+    padding: 5px;
     border: 1px solid var(--text);
     transition: 0.4s;
 }
@@ -203,7 +214,7 @@ header {
 }
 
 .product-title {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 0.5rem;
@@ -212,16 +223,46 @@ header {
 .price {
     font-weight: 500;
     color: rgb(207, 26, 26);
+    font-size: 1.7rem;
+}
+
+.price-new {
+    font-weight: 300;
+    color: gray;
+    text-decoration: line-through;
+    font-size: 1.4rem;
+}
+ 
+.box-btn{
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    justify-content: center;
+}
+
+.box-btn button{
+    height: 100%; 
+    width: 40%;
+    background-color: var(--text);
+    color: var(--bg);
+    border: none;
+    border-radius: 5px;
 }
 
 .add-cart {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    background: var(--text);
+    /* position: absolute; */
+    /* bottom: 0;
+    right: 0; */
+    background: var(--blue);
     color: var(--bg);
     padding: 10px;
     cursor: pointer;
+    height: 100%;
+    width: 40%;
+    border-radius: 5px;
 }
 
 /* starts payment */
@@ -291,6 +332,8 @@ textarea {
 .product-detail span {
     color: var(--text);
 }
+
+
 
 
 /* ends payment */
