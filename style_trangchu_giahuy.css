@@ -54,6 +54,9 @@
 .Thanh_menu_Ngang{
     background-color: #1976D2;
 }
+.text-decoration ul li a{
+    text-decoration: none;
+}
 .Chinh_anh_banner img{
     display: block;
     margin-left: auto;
