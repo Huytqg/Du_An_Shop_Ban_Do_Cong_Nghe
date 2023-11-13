@@ -30,6 +30,9 @@
 .margin_top_10px{
     margin-top: 10px;
 }
+.margin_top_30px{
+    margin-top: 30px;
+}
 .margin_top_40px{
     margin-top: 40px;
 }
@@ -50,6 +53,12 @@
 }
 .Thanh_menu_Ngang{
     background-color: #1976D2;
+}
+.Thanh_footer_Ngang{
+    background-color: #6351CE;
+}
+.text-decoration ul li a{
+    text-decoration: none;
 }
 .Chinh_anh_banner img{
     display: block;
