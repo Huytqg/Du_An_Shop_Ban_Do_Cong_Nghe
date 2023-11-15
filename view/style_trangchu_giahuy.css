@@ -88,26 +88,20 @@
 /* Hết bổ sung css */
 
 /* Trang đăng nhập */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
 
 .background_color{
     font-family: 'Poppins', sans-serif;
     background: #ececec;
 }
 
-/*------------ Login container ------------*/
-
 .box-area{
     width: 930px;
 }
 
-/*------------ Right box ------------*/
-
 .right-box{
     padding: 40px 30px 40px 40px;
 }
-
-/*------------ Custom Placeholder ------------*/
 
 ::placeholder{
     font-size: 16px;
@@ -119,9 +113,6 @@
 .rounded-5{
     border-radius: 30px;
 }
-
-
-/*------------ For small screens------------*/
 
 @media only screen and (max-width: 768px){
 
@@ -137,7 +128,7 @@
     padding: 20px;
 }
 
-}
+} */
 /* Hết trang đăng nhập */
 
 /* Hết Trang chủ - Trần Quốc Gia Huy */
