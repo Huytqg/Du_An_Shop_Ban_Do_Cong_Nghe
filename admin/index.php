@@ -4,7 +4,8 @@ include "../controller/pdo.php";
 include "../controller/danh_muc.php";
 include "../controller/users.php";
 include "header.php";
-if (isset($_SESSION['username'])) {
+
+if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
     if (isset($_GET['act'])) {
         $act = $_GET['act'];
         switch ($act) {
@@ -29,21 +30,11 @@ if (isset($_SESSION['username'])) {
                 include "danh_muc/list.php";
                 break;
 
-<<<<<<< HEAD
             case 'addkh': //Gia Huy
                 break;
 
             case 'listkh': // Gia Huy
                 break;
-=======
-        case 'addkh'://Gia Huy
-            include_once "khach_hang/addkh.php";
-            break;
-
-        case 'listkh':// Gia Huy
-            include_once "khach_hang/listkh.php";
-            break;
->>>>>>> 57a4ea8bf447f65251f7156f247621ed5054f173
 
             case '':
 
