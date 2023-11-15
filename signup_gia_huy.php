@@ -35,7 +35,7 @@
                         </div>
                         <form action="index.php?act=dangky" method="post">
                             <div class="input-group mb-3">
-                                <input type="email" class="form-control form-control-lg bg-light fs-6" placeholder="Email address" name="email">
+                                <input type="email" class="form-control form-control-lg bg-light fs-6" placeholder="Email address" name="email" required>
                             </div>
                             <div class="input-group mb-3">
                                 <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="UserName" name="username">
