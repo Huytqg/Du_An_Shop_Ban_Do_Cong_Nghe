@@ -27,14 +27,12 @@ if (isset($_GET['act'])) {
             include "danh_muc/list.php";
             break;
 
-            
-        
-        case '':
-
+        case 'addkh'://Gia Huy
             break;
-        case '':
 
+        case 'listkh':// Gia Huy
             break;
+
         case '':
 
             break;
