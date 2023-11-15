@@ -15,4 +15,9 @@ function insert_user($email,$username,$password){
     $sql = "INSERT INTO users(email,username,password) VALUES ('$email','$username','$password')";
     pdo_execute($sql);
 }
+function checkemail($email){
+    $sql = "SELECT * FROM users WHERE  email='".$email."'";
+    $sp = pdo_query_one($sql);
+    return $sp;
+}
 

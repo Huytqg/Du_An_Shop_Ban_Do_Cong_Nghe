@@ -50,7 +50,7 @@
                                             Me</small></label>
                                 </div>
                                 <div class="forgot">
-                                    <small><a href="#" style="text-decoration: none;">Forgot Password?</a></small>
+                                    <small><a href="./quenmk.php" style="text-decoration: none;">Forgot Password?</a></small>
                                 </div>
                             </div>
                             <div class="input-group mb-3">
@@ -60,6 +60,7 @@
                                 <small>Don't have account? <a href="signup_gia_huy.html" style="text-decoration: none;">Sign
                                         Up</a></small>
                             </div>
+
                         </form>
                     </div>
                 </div>
