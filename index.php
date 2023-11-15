@@ -19,8 +19,7 @@ if (isset($_GET['act'])) {
                     header("location:signup_gia_huy.php?err=" . $err);
                     echo "Email đã tồn tại";
                 } else if ($username == $one_user['username']) {
-<<<<<<< HEAD
-                   $err = "username đã tồn tại";
+                    $err = "username đã tồn tại";
                     header("location:signup_gia_huy.php");
                     echo "Tên đăng nhập đã tồn tại";
                 } else {
@@ -28,34 +27,27 @@ if (isset($_GET['act'])) {
                     header("location:index.php?err=" . $err);
                     die;
                 }
-=======
-                        $err = "username đã tồn tại";
-                        header("location:index.php?act=dangky&err=" . $err);
-                        echo "Tên đăng nhập đã tồn tại";
-                    }else {
-                        insert_user($email, $username, $password);
-                        // if (isset($email,$username) && $email == $one_email['email'] || $username == $one_user['username']) {
-                        //     echo "Tài khoản hoặc email đã tồn tại";
-                        // } else {
-                        //     insert_user($email,$username,$password);
-                        //     // header("location:index.php?act=main.php");
-                        // }
-                    }
->>>>>>> 9df03782ed69a00cebd747afa8ace23ee7a1f474
             }
             break;
         case 'dangnhap':
             if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
                 $username = $_POST['username'];
                 $password = $_POST['password'];
-                $check_user = check_user($username,$password);
+                $check_user = check_user($username, $password);
                 // print_r(is_array($check_user)) ;die;
-                if (is_array($check_user)) {
-                    $_SESSION['username'] = $check_user;
-                    header("location:index.php");
-                    die;
+                if ($check_user['role'] == "user") {
+                    if (is_array($check_user)) {
+                        $_SESSION['username'] = $check_user;
+                        header("location:index.php");
+                        die;
+                    }
+                } elseif($check_user['role'] == "admin"){
+                    if (is_array($check_user)) {
+                        $_SESSION['username'] = $check_user;
+                        header("location:admin/index.php");
+                        die;
+                    }
                 }
-
             }
             break;
         case 'thoat':
