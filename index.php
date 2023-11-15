@@ -19,11 +19,7 @@ if (isset($_GET['act'])) {
                     header("location:signup_gia_huy.php?err=" . $err);
                     echo "Email đã tồn tại";
                 } else if ($username == $one_user['username']) {
-<<<<<<< HEAD
                     $err = "username đã tồn tại";
-=======
-                   $err = "username đã tồn tại";
->>>>>>> 57a4ea8bf447f65251f7156f247621ed5054f173
                     header("location:signup_gia_huy.php");
                     echo "Tên đăng nhập đã tồn tại";
                 } else {

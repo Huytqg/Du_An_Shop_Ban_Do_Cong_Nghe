@@ -29,21 +29,11 @@ if (isset($_SESSION['username'])) {
                 include "danh_muc/list.php";
                 break;
 
-<<<<<<< HEAD
             case 'addkh': //Gia Huy
                 break;
 
             case 'listkh': // Gia Huy
                 break;
-=======
-        case 'addkh'://Gia Huy
-            include_once "khach_hang/addkh.php";
-            break;
-
-        case 'listkh':// Gia Huy
-            include_once "khach_hang/listkh.php";
-            break;
->>>>>>> 57a4ea8bf447f65251f7156f247621ed5054f173
 
             case '':
 
