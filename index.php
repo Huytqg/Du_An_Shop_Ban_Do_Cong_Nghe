@@ -19,7 +19,6 @@ if (isset($_GET['act'])) {
                     header("location:signup_gia_huy.php?err=" . $err);
                     echo "Email đã tồn tại";
                 } else if ($username == $one_user['username']) {
-<<<<<<< HEAD
                    $err = "username đã tồn tại";
                     header("location:signup_gia_huy.php");
                     echo "Tên đăng nhập đã tồn tại";
@@ -28,20 +27,6 @@ if (isset($_GET['act'])) {
                     header("location:index.php?err=" . $err);
                     die;
                 }
-=======
-                        $err = "username đã tồn tại";
-                        header("location:index.php?act=dangky&err=" . $err);
-                        echo "Tên đăng nhập đã tồn tại";
-                    }else {
-                        insert_user($email, $username, $password);
-                        // if (isset($email,$username) && $email == $one_email['email'] || $username == $one_user['username']) {
-                        //     echo "Tài khoản hoặc email đã tồn tại";
-                        // } else {
-                        //     insert_user($email,$username,$password);
-                        //     // header("location:index.php?act=main.php");
-                        // }
-                    }
->>>>>>> 9df03782ed69a00cebd747afa8ace23ee7a1f474
             }
             break;
         case 'dangnhap':
