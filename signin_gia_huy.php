@@ -26,7 +26,7 @@
         <div class="col-md-6 right-box">
             <div class="row align-items-center">
                 <div class="header-text mb-4">
-                    <div class="col mb-4 float_right margin_top_10px"><a href="view/index.html"><button style="background-color: #1976D2; color: white; font-weight: bold; border: none; border-radius: 5px; float: right; margin-top: 20px;">Home</button></a></div>
+                    <div class="col mb-4 float_right margin_top_10px"><a href="index.php"><button style="background-color: #1976D2; color: white; font-weight: bold; border: none; border-radius: 5px; float: right; margin-top: 20px;">Home</button></a></div>
                         <h2 style="margin-top: 25px;">Đăng nhập</h2>
                         <!-- <div class="sign_in_successfully" style="width: 250px; background-color: #48da3b; text-align: center; color: white; font-weight: bold; border-radius: 5px;">Đăng nhập thành công</div>
                         <div class="sign_in_successfully" style="width: 250px; background-color: #dd3636; text-align: center; color: white; font-weight: bold; border-radius: 5px;">Đăng nhập không thành công</div>-->
