@@ -21,8 +21,7 @@ if (isset($_GET['act'])) {
                         $err = "username đã tồn tại";
                         header("location:index.php?act=dangky&err=" . $err);
                         echo "Tên đăng nhập đã tồn tại";
-                    }
-                     else {
+                    }else {
                         insert_user($email, $username, $password);
                         // if (isset($email,$username) && $email == $one_email['email'] || $username == $one_user['username']) {
                         //     echo "Tài khoản hoặc email đã tồn tại";
@@ -31,7 +30,6 @@ if (isset($_GET['act'])) {
                         //     // header("location:index.php?act=main.php");
                         // }
                     }
-                
             }
             break;
 
