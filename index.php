@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "controller/pdo.php";
 include "controller/danh_muc.php";
 include "controller/users.php";
@@ -18,6 +19,16 @@ if (isset($_GET['act'])) {
                     header("location:signup_gia_huy.php?err=" . $err);
                     echo "Email đã tồn tại";
                 } else if ($username == $one_user['username']) {
+<<<<<<< HEAD
+                   $err = "username đã tồn tại";
+                    header("location:signup_gia_huy.php");
+                    echo "Tên đăng nhập đã tồn tại";
+                } else {
+                    insert_user($email, $username, $password);
+                    header("location:index.php?err=" . $err);
+                    die;
+                }
+=======
                         $err = "username đã tồn tại";
                         header("location:index.php?act=dangky&err=" . $err);
                         echo "Tên đăng nhập đã tồn tại";
@@ -30,13 +41,27 @@ if (isset($_GET['act'])) {
                         //     // header("location:index.php?act=main.php");
                         // }
                     }
+>>>>>>> 9df03782ed69a00cebd747afa8ace23ee7a1f474
             }
             break;
-        case '':
+        case 'dangnhap':
+            if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
+                $username = $_POST['username'];
+                $password = $_POST['password'];
+                $check_user = check_user($username,$password);
+                // print_r(is_array($check_user)) ;die;
+                if (is_array($check_user)) {
+                    $_SESSION['username'] = $check_user;
+                    header("location:index.php");
+                    die;
+                }
 
+            }
             break;
-        case '':
-
+        case 'thoat':
+            session_unset();
+            header("location:index.php");
+            die;
             break;
         case '':
 
