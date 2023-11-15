@@ -53,15 +53,13 @@
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                 <!-- Content -->
-                <h6 class="text-uppercase fw-bold">Company name</h6>
+                <h6 class="text-uppercase fw-bold">Về chúng tôi</h6>
                 <hr
                     class="mb-4 mt-0 d-inline-block mx-auto"
                     style="width: 60px; background-color: #7c4dff; height: 2px"
                     />
                 <p>
-                    Here you can use rows and columns to organize your footer
-                    content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit.
+                    Tại đây mọi người có thể yên tâm mua hàng vì chúng tôi đặt uy tín lên hàng đầu
                 </p>
                 </div>
                 <!-- Grid column -->
@@ -69,22 +67,22 @@
                 <!-- Grid column -->
                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                 <!-- Links -->
-                <h6 class="text-uppercase fw-bold">Products</h6>
+                <h6 class="text-uppercase fw-bold">Sản phẩm</h6>
                 <hr
                     class="mb-4 mt-0 d-inline-block mx-auto"
                     style="width: 60px; background-color: #7c4dff; height: 2px"
                     />
                 <p>
-                    <a href="#!" class="text-white">MDBootstrap</a>
+                    <a href="#!" class="text-white">Iphone</a>
                 </p>
                 <p>
-                    <a href="#!" class="text-white">MDWordPress</a>
+                    <a href="#!" class="text-white">Samsung</a>
                 </p>
                 <p>
-                    <a href="#!" class="text-white">BrandFlow</a>
+                    <a href="#!" class="text-white">Pixel</a>
                 </p>
                 <p>
-                    <a href="#!" class="text-white">Bootstrap Angular</a>
+                    <a href="#!" class="text-white">Nokia</a>
                 </p>
                 </div>
                 <!-- Grid column -->
@@ -92,22 +90,22 @@
                 <!-- Grid column -->
                 <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                 <!-- Links -->
-                <h6 class="text-uppercase fw-bold">Useful links</h6>
+                <h6 class="text-uppercase fw-bold">Liên kết</h6>
                 <hr
                     class="mb-4 mt-0 d-inline-block mx-auto"
                     style="width: 60px; background-color: #7c4dff; height: 2px"
                     />
                 <p>
-                    <a href="#!" class="text-white">Your Account</a>
+                    <a href="#!" class="text-white">Tài khoản của bạn</a>
                 </p>
                 <p>
-                    <a href="#!" class="text-white">Become an Affiliate</a>
+                    <a href="#!" class="text-white">Đơn hàng đã đặt</a>
                 </p>
                 <p>
-                    <a href="#!" class="text-white">Shipping Rates</a>
+                    <a href="#!" class="text-white">Đánh giá sản phẩm</a>
                 </p>
                 <p>
-                    <a href="#!" class="text-white">Help</a>
+                    <a href="#!" class="text-white">Hỗ trợ</a>
                 </p>
                 </div>
                 <!-- Grid column -->
@@ -115,15 +113,15 @@
                 <!-- Grid column -->
                 <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                 <!-- Links -->
-                <h6 class="text-uppercase fw-bold">Contact</h6>
+                <h6 class="text-uppercase fw-bold">Liên hệ</h6>
                 <hr
                     class="mb-4 mt-0 d-inline-block mx-auto"
                     style="width: 60px; background-color: #7c4dff; height: 2px"
                     />
-                <p><i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-                <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
-                <p><i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                <p><i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
+                <p><i class="fas fa-home mr-3"></i> Việt Nam, VN 10000, VN</p>
+                <p><i class="fas fa-envelope mr-3"></i> team13@gmail.com</p>
+                <p><i class="fas fa-phone mr-3"></i> + 89 123 223 04</p>
+                <p><i class="fas fa-print mr-3"></i> + 89 126 335 19</p>
                 </div>
                 <!-- Grid column -->
             </div>
