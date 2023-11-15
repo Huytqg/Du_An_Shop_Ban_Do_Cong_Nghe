@@ -46,7 +46,7 @@
     <!-- Thanh logo, tìm kiếm, giỏ hàng, số điện thoại -->
     <div class="container-xxl">
         <div class="row">
-            <div class="col-sm-3 margin_20px"><a href="index.html"><img src="Logo team 13\logo_2_2.png" alt="menu_logo" style="width: 160px;"></a></div>
+            <div class="col-sm-3 margin_20px"><a href="index.php"><img src="Logo team 13\logo_2_2.png" alt="menu_logo" style="width: 160px;"></a></div>
             <div class="col-sm-3 margin_top_50px">
                 <div class="search">
                     <div class="search_content">
@@ -61,7 +61,7 @@
             <!-- <div class="col" style="text-align: center; margin-top: 40px;"><input type="button" value="Card" style="border: none; background-color: #1976D2; padding: 10px; border-radius: 10px; color: white; font-weight: bold;"></div> -->
             <div class="col" style="text-align: center; margin-top: 40px;"><i class='bx bx-shopping-bag' id="cart-icon" style="font-size: 3.5rem; margin-left: 100px;"></i></div>
             <!-- <div class="col margin_top_40px"><i class='bx bx-shopping-bag' id="cart-icon" style="font-size: 3.5rem; margin-left: 100px;" ></i></div> -->
-            <div class="col" style="text-align: center; margin-top: 40px;"><a href="signin_gia_huy.html"><input type="button" value="Đăng nhập" style="border: none; background-color: #1976D2; padding: 10px; border-radius: 10px; color: white; font-weight: bold;"></a></div>
+            <div class="col" style="text-align: center; margin-top: 40px;"><a href="signin_gia_huy.php"><input type="button" value="Đăng nhập" style="border: none; background-color: #1976D2; padding: 10px; border-radius: 10px; color: white; font-weight: bold;"></a></div>
             <div class="col-sm-1" style="text-align: center; margin-top: 40px;"><a href="signup_gia_huy.php"><input type="button" value="Đăng ký" style="border: none; background-color: #1976D2; padding: 10px; border-radius: 10px; color: white; font-weight: bold;"></a></div>
             <!-- <div class="col margin_top_50px">
                         Viettel : <span class="color_red bold">0383 980 923</span>

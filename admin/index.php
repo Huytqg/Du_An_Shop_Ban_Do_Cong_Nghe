@@ -26,27 +26,9 @@ if (isset($_GET['act'])) {
             $list_dm = alldm();
             include "danh_muc/list.php";
             break;
-        case 'dangky':
-            if (isset($_POST['dangky']) && ($_POST['dangky'])) {
-                $email = $_POST['email'];
-                $username = $_POST['username'];
-                $password = $_POST['password'];
-                // $one_email = user_email($email);
-                // $one_user = user_username($username);
-                // if (isset($email) && $email == $one_email['email']) {
-                //     $err = "Email đã tồn tại";
-                //     header("location:index.php?act=dangky&err=" . $err);
-                // } else {
-                //     if (isset($username) && $username == $one_user['username']) {
-                //         $err = "username đã tồn tại";
-                //         header("location:index.php?act=dangky&err=" . $err);
-                //     } else{
-                        insert_user($email,$username,$password);
-                    }
-            //     }
-            // }
-            include "admin/signup_gia_huy.php";
-            break;
+
+            
+        
         case '':
 
             break;

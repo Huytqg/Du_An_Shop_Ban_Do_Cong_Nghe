@@ -2,7 +2,6 @@
 include "controller/pdo.php";
 include "controller/danh_muc.php";
 include "controller/users.php";
-include "header.php";
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
@@ -15,14 +14,14 @@ if (isset($_GET['act'])) {
                 $one_user = user_username($username);
                 if ($email == $one_email['email']) {
                     $err = "Email đã tồn tại";
-                    header("location:index.php?act=dangky&err=" . $err);
+                    // header("location:sigup_gia_huy.php?err=" . $err);
+                    header("location:signup_gia_huy.php?err=" . $err);
                     echo "Email đã tồn tại";
                 } else if ($username == $one_user['username']) {
                         $err = "username đã tồn tại";
                         header("location:index.php?act=dangky&err=" . $err);
                         echo "Tên đăng nhập đã tồn tại";
-                    }
-                     else {
+                    }else {
                         insert_user($email, $username, $password);
                         // if (isset($email,$username) && $email == $one_email['email'] || $username == $one_user['username']) {
                         //     echo "Tài khoản hoặc email đã tồn tại";
@@ -31,9 +30,27 @@ if (isset($_GET['act'])) {
                         //     // header("location:index.php?act=main.php");
                         // }
                     }
-                
             }
             break;
+        case '':
+
+            break;
+        case '':
+
+            break;
+        case '':
+
+            break;
+        case '':
+
+            break;
+    }
+}
+include "header.php";
+if (isset($_GET['act'])) {
+    $act = $_GET['act'];
+    switch ($act) {
+
 
         case '':
 
