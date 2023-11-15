@@ -87,7 +87,7 @@
                 <div class="col">
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle margin_top_2-5px" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; color: black; font-weight: bold; width: 250px;">
-                            TẤT CẢ DANH MỤ
+                            TẤT CẢ DANH MỤC
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-top: 5px; width: 400px;">
                             <a class="dropdown-item" href="#">Máy ảnh - Flycam</a>
