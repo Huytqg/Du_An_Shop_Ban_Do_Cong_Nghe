@@ -4,7 +4,8 @@ include "../controller/pdo.php";
 include "../controller/danh_muc.php";
 include "../controller/users.php";
 include "header.php";
-if (isset($_SESSION['username'])) {
+
+if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
     if (isset($_GET['act'])) {
         $act = $_GET['act'];
         switch ($act) {

@@ -41,7 +41,7 @@ if (isset($_GET['act'])) {
                         header("location:index.php");
                         die;
                     }
-                } elseif($check_user['role'] == "admin"){
+                } elseif ($check_user['role'] == "admin") {
                     if (is_array($check_user)) {
                         $_SESSION['username'] = $check_user;
                         header("location:admin/index.php");

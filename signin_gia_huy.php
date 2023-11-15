@@ -34,10 +34,10 @@
                             </div>
                             <form action="index.php?act=dangnhap" method="post">
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Tên đăng nhập" name="username">
+                                    <input type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Tên đăng nhập" name="username" required>
                                 </div>
                                 <div class="input-group mb-1">
-                                    <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" name="password">
+                                    <input type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Password" name="password" required>
                                 </div>
                                 <div class="input-group mb-5 d-flex justify-content-between">
                                     <div class="form-check">
