@@ -16,3 +16,8 @@ function insert_user($email,$username,$password){
     pdo_execute($sql);
 }
 
+function check_user($username,$password){
+    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    return pdo_query_one($sql);
+}
+
