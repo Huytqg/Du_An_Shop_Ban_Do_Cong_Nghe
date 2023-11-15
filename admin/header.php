@@ -17,7 +17,7 @@
     <section class="admin-content">
         <div class="admin-content-left">
             <ul>
-                <li><a href="#">Danh mục</a></li>
+                <li><a href="index.php?act=listdm">Danh mục</a></li>
                 <ul>
                     <li><a href="index.php?act=adddm">Thêm danh mục</a></li>
                     <li><a href="index.php?act=listdm">danh sách danh mục</a></li>
