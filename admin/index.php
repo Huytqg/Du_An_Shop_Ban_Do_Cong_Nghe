@@ -28,9 +28,11 @@ if (isset($_GET['act'])) {
             break;
 
         case 'addkh'://Gia Huy
+            include_once "khach_hang/addkh.php";
             break;
 
         case 'listkh':// Gia Huy
+            include_once "khach_hang/listkh.php";
             break;
 
         case '':
