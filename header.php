@@ -13,9 +13,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style_trangchu_giahuy.css">
+    <link rel="stylesheet" href="view/style_trangchu_giahuy.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="view/style.css">
     <title>Document</title>
 </head>
 
@@ -46,7 +46,7 @@
     <!-- Thanh logo, tìm kiếm, giỏ hàng, số điện thoại -->
     <div class="container-xxl">
         <div class="row">
-            <div class="col-sm-3 margin_20px"><a href="index.html"><img src="Logo team 13\logo_2_2.png" alt="menu_logo" style="width: 160px;"></a></div>
+            <div class="col-sm-3 margin_20px"><a href="index.php"><img src="Logo team 13\logo_2_2.png" alt="menu_logo" style="width: 160px;"></a></div>
             <div class="col-sm-3 margin_top_50px">
                 <div class="search">
                     <div class="search_content">
