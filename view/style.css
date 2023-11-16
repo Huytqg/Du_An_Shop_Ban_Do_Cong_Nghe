@@ -452,7 +452,7 @@ header h1 {
 
 .admin-content-right .admin-content-right-category .row select {
     height: 30px;
-    width: 500px;
+    width: 100%;
     padding-left: 12px;
     /* margin-top: 20px; */
 }
@@ -480,5 +480,5 @@ textarea {
     padding: 10px;
     border-radius: 3px;
     min-height: 40px;
-    width: 550px;
+    width: 100%;
 }

@@ -18,13 +18,18 @@ if (isset($_GET['act'])) {
                     // header("location:sigup_gia_huy.php?err=" . $err);
                     header("location:signup_gia_huy.php?err=" . $err);
                     echo "Email đã tồn tại";
+                } elseif ((filter_var($email, FILTER_VALIDATE_EMAIL) === false)) {
+                    $err = "Email không đúng định dạng";
+                    header("location:signup_gia_huy.php?err=" . $err);
+                    echo "Email không đúng định dạng";
                 } else if ($username == $one_user['username']) {
                     $err = "username đã tồn tại";
                     header("location:signup_gia_huy.php");
                     echo "Tên đăng nhập đã tồn tại";
                 } else {
                     insert_user($email, $username, $password);
-                    header("location:index.php?err=" . $err);
+                    $thongbao ="Đăng kí tài khoản thành công";
+                    header("location:signin_gia_huy.php?err=" . $thongbao);
                     die;
                 }
             }
