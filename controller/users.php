@@ -21,3 +21,8 @@ function checkemail($email){
     return $sp;
 }
 
+function check_user($username,$password){
+    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    return pdo_query_one($sql);
+}
+

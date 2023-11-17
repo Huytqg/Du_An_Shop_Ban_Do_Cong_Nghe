@@ -22,11 +22,14 @@
                     <li><a href="index.php?act=adddm">Thêm danh mục</a></li>
                     <li><a href="index.php?act=listdm">danh sách danh mục</a></li>
                 </ul>
-                
-                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="index.php?act=listsp">Sản phẩm</a></li>
                 <ul>
                     <li><a href="index.php?act=addsp">Thêm sản phẩm</a></li>
                     <li><a href="index.php?act=listsp">danh sách sản phẩm</a></li>
+                </ul>
+                <li><a href="#">Tài khoản</a></li>
+                <ul>
+                    <li><a href="index.php?act=listkh">danh sách tài khoản</a></li>
                 </ul>
             </ul>
         </div>
