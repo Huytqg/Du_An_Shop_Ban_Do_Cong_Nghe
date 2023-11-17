@@ -59,7 +59,7 @@
                 </div>
             </div>
             <!-- <div class="col" style="text-align: center; margin-top: 40px;"><input type="button" value="Card" style="border: none; background-color: #1976D2; padding: 10px; border-radius: 10px; color: white; font-weight: bold;"></div> -->
-            <div class="col" style="text-align: center; margin-top: 40px;"><i class='bx bx-shopping-bag' id="cart-icon" style="font-size: 3.5rem; margin-left: 100px;"></i></div>
+            <div class="col" style="text-align: center; margin-top: 40px;"><i class='bx bx-shopping-bag' id="cart-icon" style="font-size: 3.5rem;"></i></div>
             <!-- <div class="col margin_top_40px"><i class='bx bx-shopping-bag' id="cart-icon" style="font-size: 3.5rem; margin-left: 100px;" ></i></div> -->
             <?php
             if (isset($_SESSION['username'])) {
