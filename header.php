@@ -74,21 +74,17 @@
                 </div>
                 <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
                     <div style='width: 250px; height: 350px;'>
-                        <a class='dropdown-item' href='#'><img src='Logo user/logo user.png' alt='' style='width: 150px; margin-left: 40px; padding: 20px 20px 0px 20px;'></a>
-                        <a class='dropdown-item' href='#' style='text-align: center; font-weight: bold; text-decoration: none; color: black;'><?=$username?></a>
+                        <div class='dropdown-item' href='#'><img src='Logo user/logo user.png' alt='' style='width: 150px; margin-left: 40px; padding: 20px 20px 0px 20px;'></div>
+                        <div class='dropdown-item' href='#' style='text-align: center; font-weight: bold; text-decoration: none; color: black;'>$username</div>
                         </div>
                         </div>
-                    </div></div>";
+                    </div>
+                    </div>";
                 echo "<div class='col' style='text-align: center; margin-top: 40px;'><a href='index.php?act=thoat'><input type='button' value='Đăng Xuất' style='border: none; background-color: #1976D2; padding: 10px; border-radius: 10px; color: white; font-weight: bold;'></a></div>";
             } else {
             ?>
-                <!-- <div class="col"><img src="Logo user/logo user.png" style="width: 50px;" alt=""></div> -->
                 <div class="col" style="text-align: center; margin-top: 40px;"><a href="signin_gia_huy.php"><input type="button" value="Đăng nhập" style="border: none; background-color: #1976D2; padding: 10px; border-radius: 10px; color: white; font-weight: bold;"></a></div>
                 <div class="col-sm-1" style="text-align: center; margin-top: 40px;"><a href="signup_gia_huy.php"><input type="button" value="Đăng ký" style="border: none; background-color: #1976D2; padding: 10px; border-radius: 10px; color: white; font-weight: bold;"></a></div>
-                <!-- <div class="col margin_top_50px">
-                        Viettel : <span class="color_red bold">0383 980 923</span>
-                        Mobile : <span class="color_red bold">0906 997 704</span>
-                    </div> -->
             <?php } ?>
         </div>
     </div>
