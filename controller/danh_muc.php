@@ -14,7 +14,8 @@ function Onedm_name($name)
 
 function alldm(){
     $sql = "SELECT * FROM danh_muc WHERE 1 order by id DESC";
-    return pdo_query($sql);
+      $list_dm=pdo_query($sql);
+    return  $list_dm;
 }
 
 function one_dm_id($id){

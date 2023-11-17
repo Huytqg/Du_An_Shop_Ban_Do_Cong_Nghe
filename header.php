@@ -1,3 +1,10 @@
+<?php
+if ((is_array($list_dm) && isset($list_dm))) {
+    extract($list_dm);
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,14 +96,19 @@
                         <button class="btn btn-secondary dropdown-toggle margin_top_2-5px" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; color: black; font-weight: bold; width: 250px;">
                             TẤT CẢ DANH MỤC
                         </button>
+                        <?php foreach ($list_dm as $list) {
+                        ?>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-top: 5px; width: 400px;">
-                            <a class="dropdown-item" href="#">Máy ảnh - Flycam</a>
-                            <a class="dropdown-item" href="#">Đồ chơi trẻ em</a>
+                            <a class="dropdown-item" href="#" ><?=$list['name']?></a>
+                            <!-- <a class="dropdown-item" href="#">Đồ chơi trẻ em</a>
                             <a class="dropdown-item" href="#">Thiết bị âm thanh</a>
                             <a class="dropdown-item" href="#">Đồ chơi công nghệ</a>
                             <a class="dropdown-item" href="#">Đồ chơi mô hình tĩnh</a>
-                            <a class="dropdown-item" href="#">Máy tính và thiết bị văn phòng</a>
+                            <a class="dropdown-item" href="#">Máy tính và thiết bị văn phòng</a> -->
                         </div>
+                        <?php
+                        }
+                        ?>
                     </div>
                 </div>
                 <div class="col"><a href="#">

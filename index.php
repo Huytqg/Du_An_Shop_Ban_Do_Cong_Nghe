@@ -40,7 +40,7 @@ if (isset($_GET['act'])) {
                 $password = $_POST['password'];
                 $check_user = check_user($username, $password);
                 // print_r(is_array($check_user)) ;die;
-                if ($check_user['role'] == "user" ) {
+                if ($check_user['role'] == "user") {
                     if (is_array($check_user)) {
                         $_SESSION['username'] = $check_user;
                         header("location:index.php");
@@ -81,8 +81,11 @@ if (isset($_GET['act'])) {
             }
             include "./quenmk.php";
             break;
+
+           
     }
 }
+$list_dm=alldm();
 include "header.php";
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
