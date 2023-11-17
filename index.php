@@ -88,12 +88,8 @@ if (isset($_GET['act'])) {
            
     }
 }
-<<<<<<< HEAD
 $list_dm=alldm();
-=======
-
-$allsp = all_sp();
->>>>>>> 05d7a98b6c78c2703f10d0725b277a6fa585c5d4
+$allsp=all_sp();
 include "header.php";
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
