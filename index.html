@@ -5,13 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-    href="https://fonts.googleapis.com/css2?family=Archivo:wght@100;500;700&family=Open+Sans:ital@1&family=Roboto:ital,wght@0,400;0,500;1,300;1,400&display=swap"
-    rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@100;500;700&family=Open+Sans:ital@1&family=Roboto:ital,wght@0,400;0,500;1,300;1,400&display=swap"rel="stylesheet"/>
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="node_modules/@glidejs/glide/dist/css/glide.theme.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Shop bán đồ công nghệ</title>
 </head>
 <body>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <!-- Header -->
+    <heade class="header" id="header">
+        <div class="navigation">
+            <div class="container">
+                <nav class="nav">
+                    <div class="nav_hamburger">
+                        <img src="https://img.icons8.com/ios-glyphs/30/list--v1.png" alt="">
+                    </div>
+                    <div class="nav_logo">
+                        <a href="/" class="scroll-link">PHONE</a>
+                    </div>
+                    <div class="nav_menu">
+                        <div class="menu_top">
+                            <span class="nav_category">PHONE</span>
+                            <a href="#" class="close_toggle">
+                                <img src="https://img.icons8.com/ios-glyphs/30/multiply.png" alt="">
+                            </a>
+                        </div>
+
+                        <ul class="nav_list">
+                            <li class="nav_item">
+                                <a href="#header" class="nav_link scroll-link">Home</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="#category" class="nav_link scroll-link">Category</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="#news" class="nav_link scroll-link">Blog</a>
+                            </li>
+                            <li class="nav_item">
+                                <a href="#contact" class="nav_link scroll-link">Contact</a>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                    <div class="nav_icons">
+                        <a href="#" class="icon_item">
+                            <img src="https://img.icons8.com/ios-glyphs/30/user.png" alt="">
+                        </a>
+                        <a href="#" class="icon_item">
+                            <img src="https://img.icons8.com/ios-glyphs/30/search--v1.png" alt="">
+                        </a>
+                        <a href="#" class="icon_item">
+                            <img src="https://img.icons8.com/ios-glyphs/30/shopping-basket.png" alt="">
+                            <span id="cart_total">0</span>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </heade>
+    <!-- Hết header -->
+
+
+    <link rel="shortcut icon" href="Logo team 13/logo_1_2.png" type="image/x-icon">
+    <script src="./js/index.js"></script>
+    <script src="./js/product.js"></script>
+    <script src="./js/slider.js"></script>
+
+
+
+
+
+
+    <script src="node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>
