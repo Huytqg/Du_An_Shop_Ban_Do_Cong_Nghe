@@ -19,6 +19,4 @@ function updatetk($id,$username,$email,$role){
     $sql = "UPDATE users SET username='$username', email='$email',role='$role' WHERE id=$id;";
     pdo_execute($sql);
 }
-
-
 ?>
