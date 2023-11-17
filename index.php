@@ -45,7 +45,7 @@ if (isset($_GET['act'])) {
                 } else {
                     $thongbao = "EMAIL không tồn tại!";
                     header("location: quenmk.php?thongbao=".$thongbao);
-                    die;
+                    die;    
                 }
             }
             include "./quenmk.php";
