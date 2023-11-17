@@ -20,6 +20,9 @@ if ((is_array($list_dm) && isset($list_dm))) {
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <link rel="stylesheet" href="view/style_trangchu_giahuy.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="view/style.css">
@@ -71,17 +74,24 @@ if ((is_array($list_dm) && isset($list_dm))) {
             <?php
             if (isset($_SESSION['username'])) {
                 extract($_SESSION['username']);
-                echo  "<div class='col' style='margin-top: 25px;'><img src='Logo user/logo user.png' style='width: 70px; padding: 10px;'' alt='' >.Xin chào $username</div>";
+                echo  "<div class='col' style='margin-top: 20px;'>
+                <div class='dropdown'>
+                <div href='#' id='imageDropdown' data-toggle='dropdown'>
+                    <img src='Logo user/logo user.png' style='width: 80px; padding: 10px;' />Xin chào $username
+                </div>
+                <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
+                    <div style='width: 250px; height: 350px;'>
+                        <div class='dropdown-item' href='#'><img src='Logo user/logo user.png' alt='' style='width: 150px; margin-left: 40px; padding: 20px 20px 0px 20px;'></div>
+                        <div class='dropdown-item' href='#' style='text-align: center; font-weight: bold; text-decoration: none; color: black;'>$username</div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>";
                 echo "<div class='col' style='text-align: center; margin-top: 40px;'><a href='index.php?act=thoat'><input type='button' value='Đăng Xuất' style='border: none; background-color: #1976D2; padding: 10px; border-radius: 10px; color: white; font-weight: bold;'></a></div>";
             } else {
             ?>
-            <!-- <div class="col"><img src="Logo user/logo user.png" style="width: 50px;" alt=""></div> -->
                 <div class="col" style="text-align: center; margin-top: 40px;"><a href="signin_gia_huy.php"><input type="button" value="Đăng nhập" style="border: none; background-color: #1976D2; padding: 10px; border-radius: 10px; color: white; font-weight: bold;"></a></div>
                 <div class="col-sm-1" style="text-align: center; margin-top: 40px;"><a href="signup_gia_huy.php"><input type="button" value="Đăng ký" style="border: none; background-color: #1976D2; padding: 10px; border-radius: 10px; color: white; font-weight: bold;"></a></div>
-                <!-- <div class="col margin_top_50px">
-                        Viettel : <span class="color_red bold">0383 980 923</span>
-                        Mobile : <span class="color_red bold">0906 997 704</span>
-                    </div> -->
             <?php } ?>
         </div>
     </div>

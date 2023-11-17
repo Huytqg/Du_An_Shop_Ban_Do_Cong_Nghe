@@ -2,7 +2,10 @@
 session_start();
 include "controller/pdo.php";
 include "controller/danh_muc.php";
+include "controller/san_pham.php";
 include "controller/users.php";
+
+
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
@@ -28,7 +31,7 @@ if (isset($_GET['act'])) {
                     echo "Tên đăng nhập đã tồn tại";
                 } else {
                     insert_user($email, $username, $password);
-                    $thongbao ="Đăng kí tài khoản thành công";
+                    $thongbao = "Đăng kí tài khoản thành công";
                     header("location:signin_gia_huy.php?err=" . $thongbao);
                     die;
                 }
@@ -85,7 +88,12 @@ if (isset($_GET['act'])) {
            
     }
 }
+<<<<<<< HEAD
 $list_dm=alldm();
+=======
+
+$allsp = all_sp();
+>>>>>>> 05d7a98b6c78c2703f10d0725b277a6fa585c5d4
 include "header.php";
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
@@ -115,6 +123,7 @@ if (isset($_GET['act'])) {
             break;
     }
 } else {
+
     include "main.php";
 }
 
