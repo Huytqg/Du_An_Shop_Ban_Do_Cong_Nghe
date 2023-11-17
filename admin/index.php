@@ -3,6 +3,7 @@ session_start();
 include "../controller/pdo.php";
 include "../controller/danh_muc.php";
 include "../controller/san_pham.php";
+include "../controller/khach_hang.php";
 include "../controller/users.php";
 include "header.php";
 
@@ -118,16 +119,65 @@ if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
                     die;
                 }
                 break;
-            case '':
+            case 'editsp':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $id = $_GET['id'];
+                    $one_sp = one_sp($id);
+                }
+                $all_dm = alldm();
+                include "san_pham/update.php";
                 break;
-            case '':
+            case 'updatesp':
+                if (isset($_POST['add_sp']) && ($_POST['add_sp'])) {
+                    $id = $_POST['id'];
+                    $name = $_POST['name'];
+                    $price = $_POST['price'];
+                    $price_new = $_POST['price_new'];
+                    $quantity = $_POST['quantity'];
+                    $category_id = $_POST['category_id'];
+                    $description = $_POST['description'];
+                    $file = $_FILES['image'];
+                    $image = $file['name'];
+                    if ($file['type'] == 'image/jpeg' || $file['type'] == 'image/jpg' || $file['type'] == 'image/png') {
+                        move_uploaded_file($file['tmp_name'], "../images/" . $image);
+                    } else {
+                        echo "Ảnh sản phẩm không đúng định dạng";
+                        $image = '';
+                        $err = "Ảnh sản phẩm không đúng định dạng";
+                        header("location:index.php?act=editsp&err=" . $err);
+                        die;
+                    }
+
+                    // $oneNameSP = Onesp_name($name);
+                    // // echo "" .$oneNameSP['name']; die;
+                    // if ( $name == $oneNameSP['name']) {
+                    //     $err = "Sản phẩm đã tồn tại";
+                    //     header("location:index.php?act=editsp&err=" . $err);
+                    //     die;
+                    // } else {
+                        updatesp($id,$name, $price, $price_new, $quantity, $category_id, $image, $description);
+                        $thong_bao = "Cập nhật thành công";
+                        header("location:index.php?act=listsp&thong_bao=" . $thong_bao);
+                        die;
+                    // }
+                }
+                include "san_pham/list.php";
                 break;
-            case '':
+            case 'listkh':
+                $listkh=allkh();
+                include "khach_hang/listkh.php";
                 break;
-            case 'addkh': //Gia Huy
+            case 'deletekh': 
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $id = $_GET['id'];
+                    deletekh($id);
+                    header("location:index.php?act=listkh");
+                    die;
+                }
+                include "khach_hang/listkh.php";
                 break;
 
-            case 'listkh': // Gia Huy
+            case 'listkh': 
                 break;
 
             case '':

@@ -1,14 +1,14 @@
 <?php
-function insert_khach_hang($email,$username,$password){
-    $sql = "INSERT INTO users(email,username,password) VALUES ('$email','$username','$password')";
-    pdo_execute($sql);
+
+function allkh(){
+    $sql = "SELECT * FROM users WHERE 1 order by id DESC";
+    return pdo_query($sql);
 }
 
-function list_khach_hang(){
-    $sql = "SELECT * FROM users WHERE 1";
+function deletekh($id){
+    $sql = "DELETE FROM users WHERE id=$id";
     pdo_execute($sql);
 }
-
 
 
 ?>

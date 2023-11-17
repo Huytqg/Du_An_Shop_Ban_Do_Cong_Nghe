@@ -9,6 +9,7 @@
         <th>GIÁ KHUYẾN MẠI</th>
         <th>SỐ LƯỢNG</th>
         <th>MÔ TẢ</th>
+        <th>CATEGORY_ID</th>
         <th>TÙY BIẾN</th>
     </tr>
     <?php foreach ($listsp as $sp) : ?>
@@ -19,7 +20,8 @@
             <td><?= $sp['price'] ?></td>
             <td><?= $sp['price_new'] ?></td>
             <td><?= $sp['quantity'] ?></td>
-            <td><?= $sp['description'] ?></td>
+            <td><?= $sp['description']?></td>
+            <td><?= $sp['category_id'] ?></td>
             <td><a href="index.php?act=editsp&&id=<?= $sp['id'] ?>"><i class='bx bx-edit'></i></a> -
                 <a onclick="return confirm('Bạn có muốn xóa không?')" href="index.php?act=deletesp&&id=<?= $sp['id'] ?>"><i class='bx bx-trash'></i></a>
             </td>
