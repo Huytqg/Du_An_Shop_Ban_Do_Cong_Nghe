@@ -1,8 +1,4 @@
-<?php
-if ((is_array($list_dm) && isset($list_dm))) {
-    extract($list_dm);
-}
-?>
+<!--  -->
 
 
 <!DOCTYPE html>
@@ -102,23 +98,23 @@ if ((is_array($list_dm) && isset($list_dm))) {
         <div class="container-xxl">
             <div class="row">
                 <div class="col">
+                
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle margin_top_2-5px" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; color: black; font-weight: bold; width: 250px;">
                             TẤT CẢ DANH MỤC
                         </button>
-                        <?php foreach ($list_dm as $list) {
-                        ?>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-top: 5px; width: 400px;">
+                            <?php foreach ($list_dm as $list) :?>
                             <a class="dropdown-item" href="#" ><?=$list['name']?></a>
+
                             <!-- <a class="dropdown-item" href="#">Đồ chơi trẻ em</a>
                             <a class="dropdown-item" href="#">Thiết bị âm thanh</a>
                             <a class="dropdown-item" href="#">Đồ chơi công nghệ</a>
                             <a class="dropdown-item" href="#">Đồ chơi mô hình tĩnh</a>
                             <a class="dropdown-item" href="#">Máy tính và thiết bị văn phòng</a> -->
+                            <?php endforeach ?>
                         </div>
-                        <?php
-                        }
-                        ?>
+                       
                     </div>
                 </div>
                 <div class="col"><a href="#">
