@@ -64,7 +64,7 @@
             <?php
             if (isset($_SESSION['username'])) {
                 extract($_SESSION['username']);
-                echo  "<div class='col'><img src='Logo user/logo user.png' style='width: 50px; margin-top: 10px;'' alt='' >.Xin chào $username</div>";
+                echo  "<div class='col' style='margin-top: 25px;'><img src='Logo user/logo user.png' style='width: 70px; padding: 10px;'' alt='' >.Xin chào $username</div>";
                 echo "<div class='col' style='text-align: center; margin-top: 40px;'><a href='index.php?act=thoat'><input type='button' value='Đăng Xuất' style='border: none; background-color: #1976D2; padding: 10px; border-radius: 10px; color: white; font-weight: bold;'></a></div>";
             } else {
             ?>
