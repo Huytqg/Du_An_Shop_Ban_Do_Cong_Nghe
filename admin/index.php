@@ -155,19 +155,19 @@ if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
                     //     header("location:index.php?act=editsp&err=" . $err);
                     //     die;
                     // } else {
-                        updatesp($id,$name, $price, $price_new, $quantity, $category_id, $image, $description);
-                        $thong_bao = "Cập nhật thành công";
-                        header("location:index.php?act=listsp&thong_bao=" . $thong_bao);
-                        die;
+                    updatesp($id, $name, $price, $price_new, $quantity, $category_id, $image, $description);
+                    $thong_bao = "Cập nhật thành công";
+                    header("location:index.php?act=listsp&thong_bao=" . $thong_bao);
+                    die;
                     // }
                 }
                 include "san_pham/list.php";
                 break;
             case 'listkh':
-                $listkh=allkh();
+                $listkh = allkh();
                 include "khach_hang/listkh.php";
                 break;
-            case 'deletekh': 
+            case 'deletekh':
                 if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                     $id = $_GET['id'];
                     deletekh($id);
@@ -177,11 +177,25 @@ if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
                 include "khach_hang/listkh.php";
                 break;
 
-            case 'listkh': 
+            case 'editkh':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $id = $_GET['id'];
+                    $one_tk = onetk($id);
+                }
+                include "khach_hang/update.php";
                 break;
 
-            case '':
-
+            case 'updatekh':
+                if (isset($_POST['update_kh']) && ($_POST['update_kh'])) {
+                    $id = $_POST['id'];
+                    $username = $_POST['username'];
+                    $email = $_POST['email'];
+                    $role = $_POST['role'];
+                    updatetk($id,$username,$email,$role);
+                    header("location:index.php?act=listkh");
+                    die;
+                }
+                include "khach_hang/listkh.php";
                 break;
             case '':
 
