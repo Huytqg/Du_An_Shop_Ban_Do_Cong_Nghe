@@ -247,3 +247,14 @@ header{
         transition: .8s;
     }
 }
+
+@media only screen and (max-width: 568px){
+    .nav_icons .icon_item img{
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .nav_icons .icon_item{
+        padding: .5rem;
+    }
+}
