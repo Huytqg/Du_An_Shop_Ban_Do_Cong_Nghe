@@ -19,9 +19,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="view/style_trangchu_giahuy.css">
+    <link rel="stylesheet" href="view/css/style_trangchu_giahuy.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="view/style.css">
+    <link rel="stylesheet" href="view/css/style.css">
     <title>Document</title>
 </head>
 
@@ -104,6 +104,13 @@
                             TẤT CẢ DANH MỤC
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-top: 5px; width: 400px;">
+<<<<<<< HEAD
+                            <?php foreach ($list_dm as $list) : ?>
+                                <a class="dropdown-item" href="index.php?act=allsp&id=<?= $list['id'] ?>"><?= $list['name'] ?></a>
+                            <?php endforeach ?>
+
+                        </div>
+=======
                             <?php foreach ($list_dm as $list) :?>
                             <a class="dropdown-item" href="#" ><?=$list['name']?></a>
 
@@ -115,6 +122,7 @@
                             <?php endforeach ?>
                         </div>
                        
+>>>>>>> 571f22335843fa94058d9862d5dbef5cd3abbfbf
                     </div>
                 </div>
                 <div class="col"><a href="#">

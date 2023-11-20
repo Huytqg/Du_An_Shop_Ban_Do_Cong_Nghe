@@ -1,4 +1,4 @@
-<script src="add-to-cart.js"></script>
+<script src="view/js/add-to-cart.js"></script>
     <!-- Hết giỏ hàng - Trần Huy Hưng -->
 
     <!-- Footer - Trần Quốc Gia Huy -->
