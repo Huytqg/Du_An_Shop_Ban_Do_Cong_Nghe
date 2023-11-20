@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
+    font-family: "Roboto",sans-serif;
 }
 
 :root {
@@ -61,7 +61,7 @@ span {
 
 .row {
     width: 100%;
-    height: 700px;
+    height: auto;
     background-color: white;
     display: flex;
 }
@@ -94,7 +94,7 @@ span {
 
 .list_img div {
     flex: 1 0 0;
-    padding: 4px;
+    padding: 2px;
 }
 
 .list_img img {
@@ -235,4 +235,156 @@ h1{
     background-color: red;
     margin: 20px 0;
 }
+
+.mau_bonho{
+    width: 98%;
+    height: 100px;
+    justify-content: flex-start;
+    display: flex;
+}
+
+.bonho_sp{
+   width: 80px;
+    display: flex;
+   
+    justify-content: start;
+    align-items: center;
+}
+
+.list_img img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.tt_sp span{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 10px;
+}
+
+.giasp{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 20px;
+}
+
+.giasp .giakm_sp{
+    color: red;
+    font-weight: bold;
+    margin-right:10px ;
+    font-size: 30px;
+}
+.giathat_sp{
+    text-decoration: line-through;
+
+   
+}
+
+.tragop_sp{
+   text-align: center;
+   font-size: 20px;
+}
+
+.mau{
+    position: relative;
+    top: 50px;
+   right: 60px;
+   margin-top: 5px;
+   font-size: 20px;
+   font-weight: 500;
+   
+}
+
+.dungluong_s{ 
+    display: flex;
+    border-radius: 8px;
+    background-color: #ECEFF1;
+    width: 98%;
+    margin: 15px 0;
+}
+.dungluong_s .GB{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   flex-direction: column;
+   width: 24%;
+   height: 50px;
+    
+}
+
+.lineX{
+    height: 50px;
+    width: 1px;
+    background-color: #Ccc;
+}
+
+
+.GB:hover{
+    background-color: #a1a3a4;
+    border-radius: 8px;
+ }
+
+ .khuyenmai_sp{
+    margin: 5% 0;
+    width: 98%;
+    min-height: 300px;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+ }
+  
+
+.khuyenmai_sp .Uudai{
+    margin: 10px 10px;
+}
+
+
+.Uudai1 .input{
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 16px;
+    text-align:justify ;
+}
+ .txxt{
+    text-align: center;
+ }
+
+ .Uudai2 p{
+   font-size: 16px;
+   margin-top: 5px ;
+ }
+
+ .Uudai2 i{
+    color: #21BA45;
+ }
+
+ .thongsokythuat{
+    margin: 3% 0;
+    width: 100%;
+    height: 150px;
+    border: 1px solid rgb(236, 232, 232);
+    background-color: #ECEFF1;
+    border-radius: 8px;
+ }
+ .thongso{
+    position: relative;
+    top: 40%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    margin: 0px 10px;
+ }
+ 
+ 
+
+ 
+
+
+
+
+
+    
+
 
