@@ -23,9 +23,9 @@ if ((is_array($list_dm) && isset($list_dm))) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="view/style_trangchu_giahuy.css">
+    <link rel="stylesheet" href="view/css/style_trangchu_giahuy.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="view/style.css">
+    <link rel="stylesheet" href="view/css/style.css">
     <title>Document</title>
 </head>
 
@@ -106,19 +106,12 @@ if ((is_array($list_dm) && isset($list_dm))) {
                         <button class="btn btn-secondary dropdown-toggle margin_top_2-5px" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; color: black; font-weight: bold; width: 250px;">
                             TẤT CẢ DANH MỤC
                         </button>
-                        <?php foreach ($list_dm as $list) {
-                        ?>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-top: 5px; width: 400px;">
-                            <a class="dropdown-item" href="#" ><?=$list['name']?></a>
-                            <!-- <a class="dropdown-item" href="#">Đồ chơi trẻ em</a>
-                            <a class="dropdown-item" href="#">Thiết bị âm thanh</a>
-                            <a class="dropdown-item" href="#">Đồ chơi công nghệ</a>
-                            <a class="dropdown-item" href="#">Đồ chơi mô hình tĩnh</a>
-                            <a class="dropdown-item" href="#">Máy tính và thiết bị văn phòng</a> -->
+                            <?php foreach ($list_dm as $list) : ?>
+                                <a class="dropdown-item" href="index.php?act=allsp&id=<?= $list['id'] ?>"><?= $list['name'] ?></a>
+                            <?php endforeach ?>
+
                         </div>
-                        <?php
-                        }
-                        ?>
                     </div>
                 </div>
                 <div class="col"><a href="#">

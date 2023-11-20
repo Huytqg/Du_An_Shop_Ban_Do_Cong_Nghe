@@ -74,22 +74,20 @@ if (isset($_GET['act'])) {
                 $checkemail = checkemail($email);
                 if (is_array($checkemail)) {
                     $thongbao = "Mật khẩu của bạn là: " . $checkemail['password'];
-                    header("location: quenmk.php?thongbao=".$thongbao);
+                    header("location: quenmk.php?thongbao=" . $thongbao);
                     die;
                 } else {
                     $thongbao = "EMAIL không tồn tại!";
-                    header("location: quenmk.php?thongbao=".$thongbao);
-                    die;    
+                    header("location: quenmk.php?thongbao=" . $thongbao);
+                    die;
                 }
             }
             include "./quenmk.php";
             break;
-
-           
     }
 }
-$list_dm=alldm();
-$allsp=all_sp();
+$list_dm = alldm();
+$allsp = all_sp();
 include "header.php";
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
