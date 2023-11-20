@@ -85,7 +85,11 @@ if (isset($_GET['act'])) {
             include "./quenmk.php";
             break;
 
-           
+        
+        case 'ctsp':
+            
+        include "./view/product_details.php";
+        break;
     }
 }
 $list_dm=alldm();

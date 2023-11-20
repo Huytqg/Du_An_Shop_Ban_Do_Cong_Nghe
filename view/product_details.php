@@ -10,17 +10,18 @@
 </head>
 
 <body>
+    <form action="index.php?act=ctsp" method="post">
     <div class="container">
         <div class="hea"></div>
         <div class="m-jc">
             <div class="m-js ">
-                <a href="#">
+                <a href="../index.php">
                     Trang chủ
                 </a>
                 <span>/</span>
-                <a href="#">Micro thu âm cho điện thoại và máy ảnh</a>
+                <a href="../index.php">Điện thoại </a>
                 <span>/</span>
-                <a href="#">Micro thu âm Saramonic Blink 500 B5</a>
+                <a href="#">Iphone 14 promax</a>
 
             </div>
         </div>
@@ -187,7 +188,7 @@
         <div class="slideshow_sp"></div>
     </div>
 
-
+    </form>
     <script src="product_details.js"></script>
 </body>
 
