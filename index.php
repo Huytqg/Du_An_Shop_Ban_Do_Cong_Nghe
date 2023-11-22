@@ -5,7 +5,6 @@ include "controller/danh_muc.php";
 include "controller/san_pham.php";
 include "controller/users.php";
 
-
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
@@ -84,12 +83,17 @@ if (isset($_GET['act'])) {
             }
             include "./quenmk.php";
             break;
-
-        
+           
         case 'ctsp':
-            
-        include "./view/product_details.php";
-        break;
+            if(isset($_GET['id'])&&($_GET['id']>0)){
+                $id=$_GET['id'];
+                $listctsp=one_sp($id);
+            }
+            include "./headercts.php";
+            include "./view/product_details.php"; die;
+            break;
+        
+       
     }
 }
 $list_dm = alldm();
@@ -100,9 +104,7 @@ if (isset($_GET['act'])) {
     switch ($act) {
 
 
-        case '':
-
-            break;
+     
         case '':
 
             break;

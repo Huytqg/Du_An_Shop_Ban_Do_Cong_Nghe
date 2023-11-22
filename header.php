@@ -104,25 +104,11 @@
                             TẤT CẢ DANH MỤC
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-top: 5px; width: 400px;">
-<<<<<<< HEAD
                             <?php foreach ($list_dm as $list) : ?>
                                 <a class="dropdown-item" href="index.php?act=allsp&id=<?= $list['id'] ?>"><?= $list['name'] ?></a>
                             <?php endforeach ?>
 
                         </div>
-=======
-                            <?php foreach ($list_dm as $list) :?>
-                            <a class="dropdown-item" href="#" ><?=$list['name']?></a>
-
-                            <!-- <a class="dropdown-item" href="#">Đồ chơi trẻ em</a>
-                            <a class="dropdown-item" href="#">Thiết bị âm thanh</a>
-                            <a class="dropdown-item" href="#">Đồ chơi công nghệ</a>
-                            <a class="dropdown-item" href="#">Đồ chơi mô hình tĩnh</a>
-                            <a class="dropdown-item" href="#">Máy tính và thiết bị văn phòng</a> -->
-                            <?php endforeach ?>
-                        </div>
-                       
->>>>>>> 571f22335843fa94058d9862d5dbef5cd3abbfbf
                     </div>
                 </div>
                 <div class="col"><a href="#">

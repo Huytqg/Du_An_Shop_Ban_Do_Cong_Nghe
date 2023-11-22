@@ -1,13 +1,21 @@
-<!DOCTYPE html>
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>product details</title>
-    <link rel="stylesheet" href="product_details.css">
+    <link rel="stylesheet" href="../view/css/product_details.css">
     <link rel="stylesheet" href="../fontawesome-free-6.4.2-web/css/all.css">
-</head>
+</head> -->
+<?php
+if(is_array($listctsp) && isset($listctsp)){
+    extract($listctsp);
+    // print_r($listctsp);die;
+}
+
+?>
 
 <body>
     <form action="index.php?act=ctsp" method="post">
@@ -19,9 +27,9 @@
                     Trang chủ
                 </a>
                 <span>/</span>
-                <a href="../index.php">Điện thoại </a>
+                <a href="../index.php">Điện</a>
                 <span>/</span>
-                <a href="#">Iphone 14 promax</a>
+                <a href="#">Micro thu âm Saramonic Blink 500 B5</a>
 
             </div>
         </div>
@@ -62,9 +70,10 @@
 
 
             <!-- ================================================= -->
+            
             <div class="products_content">
                 <div class="tendg_sp">
-                    <h1>iPhone 14 Pro Max 1TB</h1>
+                    <h1 ><?=$name ?></h1>
                     <div class="icon">
                         <i class="fa-solid fa-star"></i>
                         <i class="fa-solid fa-star"></i>
@@ -78,12 +87,26 @@
                 </div>
                 <div class="line"></div>
 
-                <div class="tt_sp">
+                <?php 
+                if(isset($price_new)){
+                    echo " <div class='giasp'>
+                            <div class='giakm_sp'>$price_new
+                            </div>
+                            <div class='giathat_sp'>$price</div>
+                        </div>";
+                }else{
+                    echo " <div class='giasp'>
+                            <div class='giakm_sp'><?=$price?></div>
+                        </div>";
+                }
+
+                ?>
+                <!-- <div class="tt_sp">
                     <span>
                         <div class="giasp">
-                            <div class="giakm_sp">32.190.000₫
+                            <div class="giakm_sp">
                             </div>
-                            <div class="giathat_sp">32.990.000₫</div>
+                            <div class="giathat_sp"></div>
                         </div>
                         <div class="tragop_sp">Trả góp chỉ từ <br>
                             <strong>2.033.000</strong>₫/tháng
@@ -92,7 +115,7 @@
 
 
                 </div>
-
+            -->
                 <div class="dungluong_s">
                     <div class="GB">
                         <span><input type="radio"> 128Gb </span>
@@ -118,7 +141,7 @@
                 <div class="mau_bonho">
                     <div class="bonho_sp">
                         <div class="list_img ">
-                            <div><img src="./image/anh1.jpg" alt=""></div>
+                            <div><img  $image alt=""></div>
                         </div> <br>
                         <div class="mau">Xám</div>
                     </div>
@@ -182,13 +205,14 @@
 
             </div>
         </div>
+        
         <div class="slideshow_sp"></div>
         <div class="slideshow_sp"></div>
         <div class="slideshow_sp"></div>
         <div class="slideshow_sp"></div>
     </div>
 
-    </form>
+</form>
     <script src="product_details.js"></script>
 </body>
 

@@ -13,15 +13,8 @@ function Onedm_name($name)
 }
 
 function alldm(){
-<<<<<<< HEAD
-    $sql = "SELECT * FROM danh_muc WHERE 1 order by id DESC";
-    return pdo_query($sql);
-  
-=======
     $sql = "SELECT * FROM danh_muc ";
-    $list_dm=pdo_query($sql);
-    return  $list_dm;
->>>>>>> 571f22335843fa94058d9862d5dbef5cd3abbfbf
+    return pdo_query($sql);
 }
 
 function one_dm_id($id){
