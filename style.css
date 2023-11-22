@@ -258,3 +258,38 @@ header{
         padding: .5rem;
     }
 }
+
+.hero, .hero .glide_slides{
+    background-color: var(--primaryColor);
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+.hero .glide_bullet{
+    background-color: var(--black);
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.hero .glide_arrow{
+    padding: 1.5rem 1.7rem;
+    opacity: 0;
+    border: none;
+    background-color: var(--grey);
+    transition: all .5s ease-in-out .2s;
+}
+
+.glide_arrow :hover{
+    background-color: var(--black3);
+}
+
+.glide_arrow--left{
+    left: 20rem;
+}
+
+.glide_arrow--right{
+    position: absolute;
+    right: 20rem;
+}
+
