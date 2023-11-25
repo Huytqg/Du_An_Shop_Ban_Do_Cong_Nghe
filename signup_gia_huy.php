@@ -20,7 +20,7 @@
                 <!--------------------------- Left Box ----------------------------->
                 <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box Thanh_menu_Ngang">
                     <div class="featured-image mb-3">
-                        <img src="Logo team 13/logo_1_2.png" class="img-fluid" style="width: 250px;">
+                        <img src="images/Logo team 13/logo_1_1.png" class="img-fluid" style="width: 250px;">
                     </div>
                 </div>
                 <!-------------------- ------ Right Box ---------------------------->

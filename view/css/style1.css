@@ -64,10 +64,14 @@ header {
     background: var(--bg);
     transition: .3s;
     border-left: 1px solid var(--text);
+    z-index: 1000;
+
 }
 
 .cart.active {
     right: 0;
+    z-index: 1000;
+
 }
 
 .cart-title {
@@ -131,7 +135,7 @@ header {
 }
 
 .total-title {
-    font-size: 1rem;
+    font-size: 2rem;
     font-weight: 600;
 }
 
@@ -223,7 +227,7 @@ header {
 .price {
     font-weight: 500;
     color: rgb(207, 26, 26);
-    font-size: 1.7rem;
+    font-size: 2rem;
 }
 
 .price-new {
@@ -257,6 +261,7 @@ header {
     color: var(--bg);
 }
 
+
 .add-cart {
     /* position: absolute; */
     /* bottom: 0;
@@ -269,7 +274,6 @@ header {
     width: 40%;
     border-radius: 5px;
 }
-
 .add-cart:hover{
     background: var(--blue);
     color: var(--bg);
@@ -329,11 +333,12 @@ textarea {
     gap: 20px;
     border-bottom: 1px solid #eee;
     padding: 10px 0;
+
 }
 
 .products-img img {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     padding: 3px;
     background: white;

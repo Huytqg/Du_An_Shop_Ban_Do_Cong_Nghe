@@ -4,7 +4,14 @@ include "controller/pdo.php";
 include "controller/danh_muc.php";
 include "controller/san_pham.php";
 include "controller/users.php";
+include "controller/gio_hang.php";
 
+if (!isset($_SESSION['mycart'])) {
+    $_SESSION['mycart'] = [];
+}
+if (!empty($_SESSION['mycart'])) {
+    $pro = one_in_sp();
+}
 
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
@@ -62,11 +69,6 @@ if (isset($_GET['act'])) {
             session_unset();
             header("location:index.php");
             die;
-            break;
-        case '':
-
-            break;
-        case '':
 
         case 'quenmk':
             if (isset($_POST['guiemail']) && ($_POST['guiemail'])) {
@@ -84,6 +86,98 @@ if (isset($_GET['act'])) {
             }
             include "./quenmk.php";
             break;
+
+        case 'addtocart':
+            if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
+                update_cart(true);
+            }
+            header("location:index.php");
+            include "main.php";
+            break;
+        case 'deletecart':
+            if (isset($_GET['id'])) {
+                $id = $_GET['id'];
+                deletecart($id);
+            } else {
+                $_SESSION['mycart'] = [];
+            }
+            header("location:index.php");
+            break;
+
+        case 'submit':
+            if (isset($_POST['update_click']) && ($_POST['update_click'])) {
+                update_cart();
+                header("location:index.php");
+                die;
+            } elseif (isset($_POST['order_click']) && ($_POST['order_click'])) {
+                include "header.php";
+                update_cart();
+                // $quantity = $_POST['quantity'];
+                // $price = $_POST['price'];
+
+
+                // $one_sp=one_sp_order();
+                // $id = $one_sp['id'] + 1;
+                // var_dump($id); exit;
+                // insert_shopping_cart_item($id,$quantity,$price,$product_id,$shopping_cart_id);
+                include "view/payment.php";
+                include "footer.php";
+                die;
+            }
+            break;
+
+        case 'thanhtoan':
+            include "header.php";
+            if (isset($_POST['thanhtoan']) && ($_POST['thanhtoan'])) {
+                if (empty($_POST['name'])) {
+                    $err = "Vui lòng nhập tên người nhận";
+                } elseif (empty($_POST['phone'])) {
+                    $err = "Vui lòng nhập số điện thoại";
+                } elseif (empty($_POST['address'])) {
+                    $err = "Vui lòng nhập địa chỉ";
+                } elseif (empty($_POST['select'])) {
+                    $err = "Vui lòng chọn phương thức thanh toán";
+                } else {
+                    $pro = one_in_sp();
+                    // var_dump($pro);exit;
+                    $total = 0;
+                    $orderProducts = array();
+                    foreach ($pro as $cart) {
+                        $orderProducts[] = $cart;
+                        $total += $cart['price'] * $_SESSION['mycart'][$cart['id']];
+                    }
+                    $name = $_POST['name'];
+                    $phone = $_POST['phone'];
+                    $address = $_POST['address'];
+                    $desc_order = $_POST['desc_order'];
+                    $date_order = time();
+                    insert_shop_order($name, $phone, $address, $desc_order, $total, $date_order);
+
+                    $one_order = one_sp_order();
+                    $one_order_id = $one_order['id'];
+                    $array = "";
+                    foreach ($orderProducts as $key => $order) {
+                        $array .= "('".$_SESSION['mycart'][$order['id']]."','".$order['id']."','".$one_order_id."', '" . $order['price'] . "')";
+                        if ($key != count($orderProducts) - 1) {
+                            $array .= ",";
+                        }
+                    }
+                    // var_dump($array); exit;
+                    insert_shopping_cart_item($array);
+                }
+            }
+            include "view/payment.php";
+            include "footer.php";
+            die;
+            break;
+        case '':
+            break;
+        case '':
+            break;
+        case '':
+            break;
+        case '':
+            break;
     }
 }
 $list_dm = alldm();
@@ -92,13 +186,12 @@ include "header.php";
 if (isset($_GET['act'])) {
     $act = $_GET['act'];
     switch ($act) {
-
-
-        case '':
-
-            break;
-        case '':
-
+        case 'loaisp':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $id = $_GET['id'];
+                $loaisp = loaisp($id);
+            }
+            include "view/loaisp.php";
             break;
         case '':
 
