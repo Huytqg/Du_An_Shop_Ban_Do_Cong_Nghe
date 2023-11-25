@@ -1,13 +1,33 @@
 const slider1 = document.getElementById('glide_1');
+const slider2 = document.getElementById('glide_2');
 
 if(slider1){
     new Glide(slider1, {
         type: 'carousel',
         starAt: 0,
-        // autoplay: 3000,
+        autoplay: 3000,
         hoverpause: true,
         perView: 1,
         animationDuration: 800,
-        animationTimingFunc: "Linear"
+        animationTimingFunc: "linear"
+    }).mount();
+}
+
+if(slider2){
+    new Glide(slider2, {
+        type: 'carousel',
+        starAt: 0,
+        hoverpause: true,
+        perView: 4,
+        animationDuration: 800,
+        animationTimingFunc: "cubic-bezier(.165,.840,.44,.1)",
+        breakpoints:{
+            1200:{
+                perView3,
+            },
+            768:{
+                perView2,
+            },
+        },
     }).mount();
 }
