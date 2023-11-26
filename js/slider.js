@@ -20,7 +20,7 @@ if(slider2){
         hoverpause: true,
         perView: 4,
         animationDuration: 800,
-        animationTimingFunc: "cubic-bezier(.165,.840,.44,.1)",
+        animationTimingFunc: "ease-in-out",
         breakpoints:{
             1200:{
                 perView3,
