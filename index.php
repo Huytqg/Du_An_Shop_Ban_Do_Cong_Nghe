@@ -5,7 +5,7 @@ include "controller/danh_muc.php";
 include "controller/san_pham.php";
 include "controller/users.php";
 include "controller/gio_hang.php";
-
+// include "header.php";
 if (!isset($_SESSION['mycart'])) {
     $_SESSION['mycart'] = [];
 }
@@ -63,6 +63,11 @@ if (isset($_GET['act'])) {
                         die;
                     }
                 }
+                else {
+                    $err = "Tài khoản hoặc mật khẩu không đúng !";
+                    header("location:signin_gia_huy.php");
+                    die;
+                }
             }
             break;
         case 'thoat':
@@ -90,10 +95,21 @@ if (isset($_GET['act'])) {
         case 'addtocart':
             if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
                 update_cart(true);
+                // $_SESSION['mycart'][$id] = $quantity;
             }
             header("location:index.php");
             include "main.php";
             break;
+        case 'buynow':
+            if (isset($_POST['buynow']) && ($_POST['buynow'])) {
+                update_cart(true);
+            }
+            header("location:index.php?act=thanhtoan");
+            include "view/payment.php";
+
+            // header("location:index.php?act=thanhtoan");
+            break;
+
         case 'deletecart':
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
@@ -127,7 +143,6 @@ if (isset($_GET['act'])) {
             break;
 
         case 'thanhtoan':
-            include "header.php";
             if (isset($_POST['thanhtoan']) && ($_POST['thanhtoan'])) {
                 if (empty($_POST['name'])) {
                     $err = "Vui lòng nhập tên người nhận";
@@ -138,6 +153,8 @@ if (isset($_GET['act'])) {
                 } elseif (empty($_POST['select'])) {
                     $err = "Vui lòng chọn phương thức thanh toán";
                 } else {
+                    // var_dump($_POST['phone']);
+                    // die;
                     $pro = one_in_sp();
                     // var_dump($pro);exit;
                     $total = 0;
@@ -157,7 +174,7 @@ if (isset($_GET['act'])) {
                     $one_order_id = $one_order['id'];
                     $array = "";
                     foreach ($orderProducts as $key => $order) {
-                        $array .= "('".$_SESSION['mycart'][$order['id']]."','".$order['id']."','".$one_order_id."', '" . $order['price'] . "')";
+                        $array .= "('" . $_SESSION['mycart'][$order['id']] . "','" . $order['id'] . "','" . $one_order_id . "', '" . $order['price'] . "')";
                         if ($key != count($orderProducts) - 1) {
                             $array .= ",";
                         }
@@ -166,6 +183,8 @@ if (isset($_GET['act'])) {
                     insert_shopping_cart_item($array);
                 }
             }
+            // header("location:index.php");
+            include "header.php";
             include "view/payment.php";
             include "footer.php";
             die;

@@ -38,18 +38,14 @@
                         <p class="price-new"><?= $sp['price_new'] ?></p>
                     </a>
                     <div class="box-btn">
-                        <button>Mua ngay</button>
-                        <form action="index.php?act=addtocart" method="post">
-                            <!-- <input type="hidden" name="id" value="<?= $sp['id'] ?>">
-                            <input type="hidden" name="name" value="<?= $sp['name'] ?>">
-                            <input type="hidden" name="image" value="<?= $sp['image'] ?>">
-                            <input type="hidden" name="price" value="<?= $sp['price'] ?>"> -->
+                    <form action="index.php?act=buynow" method="post">
                             <input type="hidden" value="1" name="quantity[<?= $sp['id'] ?>]">
-                            <input type="submit"  name="addtocart" value="Thêm vào giỏ hàng">
-                            <!-- <button  name="addtocart"><i class='bx bx-shopping-bag add-cart'></i></button> -->
+                            <input type="submit" name="buynow" value="Mua ngay">
                         </form>
-                        <!-- <button class="add-cart" name="addtocart"><i class='bx bx-shopping-bag '></i></button> -->
-                        <!-- <i class='bx bx-shopping-bag add-cart'></i> -->
+                        <form action="index.php?act=addtocart" method="post">
+                            <input type="hidden" value="1" name="quantity[<?= $sp['id'] ?>]">
+                            <input type="submit" name="addtocart" value="Thêm vào giỏ hàng">
+                        </form>
                     </div>
                 </div>
             <?php endforeach ?>

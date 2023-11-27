@@ -62,7 +62,7 @@ if (!empty($err)) { ?>
                                         <div class="product-detail">
                                             <h2 class="product-title"><?= $cart['name'] ?></h2>
                                             <p class="price"><span>Giá:</span> <?= number_format($cart['price'], 0, ",", ".") ?> VND</p>
-                                            <p class="quantity">Số lượng: <?= $_SESSION['mycart'][$cart['id']] ?> </p>
+                                            <p class="quantity">Số lượng: <?=  $_SESSION['mycart'][$cart['id']] ?> </p>
                                         </div>
                                     </div>
                                     <?php $total += $cart['price'] * $_SESSION['mycart'][$cart['id']]; ?>
