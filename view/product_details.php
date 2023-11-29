@@ -13,10 +13,10 @@ if (is_array($listctsp) && isset($listctsp)) {
     extract($listctsp);
     // print_r($listctsp);die;
 }
-if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-    // print_r($listctsp);die;
-    $nameDm = nameDm($_GET['id']);
-}
+// if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+//     // print_r($listctsp);die;
+//     $nameDm = nameDm($_GET['id']);
+// }
 // var_dump($nameDm);  
 
 include "./headercts.php";
@@ -32,7 +32,7 @@ include "./headercts.php";
                         Trang chủ
                     </a>
                     <span>/</span>
-                    <a href="index.php" name="name"><?= $nameDm['name'] ?></a>
+                    <a href="index.php" name="name"></a>
                     <span>/</span>
                     <a href="#"><?= $name ?></a>
 
