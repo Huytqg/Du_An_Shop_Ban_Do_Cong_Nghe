@@ -200,17 +200,17 @@ if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
                 include "khach_hang/listkh.php";
                 break;
             case 'listdonhang':
-                if (isset($_POST['timkiem']) && ($_POST['timkiem']) ) {
+                if (isset($_POST['timkiem']) && ($_POST['timkiem'])) {
                     $key = $_POST['key'];
-                } else{
+                } else {
                     $key = "";
                 }
-                if (isset($_POST['loc']) && ($_POST['loc']) ) {
+                if (isset($_POST['loc']) && ($_POST['loc'])) {
                     $trang_thai = $_POST['trang_thai'];
-                } else{
+                } else {
                     $trang_thai = 0;
                 }
-                
+
                 $listdonhang = all_donhang($key, $trang_thai);
                 include "donhang/list.php";
                 break;
@@ -237,6 +237,14 @@ if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
                     die;
                 }
                 include "khach_hang/listkh.php";
+            case '':
+                break;
+            case '':
+                break;
+            case '':
+                break;
+
+
 
             default:
 

@@ -19,9 +19,9 @@ function deletecart($id)
     unset($_SESSION['mycart'][$id]);
 }
 
-function insert_shop_order($name, $phone, $address, $desc_order, $total_price, $date_order)
+function insert_shop_order($name, $phone, $address, $desc_order, $total_price, $date_order,$user_id)
 {
-    $sql = "INSERT INTO shop_order(name,phone,address,desc_order,total_price,date_order) VALUES ('$name','$phone','$address','$desc_order','$total_price','$date_order')";
+    $sql = "INSERT INTO shop_order(name,phone,address,desc_order,total_price,date_order,user_id) VALUES ('$name','$phone','$address','$desc_order','$total_price','$date_order',$user_id)";
     pdo_execute($sql);
 }
 
@@ -43,3 +43,5 @@ function insert_shopping_cart_item($array)
 }
 
 // INSERT INTO `shopping_cart_item` (`id`, `quantity`, `product_id`, `shopping_cart_id`, `price`) VALUES (NULL, '2', '1', '1', '12999'), (NULL, '3', '1', '1', '213123');
+
+

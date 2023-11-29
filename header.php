@@ -76,9 +76,13 @@
                 <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
                     <div style='width: 250px; height: 350px;'>
                         <div class='dropdown-item' href='#'><img src='Logo user/logo user.png' alt='' style='width: 150px; margin-left: 40px; padding: 20px 20px 0px 20px;'></div>
-                        <div class='dropdown-item' href='#' style='text-align: center; font-weight: bold; text-decoration: none; color: black;'>$username</div>
+                        <div class='dropdown-item' href='#' style='text-align: center; font-weight: bold; text-decoration: none; color: black;'>
+                        <div><a href='index.php?act=lichsudon'>Lịch sử đơn hàng</a></div>
+                        <div><a href='index.php?act=updatetk'>Cập nhật tài khoản</a></div>
                         </div>
                         </div>
+                        </div>
+                        
                     </div>
                     </div>";
                 echo "<div class='col' style='text-align: center; margin-top: 40px;'><a href='index.php?act=thoat'><input type='button' value='Đăng Xuất' style='border: none; background-color: #1976D2; padding: 10px; border-radius: 10px; color: white; font-weight: bold;'></a></div>";
@@ -153,7 +157,7 @@
                             <img src="images/<?= $cart['image'] ?>" alt="" class="cart-img">
                             <div class="detail-box">
                                 <div class="cart-product-title"><?= $cart['name'] ?></div>
-                                <div class="cart-price">$<?= number_format($cart['price'],0,",",".") ?> VND </div>
+                                <div class="cart-price">$<?= number_format($cart['price'], 0, ",", ".") ?> VND </div>
                                 <input type="number" min="0" value="<?= $_SESSION['mycart'][$cart['id']] ?>" class="cart-quantity" name="quantity[<?= $cart['id'] ?>]">
                                 <!-- xóa -->
                             </div>
@@ -168,7 +172,7 @@
             <!-- tổng -->
             <div class="total">
                 <div class="total-title">Total</div>
-                <div class="total-price price">$<?= number_format($total,0,",",".") ?> VND</div>
+                <div class="total-price price">$<?= number_format($total, 0, ",", ".") ?> VND</div>
             </div>
             <!-- mua -->
             <input type="submit" name="update_click" class="btn-buy" value="Cập nhật">
