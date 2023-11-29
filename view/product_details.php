@@ -28,9 +28,7 @@ include "./headercts.php";
             <div class="hea"></div>
             <div class="m-jc">
                 <div class="m-js ">
-                    <a href="index.php">
-                        Trang chủ
-                    </a>
+                    <a href="index.php">Trang chủ</a>
                     <span>/</span>
                     <a href="index.php" name="name"><?= $oneDM['name'] ?></a>
                     <span>/</span>
