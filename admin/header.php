@@ -36,6 +36,8 @@
                 <ul>
                     <li><a href="index.php?act=listdonhang">Quản lí đơn hàng</a></li>
                 </ul>
+                <li><a href="../index.php?act=thoat">Đăng xuất</a></li>
+
             </ul>
         </div>
         <div class="admin-content-right">

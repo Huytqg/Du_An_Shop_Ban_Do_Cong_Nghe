@@ -5,6 +5,7 @@ include "controller/danh_muc.php";
 include "controller/san_pham.php";
 include "controller/users.php";
 include "controller/gio_hang.php";
+include "controller/don_hang.php";
 // include "header.php";
 if (!isset($_SESSION['mycart'])) {
     $_SESSION['mycart'] = [];
@@ -128,14 +129,6 @@ if (isset($_GET['act'])) {
             } elseif (isset($_POST['order_click']) && ($_POST['order_click'])) {
                 include "header.php";
                 update_cart();
-                // $quantity = $_POST['quantity'];
-                // $price = $_POST['price'];
-
-
-                // $one_sp=one_sp_order();
-                // $id = $one_sp['id'] + 1;
-                // var_dump($id); exit;
-                // insert_shopping_cart_item($id,$quantity,$price,$product_id,$shopping_cart_id);
                 include "view/payment.php";
                 include "footer.php";
                 die;
@@ -153,10 +146,7 @@ if (isset($_GET['act'])) {
                 } elseif (empty($_POST['select'])) {
                     $err = "Vui lòng chọn phương thức thanh toán";
                 } else {
-                    // var_dump($_POST['phone']);
-                    // die;
                     $pro = one_in_sp();
-                    // var_dump($pro);exit;
                     $total = 0;
                     $orderProducts = array();
                     foreach ($pro as $cart) {
@@ -168,8 +158,14 @@ if (isset($_GET['act'])) {
                     $address = $_POST['address'];
                     $desc_order = $_POST['desc_order'];
                     $date_order = time();
-                    insert_shop_order($name, $phone, $address, $desc_order, $total, $date_order);
-
+                    if (isset($_SESSION['username'])) {
+                        $user_id = $_SESSION['username']['id'];
+                        // $one_user = one_user($user_id);
+                    } else{
+                        $user_id = 0;
+                    }
+                    // var_dump( $_SESSION['username']); die;
+                    insert_shop_order($name, $phone, $address, $desc_order, $total, $date_order,$user_id);
                     $one_order = one_sp_order();
                     $one_order_id = $one_order['id'];
                     $array = "";
@@ -179,18 +175,16 @@ if (isset($_GET['act'])) {
                             $array .= ",";
                         }
                     }
-                    // var_dump($array); exit;
                     insert_shopping_cart_item($array);
                 }
+                header("location:index.php");
             }
-            // header("location:index.php");
             include "header.php";
             include "view/payment.php";
             include "footer.php";
             die;
             break;
-        case '':
-            break;
+       
         case '':
             break;
         case '':
@@ -212,8 +206,23 @@ if (isset($_GET['act'])) {
             }
             include "view/loaisp.php";
             break;
-        case '':
+            case 'lichsudon':
+                if (isset($_SESSION['username']) ) {
+                    $user_id =$_SESSION['username']['id'];
+                    $listdonhang = lsdonhang($user_id);
+                }
+                // include "admin/donhang/chitietdon.php";
+                include "view/lsdon.php";
+                break;
 
+                
+        case 'chitietdon':
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                $id = $_GET['id'];
+                $chitietdon = joindonhang($id);
+            }
+            include "admin/donhang/chitietdon.php";
+            break;
             break;
         case '':
 

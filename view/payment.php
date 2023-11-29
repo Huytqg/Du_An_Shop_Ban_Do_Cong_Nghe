@@ -7,7 +7,7 @@ if (!empty($err)) { ?>
 <?php } else { ?>
     <form action="index.php?act=thanhtoan" method="post">
 
-    <input type="hidden" name="id" value="">
+        <input type="hidden" name="id" value="">
 
         <section>
             <div class="container">
@@ -15,17 +15,23 @@ if (!empty($err)) { ?>
                     <div class="box-left">
                         <div class="box-left-row">
                             <label for="name">Tên người nhận</label>
-                            <input type="text" name="name" id="">
+                            <input type="text" name="name" id="" value="<?php if (isset($_SESSION['username'])) {
+                                                                            echo "" . $_SESSION['username']['name'];
+                                                                        }  ?>">
                         </div>
 
                         <div class="box-left-row">
                             <label for="phone">Số điện thoại</label>
-                            <input type="text" name="phone" id="" placeholder="Số điện thoại">
+                            <input type="text" name="phone" id="" placeholder="Số điện thoại" value="<?php if (isset($_SESSION['username'])) {
+                                                                                                            echo "" . $_SESSION['username']['phone'];
+                                                                                                        }  ?>">
                         </div>
 
                         <div class="box-left-row">
                             <label for="address">Địa chỉ</label>
-                            <input type="text" name="address" id="" placeholder="Địa chỉ">
+                            <input type="text" name="address" id="" placeholder="Địa chỉ" value="<?php if (isset($_SESSION['username'])) {
+                                                                                                        echo "" . $_SESSION['username']['address'];
+                                                                                                    }  ?>">
                         </div>
 
                         <div class="box-left-row">
@@ -62,7 +68,7 @@ if (!empty($err)) { ?>
                                         <div class="product-detail">
                                             <h2 class="product-title"><?= $cart['name'] ?></h2>
                                             <p class="price"><span>Giá:</span> <?= number_format($cart['price'], 0, ",", ".") ?> VND</p>
-                                            <p class="quantity">Số lượng: <?=  $_SESSION['mycart'][$cart['id']] ?> </p>
+                                            <p class="quantity">Số lượng: <?= $_SESSION['mycart'][$cart['id']] ?> </p>
                                         </div>
                                     </div>
                                     <?php $total += $cart['price'] * $_SESSION['mycart'][$cart['id']]; ?>
