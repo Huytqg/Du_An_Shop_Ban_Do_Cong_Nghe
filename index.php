@@ -97,9 +97,10 @@ if (isset($_GET['act'])) {
                 $id=$_GET['id'];    
                 $listctsp=one_sp($id);
             }
-            header("location:index.php");
-            include "main.php";
+            // header("location:index.php");
+            include "./view/product_details.php";
             break;
+            // Bị lỗi header 
         case 'buynow':
             if (isset($_POST['buynow']) && ($_POST['buynow'])) {
                 update_cart(true);

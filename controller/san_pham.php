@@ -44,20 +44,7 @@ function updatesp($id, $name, $price, $price_new, $quantity, $category_id, $imag
     pdo_execute($sql);
 }
 
-<<<<<<< HEAD
 function nameDm($id){
     $sql= "SELECT danh_muc.name FROM san_pham join danh_muc on san_pham.category_id=danh_muc.id Where san_pham.id=".$id;
    return pdo_query_one($sql);
-=======
-function loaisp($id)
-{
-    $sql = "SELECT * FROM san_pham WHERE category_id=$id order by id DESC";
-    return pdo_query($sql);
-}
-
-function one_in_sp()
-{
-    $sql = "SELECT * FROM san_pham WHERE id IN (".implode(",", array_keys($_SESSION['mycart'])).")";
-    return pdo_query($sql);
->>>>>>> 97ec795ec778900e025dbbfa8b4632dec606e646
 }

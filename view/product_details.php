@@ -19,7 +19,7 @@ if (isset($_GET['id']) && ($_GET['id'] > 0)) {
 }
 // var_dump($nameDm);  
 
-
+include "./headercts.php";
 ?>
 
 <body>
