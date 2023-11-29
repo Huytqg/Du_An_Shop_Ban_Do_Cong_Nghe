@@ -50,13 +50,14 @@ function loaisp($id)
     return pdo_query($sql);
 }
 
-function oneDM($id){
-    $sql = "SELECT danh_muc.name as dmname,danh_muc.id FROM danh_muc JOIN san_pham ON danh_muc.id=san_pham.category_id WHERE san_pham.id=$id";
+function oneDM($id)
+{
+    $sql = "SELECT danh_muc.name ,danh_muc.id FROM danh_muc JOIN san_pham ON danh_muc.id=san_pham.category_id WHERE san_pham.id=$id";
     return pdo_query_one($sql);
 }
 
 function one_in_sp()
 {
-    $sql = "SELECT * FROM san_pham WHERE id IN (".implode(",", array_keys($_SESSION['mycart'])).")";
+    $sql = "SELECT * FROM san_pham WHERE id IN (" . implode(",", array_keys($_SESSION['mycart'])) . ")";
     return pdo_query($sql);
 }
