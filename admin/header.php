@@ -6,8 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quản trị admin</title>
     <!-- <link rel="stylesheet" href="style.css"> -->
+<<<<<<< HEAD
     <link rel="stylesheet" href="../view/css/style.css">
+=======
+    <link rel="stylesheet" href="../view/css/style1.css">
+>>>>>>> 97ec795ec778900e025dbbfa8b4632dec606e646
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
 </head>
 
 <body>
@@ -30,6 +35,10 @@
                 <li><a href="#">Tài khoản</a></li>
                 <ul>
                     <li><a href="index.php?act=listkh">danh sách tài khoản</a></li>
+                </ul>
+                <li><a href="#">Đơn hàng</a></li>
+                <ul>
+                    <li><a href="index.php?act=listdonhang">Quản lí đơn hàng</a></li>
                 </ul>
             </ul>
         </div>

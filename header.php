@@ -1,6 +1,3 @@
-<!--  -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +18,8 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <link rel="stylesheet" href="view/css/style_trangchu_giahuy.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="view/css/style.css">
+    <!-- <link rel="stylesheet" href="view/css/style1.css"> -->
+    <link rel="stylesheet" href="view/css/style1.css">
     <title>Document</title>
 </head>
 
@@ -52,7 +50,7 @@
     <!-- Thanh logo, tìm kiếm, giỏ hàng, số điện thoại -->
     <div class="container-xxl">
         <div class="row">
-            <div class="col-sm-3 margin_20px"><a href="index.php"><img src="Logo team 13\logo_2_2.png" alt="menu_logo" style="width: 160px;"></a></div>
+            <div class="col-sm-3 margin_20px"><a href="index.php"><img src="images\Logo team 13\logo_2_2.png" alt="menu_logo" style="width: 160px;"></a></div>
             <div class="col-sm-3 margin_top_50px">
                 <div class="search">
                     <div class="search_content">
@@ -98,14 +96,14 @@
         <div class="container-xxl">
             <div class="row">
                 <div class="col">
-                
+
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle margin_top_2-5px" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: white; color: black; font-weight: bold; width: 250px;">
                             TẤT CẢ DANH MỤC
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="margin-top: 5px; width: 400px;">
                             <?php foreach ($list_dm as $list) : ?>
-                                <a class="dropdown-item" href="index.php?act=allsp&id=<?= $list['id'] ?>"><?= $list['name'] ?></a>
+                                <a class="dropdown-item" href="index.php?act=loaisp&id=<?= $list['id'] ?>"><?= $list['name'] ?></a>
                             <?php endforeach ?>
 
                         </div>
@@ -131,32 +129,7 @@
     </div>
     <!-- Hết thanh menu ngang và menu -->
 
-    <!-- banner -->
-    <div class="container-xxl"><br>
-        <div class="Chinh_anh_banner">
-            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img class="d-block w-100" src="https://jola.vn/cdn/860/ProductCategory/vRCkgAVXg/photo-2023-10-02-12-03-37.jpg" alt="First slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="https://jola.vn/cdn/860/ProductCategory/Isn06dsQh/utfuf.jpg" alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="https://jola.vn/cdn/860/ProductCategory/J-UoWm9NV/mnvbmfg.jpg   " alt="Third slide">
-                    </div>
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
-        </div>
-    </div><br>
+
     <!--Hết banner -->
 
     <!-- Hết Trang chủ - Trần Quốc Gia Huy -->
@@ -170,27 +143,42 @@
     <!-- 1. Giỏ hàng - Trần Huy Hưng -->
     <div class="cart">
         <h2 class="cart-title">Your car</h2>
-        <div class="cart-content">
-            <div class="cart-box">
-                <img src="images/product1.png" alt="" class="cart-img">
-                <div class="detail-box">
-                    <div class="cart-product-title">product1</div>
-                    <div class="cart-price">$230.02</div>
-                    <input type="number" value="1" class="cart-quantity">
-                    <!-- xóa -->
-                </div>
-                <i class='bx bxs-trash-alt cart-remove'></i>
+        <form action="index.php?act=submit" method="post">
+            <div class="cart-content">
+                <?php
+                $total = 0;
+                if (isset($pro)) { ?>
+                    <?php foreach ($pro as $cart) : ?>
+                        <div class="cart-box">
+                            <img src="images/<?= $cart['image'] ?>" alt="" class="cart-img">
+                            <div class="detail-box">
+                                <div class="cart-product-title"><?= $cart['name'] ?></div>
+                                <div class="cart-price">$<?= number_format($cart['price'],0,",",".") ?> VND </div>
+                                <input type="number" min="0" value="<?= $_SESSION['mycart'][$cart['id']] ?>" class="cart-quantity" name="quantity[<?= $cart['id'] ?>]">
+                                <!-- xóa -->
+                            </div>
+                            <a href="index.php?act=deletecart&id=<?= $cart['id'] ?>"><i class='bx bxs-trash-alt cart-remove'></i></a>
+                        </div>
+                        <?php $total += $cart['price'] * $_SESSION['mycart'][$cart['id']]; ?>
+                    <?php endforeach ?>
+                <?php } else {
+                    echo "Không có sản phẩm trong giỏ hàng";
+                } ?>
             </div>
-        </div>
-        <!-- tổng -->
-        <div class="total">
-            <div class="total-title">Total</div>
-            <div class="total-price">$0</div>
-        </div>
-        <!-- mua -->
-        <a href="payment.html"> <button type="button" class="btn-buy" value="Buy now"></button></a>
-        <!-- Thoát -->
-        <i class='bx bx-x' id="close-cart"></i>
+            <!-- tổng -->
+            <div class="total">
+                <div class="total-title">Total</div>
+                <div class="total-price price">$<?= number_format($total,0,",",".") ?> VND</div>
+            </div>
+            <!-- mua -->
+            <input type="submit" name="update_click" class="btn-buy" value="Cập nhật">
+            <input type="submit" name="order_click" class="btn-buy" value="Mua ngay">
+            <!-- <button type="button" value="Buy now">BUY NOW</button> -->
+            <!-- Thoát -->
+            <i class='bx bx-x' id="close-cart"></i>
+        </form>
+
+
     </div>
     </div>
     </header>

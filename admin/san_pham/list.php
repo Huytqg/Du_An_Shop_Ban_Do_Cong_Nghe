@@ -4,9 +4,9 @@
     <tr>
         <th>ID SẢN PHẨM</th>
         <th>TÊN SẢN PHẨM</th>
-        <th>ẢNH SẢN PHẨM</th>
+        <th>SỐ ĐIỆN THOẠI</th>
         <th>GIÁ TIỀN</th>
-        <th>GIÁ KHUYẾN MẠI</th>
+        <th>GIÁ CŨ</th>
         <th>SỐ LƯỢNG</th>
         <th>MÔ TẢ</th>
         <th>CATEGORY_ID</th>

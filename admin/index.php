@@ -5,6 +5,7 @@ include "../controller/danh_muc.php";
 include "../controller/san_pham.php";
 include "../controller/khach_hang.php";
 include "../controller/users.php";
+include "../controller/don_hang.php";
 
 include "header.php";
 
@@ -192,20 +193,50 @@ if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
                     $username = $_POST['username'];
                     $email = $_POST['email'];
                     $role = $_POST['role'];
-                    updatetk($id,$username,$email,$role);
+                    updatetk($id, $username, $email, $role);
                     header("location:index.php?act=listkh");
                     die;
                 }
                 include "khach_hang/listkh.php";
                 break;
-            case '':
-
+            case 'listdonhang':
+                if (isset($_POST['timkiem']) && ($_POST['timkiem']) ) {
+                    $key = $_POST['key'];
+                } else{
+                    $key = "";
+                }
+                if (isset($_POST['loc']) && ($_POST['loc']) ) {
+                    $trang_thai = $_POST['trang_thai'];
+                } else{
+                    $trang_thai = 0;
+                }
+                
+                $listdonhang = all_donhang($key, $trang_thai);
+                include "donhang/list.php";
                 break;
-            case '':
-
+            case 'chitietdon':
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    $id = $_GET['id'];
+                    $chitietdon = joindonhang($id);
+                }
+                include "donhang/chitietdon.php";
                 break;
-
-
+            case 'editdonhang':
+                if (isset($_GET['id']) && $_GET['id'] > 0) {
+                    $id = $_GET['id'];
+                    $chitietdon = one_don($id);
+                }
+                include "donhang/update.php";
+                break;
+            case 'updatedonhang':
+                if (isset($_POST['updatedonhang']) && ($_POST['updatedonhang'])) {
+                    $id = $_POST['id'];
+                    $trang_thai = $_POST['trang_thai'];
+                    updatedonhang($id, $trang_thai);
+                    header("location:index.php?act=listdonhang");
+                    die;
+                }
+                include "khach_hang/listkh.php";
 
             default:
 

@@ -13,7 +13,7 @@ function Onedm_name($name)
 }
 
 function alldm(){
-    $sql = "SELECT * FROM danh_muc ";
+    $sql = "SELECT * FROM danh_muc WHERE 1 order by id DESC";
     return pdo_query($sql);
 }
 
@@ -31,3 +31,4 @@ function deletedm($id){
     $sql = "DELETE  FROM danh_muc WHERE id=$id ";
     pdo_execute($sql);
 }
+
