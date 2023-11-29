@@ -91,19 +91,11 @@ if (isset($_GET['act'])) {
             }
             include "./quenmk.php";
             break;
-<<<<<<< HEAD
            
         case 'ctsp':
             if(isset($_GET['id'])&&($_GET['id']>0)){
                 $id=$_GET['id'];    
                 $listctsp=one_sp($id);
-=======
-
-        case 'addtocart':
-            if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
-                update_cart(true);
-                // $_SESSION['mycart'][$id] = $quantity;
->>>>>>> 97ec795ec778900e025dbbfa8b4632dec606e646
             }
             header("location:index.php");
             include "main.php";
