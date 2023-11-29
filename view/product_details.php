@@ -30,7 +30,7 @@ include "./headercts.php";
                 <div class="m-js ">
                     <a href="index.php">Trang chủ</a>
                     <span>/</span>
-                    <a href="index.php" name="name"><?= $oneDM['name'] ?></a>
+                    <a href="index.php" name="name"><?= $nameDm['name'] ?></a>
                     <span>/</span>
                     <a href="#"><?= $name ?></a>
 
