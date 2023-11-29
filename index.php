@@ -63,8 +63,7 @@ if (isset($_GET['act'])) {
                         header("location:admin/index.php");
                         die;
                     }
-                }
-                else {
+                } else {
                     $err = "Tài khoản hoặc mật khẩu không đúng !";
                     header("location:signin_gia_huy.php");
                     die;
@@ -92,8 +91,17 @@ if (isset($_GET['act'])) {
             }
             include "./quenmk.php";
             break;
-           
-        
+        case 'addtocart':
+            if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
+                update_cart(true);
+            }
+            header("location:index.php");
+            include "main.php";
+
+            // header("location:index.php?act=thanhtoan");
+            break;
+
+
             // Bị lỗi header 
         case 'buynow':
             if (isset($_POST['buynow']) && ($_POST['buynow'])) {
@@ -155,11 +163,11 @@ if (isset($_GET['act'])) {
                     if (isset($_SESSION['username'])) {
                         $user_id = $_SESSION['username']['id'];
                         // $one_user = one_user($user_id);
-                    } else{
+                    } else {
                         $user_id = 0;
                     }
                     // var_dump( $_SESSION['username']); die;
-                    insert_shop_order($name, $phone, $address, $desc_order, $total, $date_order,$user_id);
+                    insert_shop_order($name, $phone, $address, $desc_order, $total, $date_order, $user_id);
                     $one_order = one_sp_order();
                     $one_order_id = $one_order['id'];
                     $array = "";
@@ -178,7 +186,7 @@ if (isset($_GET['act'])) {
             include "footer.php";
             die;
             break;
-       
+
         case '':
             break;
         case '':
@@ -200,16 +208,16 @@ if (isset($_GET['act'])) {
             }
             include "view/loaisp.php";
             break;
-            case 'lichsudon':
-                if (isset($_SESSION['username']) ) {
-                    $user_id =$_SESSION['username']['id'];
-                    $listdonhang = lsdonhang($user_id);
-                }
-                // include "admin/donhang/chitietdon.php";
-                include "view/lsdon.php";
-                break;
+        case 'lichsudon':
+            if (isset($_SESSION['username'])) {
+                $user_id = $_SESSION['username']['id'];
+                $listdonhang = lsdonhang($user_id);
+            }
+            // include "admin/donhang/chitietdon.php";
+            include "view/lsdon.php";
+            break;
 
-                
+
         case 'chitietdon':
             if (isset($_GET['id']) && $_GET['id'] > 0) {
                 $id = $_GET['id'];
@@ -217,15 +225,15 @@ if (isset($_GET['act'])) {
             }
             include "admin/donhang/chitietdon.php";
             break;
-            case 'ctsp':
-                if(isset($_GET['id'])&&($_GET['id']>0)){
-                    $id=$_GET['id'];    
-                    $listctsp=one_sp($id);
-                    // $nameDm=oneDM($_GET['id']);
-                    // header("location:index.php?act=ctsp");
-                }
-                include "view/product_details.php";
-                break;
+        case 'ctsp':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $id = $_GET['id'];
+                $listctsp = one_sp($id);
+                // $nameDm=oneDM($_GET['id']);
+                // header("location:index.php?act=ctsp");
+            }
+            include "view/product_details.php";
+            break;
         case '':
 
             break;
