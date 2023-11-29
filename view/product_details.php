@@ -23,7 +23,7 @@ include "./headercts.php";
 ?>
 
 <body>
-    <form action="index.php?act=ctsp" method="post">
+    <form action="index.php?act=ctsp" method="post" enctype="multipart/form-data">
         <div class="container">
             <div class="hea"></div>
             <div class="m-jc">

@@ -62,8 +62,7 @@ if (isset($_GET['act'])) {
                         header("location:admin/index.php");
                         die;
                     }
-                }
-                else {
+                } else {
                     $err = "Tài khoản hoặc mật khẩu không đúng !";
                     header("location:signin_gia_huy.php");
                     die;
@@ -91,17 +90,17 @@ if (isset($_GET['act'])) {
             }
             include "./quenmk.php";
             break;
-           
+            
         case 'ctsp':
-            if(isset($_GET['id'])&&($_GET['id']>0)){
-                $id=$_GET['id'];    
-                $listctsp=one_sp($id);
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $id = $_GET['id'];
+                $listctsp = one_sp($id);
                 // $nameDm=oneDM($_GET['id']);
-                header("location:index.php?act=ctsp");
             }
+            header("location:product_details.php");
+            die;
             include "view/product_details.php";
-            break;
-            // Bị lỗi header 
+
         case 'buynow':
             if (isset($_POST['buynow']) && ($_POST['buynow'])) {
                 update_cart(true);
