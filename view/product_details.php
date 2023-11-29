@@ -18,6 +18,7 @@ if (isset($_GET['id']) && ($_GET['id'] > 0)) {
     $nameDm = oneDM($_GET['id']);
 }
 // var_dump($nameDm);  
+// die;
 
 include "./headercts.php";
 ?>
