@@ -86,7 +86,7 @@ if (isset($_GET['act'])) {
            
         case 'ctsp':
             if(isset($_GET['id'])&&($_GET['id']>0)){
-                $id=$_GET['id'];
+                $id=$_GET['id'];    
                 $listctsp=one_sp($id);
             }
             include "./headercts.php";

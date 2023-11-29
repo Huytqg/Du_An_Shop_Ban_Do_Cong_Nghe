@@ -40,3 +40,8 @@ function updatesp($id,$name, $price, $price_new, $quantity, $category_id, $image
     }
     pdo_execute($sql);
 }
+
+function nameDm($id){
+    $sql= "SELECT danh_muc.name FROM san_pham join danh_muc on san_pham.category_id=danh_muc.id Where san_pham.id=".$id;
+   return pdo_query_one($sql);
+}

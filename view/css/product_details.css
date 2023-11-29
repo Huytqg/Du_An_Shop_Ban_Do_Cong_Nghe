@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Roboto",sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 :root {
@@ -35,7 +35,6 @@ body {
 .m-jc {
     width: 100%;
     height: 41px;
-
 }
 
 span {
@@ -48,21 +47,21 @@ span {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
 }
 
 .m-js a {
     padding: 8px;
     text-decoration: none;
+    color: black;
     font-family: var(--font-family);
-    font-size: 12px;
-    color: #551a8B;
 }
 
+
+
 .row {
-    width: 100%;
+    width: 1200px;
     height: auto;
-    background-color: white;
+    background-color: #fff;
     display: flex;
 }
 
@@ -71,11 +70,10 @@ span {
     margin-top: 20px;
     position: relative;
     margin-bottom: 15px;
-    border: 0.5px solid #ccc;
     border-radius: 5px;
 }
 
-.img_feature{
+.img_feature {
     width: 100%;
     margin-top: 15px;
     /* margin-top: 50px; */
@@ -89,7 +87,7 @@ span {
     justify-content: space-between;
     margin-left: 8px;
     cursor: pointer;
-   
+
 }
 
 .list_img div {
@@ -104,10 +102,10 @@ span {
     object-position: center;
 }
 
-.control{
+.control {
     position: absolute;
     top: 50%;
-    font-size: 35px;
+    font-size: 20px;
     color: rgb(79, 75, 75);
     transform: translateY(-50%);
     cursor: pointer;
@@ -117,12 +115,12 @@ span {
     left: 5px;
 }
 
-.next{
+.next {
     right: 5px;
 }
 
-.active{
-   background: #ccc;
+.active {
+    background: #ccc;
 }
 
 .row .slideshow {
@@ -142,7 +140,7 @@ h1 {
 
 }
 
-.tendg_sp{
+.tendg_sp {
     padding-top: 10px;
     display: flex;
     text-align: center;
@@ -150,13 +148,13 @@ h1 {
     flex: 1;
 }
 
-h1{
+h1 {
     white-space: nowrap;
 }
 
-.tendg_sp .icon{
-   margin-top: 10px;
-    
+.tendg_sp .icon {
+    margin-top: 10px;
+
 }
 
 .icon {
@@ -181,47 +179,51 @@ h1{
     border-bottom: 1px solid #Ccc;
 }
 
-.giasp{
+.giasp {
     display: flex;
 }
 
-.button_gh{
-  /* border: none;
+.button_gh {
+    /* border: none;
   outline: none; */
-  padding: 15px 10px;
-  width: 100%;
-  display: flex;
+    padding: 15px 10px;
+    width: 100%;
+    display: flex;
 }
-.button_gh button{
+
+.button_gh button {
     border: none;
     outline: none;
     width: 340px;
     height: 50px;
     text-align: center;
-  
-}
-
-.button1 button{
-    background-color:#21BA45 ;
-    transition: opacity 0.3s ease;;
-}
-
-.button1 button:hover , .button2 button:hover{
-  opacity: 0.5;
-}
-
-.button2 button{
-    background-color: rgb(104, 20, 104) ;
-    transition: opacity 0.3s ease;;
 
 }
 
-.ri{
-   position: relative;
-   left: 5%;
+.button1 button {
+    background-color: #21BA45;
+    transition: opacity 0.3s ease;
+    ;
 }
 
-.button_gh a{
+.button1 button:hover,
+.button2 button:hover {
+    opacity: 0.5;
+}
+
+.button2 button {
+    background-color: rgb(104, 20, 104);
+    transition: opacity 0.3s ease;
+    ;
+
+}
+
+.ri {
+    position: relative;
+    left: 5%;
+}
+
+.button_gh a {
     text-decoration: none;
     color: white;
     font-size: 20px;
@@ -229,162 +231,335 @@ h1{
     text-transform: uppercase;
 }
 
-.slideshow_sp{
+.slideshow_sp {
     width: 1200px;
     height: 200px;
     background-color: red;
     margin: 20px 0;
 }
 
-.mau_bonho{
+.mau_bonho {
     width: 98%;
     height: 100px;
     justify-content: flex-start;
     display: flex;
 }
 
-.bonho_sp{
-   width: 80px;
+.bonho_sp {
+    width: 80px;
     display: flex;
-   
+
     justify-content: start;
     align-items: center;
 }
 
-.list_img img{
+.list_img img {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 
-.tt_sp span{
+.tt_sp span {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin: 10px 10px;
 }
 
-.giasp{
+.giasp {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     font-size: 20px;
 }
 
-.giasp .giakm_sp{
+.giasp .giakm_sp {
     color: red;
     font-weight: bold;
-    margin-right:10px ;
+    margin-right: 10px;
     font-size: 30px;
 }
-.giathat_sp{
+
+.giathat_sp {
     text-decoration: line-through;
 
-   
+
 }
 
-.tragop_sp{
-   text-align: center;
-   font-size: 20px;
+.tragop_sp {
+    text-align: center;
+    font-size: 20px;
 }
 
-.mau{
+.mau {
     position: relative;
     top: 50px;
-   right: 60px;
-   margin-top: 5px;
-   font-size: 20px;
-   font-weight: 500;
-   
+    right: 60px;
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: 500;
+
 }
 
-.dungluong_s{ 
+.dungluong_s {
     display: flex;
     border-radius: 8px;
     background-color: #ECEFF1;
     width: 98%;
     margin: 15px 0;
 }
-.dungluong_s .GB{
+
+.dungluong_s .GB {
     display: flex;
     justify-content: space-around;
     align-items: center;
-   flex-direction: column;
-   width: 24%;
-   height: 50px;
-    
+    flex-direction: column;
+    width: 24%;
+    height: 50px;
+
 }
 
-.lineX{
+.lineX {
     height: 50px;
     width: 1px;
     background-color: #Ccc;
 }
 
 
-.GB:hover{
+.GB:hover {
     background-color: #a1a3a4;
     border-radius: 8px;
- }
+}
 
- .khuyenmai_sp{
+.khuyenmai_sp {
     margin: 5% 0;
     width: 98%;
     min-height: 300px;
     border-radius: 5px;
     background-color: #f7f7f7;
- }
-  
+}
 
-.khuyenmai_sp .Uudai{
+
+.khuyenmai_sp .Uudai {
     margin: 10px 10px;
 }
 
 
-.Uudai1 .input{
+.Uudai1 .input {
     display: inline-block;
     margin: 10px 0;
     font-size: 16px;
-    text-align:justify ;
+    text-align: justify;
 }
- .txxt{
+
+.txxt {
     text-align: center;
- }
+}
 
- .Uudai2 p{
-   font-size: 16px;
-   margin-top: 5px ;
- }
+.Uudai2 p {
+    font-size: 16px;
+    margin-top: 5px;
+}
 
- .Uudai2 i{
+.Uudai2 i {
     color: #21BA45;
- }
+}
 
- .thongsokythuat{
+.thongsokythuat {
     margin: 3% 0;
     width: 100%;
     height: 150px;
     border: 1px solid rgb(236, 232, 232);
     background-color: #ECEFF1;
     border-radius: 8px;
- }
- .thongso{
+}
+
+.thongso {
     position: relative;
     top: 40%;
     transform: translateY(-50%);
     font-size: 14px;
     margin: 0px 10px;
- }
- 
- 
+}
 
- 
+.content_sp {
+    text-align: justify;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background: #fff;
+    margin-top: 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#content {
+    max-height:680px;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    width: 60%;
+    margin: 20px 5px;
+}
+
+#content>.Nd_sp {
+    width: 100%;
+    padding: 20px
+}
+
+#readMoreBtn {
+    cursor: pointer;
+    color: #746666;
+    border: 1px solid black;
+    width: 100px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 8px;
+    position: relative;
+    bottom: 48px;
+    left: 5px;
+    outline: none;
+    border: none;
+    background-color: #cccfd0;
+}
+
+#readMoreBtn:hover{
+    background: black;
+    color: #fff;
+}
+.Real_specifications {
+    width: 40%;
+}
+
+table {
+    width: 95%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* td:first-child {
+    ;
+} */
+
+/* Trang trí thêm */
+table {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+th,
+td {
+    transition: background-color 0.3s;
+}
+
+th:hover,
+td:hover {
+    background-color: #f5f5f5;
+}
+
+/* Hiệu ứng hover cho bảng */
+
+th,
+td {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Font chữ cho ô tiêu đề và ô dữ liệu */
+
+th {
+    letter-spacing: 1px;
+}
+
+/* Chữ in hoa và tăng khoảng cách giữa các ký tự */
+
+th:first-child,
+td:first-child {
+    border-left: none;
+}
 
 
+.DGCT .img_Sp{
+    text-align: center;
+    margin: 10px 0;
+}
 
 
+.cauhoithuonggap{
+    width: 1200px;
+    height: 350px;
+   background-color: #FFF;
+   border-radius: 8px;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
 
+.nd-content{
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
     
+}
+
+.nd-content h3{
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.nd-chtg{
+  
+}
+
+.nd-chtg .nd-nd{
+    margin: 15px 0;
+    width: 100%;
+    height: 27px;
+    overflow: hidden;
+}
+
+.nd-chtg .nd-nd h6{
+    display: flex;
+    flex:1 0 0;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+.nd-chtg .nd-nd h6 i{
+    /* margin-top: 5px; */
+    margin-left: 5px;
+    font-size: 20px;
+    color: black;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+
+.fa-circle-plus{
+  position: relative;
+  left: 50%;
+}
+
+.item{
+    display: flex;
+}
+
+#cick i{
+    margin-right:300px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
 
 
