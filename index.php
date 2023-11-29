@@ -191,7 +191,7 @@ if (isset($_GET['act'])) {
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 $id = $_GET['id'];
                 $listctsp = one_sp($id);
-                // $nameDm=oneDM($_GET['id']);
+                $nameDm=oneDM($_GET['id']);
                 // header("location:index.php?act=ctsp");
             }
             include "view/product_details.php";
