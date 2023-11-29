@@ -51,7 +51,7 @@ function loaisp($id)
 }
 
 function oneDM($id){
-    $sql="SELECT * FROM danh_muc.name , san_pham WHERE danhmuc.id=san_pham.category_id";
+    $sql="SELECT * FROM danh_muc.name , san_pham WHERE danhmuc.id=san_pham.category_idz";
     return pdo_query_one($sql);
     // Chỉnh lại code nhé ô
 }

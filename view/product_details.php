@@ -32,7 +32,7 @@ include "./headercts.php";
                         Trang chủ
                     </a>
                     <span>/</span>
-                    <a href="index.php" name="name"><?=$oneDM['name']?></a>
+                    <a href="index.php" name="name"><?= $oneDM['name'] ?></a>
                     <span>/</span>
                     <a href="#"><?= $name ?></a>
 
@@ -562,16 +562,19 @@ include "./headercts.php";
                     <div class="line"></div>
                     <div class="nd-chtg">
                         <div class="nd-nd" id="nd-nd">
-                            <h6><i class="fa-solid fa-circle-question" style="color:black;"></i>
+                            <div class="tieude">
+                            <h6>
+                            <i class="fa-solid fa-circle-question" style="color:black;"></i>
                                 Chip xử lý của iPhone 14 Pro max có gì đặc biệt
-                                <i class="fa-solid fa-circle-plus " id="click" style="color:black;"></i>
                             </h6>
+                            <i class="fa-solid fa-circle-plus " id="click" style="color:black;"></i>
+                            </div>
                             <p>iPhone 14 Pro Max chạy chip A16 Bionic. Con chip thế hệ mới của Apple tập hợp 16 tỷ bóng bán dẫn, bao gồm 6 lõi CPU và 5 lõi GPU, giúp sản phẩm xử lý được khối lượng thông tin khổng lồ một cách chuyên nghiệp. Ngoài ra, A16 Bionic giúp thiết bị tiết kiệm pin tối đa, thực hiện các tác vụ đồ họa phức tạp để chạy mượt mọi tựa game.</p>
                         </div>
                         <div class="line"></div>
                         <div class="nd-nd">
                             <h6>
-                                <i class="fa-solid fa-circle-question"style="color:black;"></i>
+                                <i class="fa-solid fa-circle-question" style="color:black;"></i>
                                 Chip xử lý của iPhone 14 Pro max có gì đặc biệt
                                 <i class="fa-solid fa-circle-plus" id="left" style="color:black;"></i>
                             </h6>
@@ -601,7 +604,7 @@ include "./headercts.php";
 
     </form>
     <script src="view/js/product_details.js"></script>
-</script>
+    </script>
 
 </body>
 <script>
