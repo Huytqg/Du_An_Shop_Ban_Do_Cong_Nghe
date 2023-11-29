@@ -50,11 +50,10 @@ function loaisp($id)
     return pdo_query($sql);
 }
 
-// function oneDM($id){
-//     $sql="SELECT * FROM danh_muc.name , san_pham WHERE danhmuc.id=san_pham.category_id";
-//     return pdo_query_one($sql);
-//     // Chỉnh lại code nhé ô
-// }
+function oneDM($id){
+    $sql = "SELECT danh_muc.name as dmname,danh_muc.id FROM danh_muc JOIN san_pham ON danh_muc.id=san_pham.category_id WHERE san_pham.id=$id";
+    return pdo_query_one($sql);
+}
 
 function one_in_sp()
 {
