@@ -32,7 +32,7 @@
             <?php foreach ($allsp as $sp) : ?>
                 <div class="product-box">
                     <a href="index.php?act=ctsp&id=<?= $sp['id'] ?>">
-                        <img style="height: 250px;width: 250px;" src="images/<?= $sp['image'] ?>" class="product-img">
+                      <img style="height: 250px;width: 250px;" src="images/<?= $sp['image'] ?>" class="product-img">
                         <h2 class="product-title"><?= $sp['name'] ?></h2>
                         <span class="price"><?= number_format($sp['price'],0,',','.')  ?></span>
                         <p class="price-new"><?= number_format( $sp['price_new'],0,',','.' )?></p>

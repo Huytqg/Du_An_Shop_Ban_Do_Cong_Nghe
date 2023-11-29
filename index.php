@@ -92,15 +92,17 @@ if (isset($_GET['act'])) {
             }
             include "./quenmk.php";
             break;
-
-        case 'addtocart':
-            if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
-                update_cart(true);
-                // $_SESSION['mycart'][$id] = $quantity;
+           
+        case 'ctsp':
+            if(isset($_GET['id'])&&($_GET['id']>0)){
+                $id=$_GET['id'];    
+                $listctsp=one_sp($id);
+                // $nameDm=oneDM($_GET['id']);
+                header("location:index.php?act=ctsp");
             }
-            header("location:index.php");
-            include "main.php";
+            include "view/product_details.php";
             break;
+            // Bị lỗi header 
         case 'buynow':
             if (isset($_POST['buynow']) && ($_POST['buynow'])) {
                 update_cart(true);

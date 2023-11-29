@@ -5,10 +5,10 @@ var nextBtn = document.querySelector('.next')
 
 var currentIndex = 0;
 function updateImgByIndex(index) {
-// remove active class
-document.querySelectorAll('.list_img div').forEach(item => {
-    item.classList.remove('active')
-});
+    // remove active class
+    document.querySelectorAll('.list_img div').forEach(item => {
+        item.classList.remove('active')
+    });
 
     currentIndex = index
     imgFeature.src = listImg[index].getAttribute('src')
@@ -25,10 +25,10 @@ listImg.forEach((imgElement, index) => {
 
 });
 
-prevBtn.addEventListener('click',e=>{
-    if(currentIndex ==0){
-        currentIndex = listImg.length-1
-    }else{
+prevBtn.addEventListener('click', e => {
+    if (currentIndex == 0) {
+        currentIndex = listImg.length - 1
+    } else {
         currentIndex--
     }
 
@@ -36,10 +36,10 @@ prevBtn.addEventListener('click',e=>{
 })
 
 
-nextBtn.addEventListener('click',e=>{
-    if(currentIndex==listImg.length-1){
+nextBtn.addEventListener('click', e => {
+    if (currentIndex == listImg.length - 1) {
         currentIndex = 0
-    }else{
+    } else {
         currentIndex++
     }
 
@@ -47,3 +47,95 @@ nextBtn.addEventListener('click',e=>{
 })
 
 updateImgByIndex(0)
+
+
+// ================================
+var updateactive = document.getElementsByClassName('.GB')
+var raidoBtn = document.querySelectorAll('input[name="dung-luong"]')
+raidoBtn.forEach((raidoBtn) => {
+    raidoBtn.addEventListener('change', (e) => {
+        updateactive.style.backgroundColor = 'red';
+    });
+
+});
+
+
+const chosseKm = document.querySelectorAll('input[name="km1"]')
+
+chosseKm.forEach((chosseKm) => {
+    chosseKm.addEventListener('change', e => {
+
+    })
+});
+
+
+// ===================
+// function read(contentElement,readMoreBtn){
+//     const contentElement = document.getElementById('content');
+// const readMoreBtn = document.getElementById('readMoreBtn');
+
+// let isExpanded = false;
+
+// readMoreBtn.addEventListener('click', () => {
+//     if (isExpanded) {
+//         // Nếu đang mở rộng, thu lại lại với chiều cao tối đa
+//         contentElement.style.maxHeight = '150px';
+//         readMoreBtn.textContent = 'Đọc thêm';
+//     } else {
+//         // Nếu không mở rộng, mở rộng hết chiều cao
+//         contentElement.style.maxHeight = contentElement.scrollHeight + 'px';
+//         readMoreBtn.textContent = 'Thu gọn';
+//     }
+
+//     // Chuyển đổi trạng thái
+//     isExpanded = !isExpanded;
+// });
+// read(contentElement,readMoreBtn)
+// }
+
+const contentElement = document.getElementById('content');
+const readMoreBtn = document.getElementById('readMoreBtn');
+
+let isExpanded = false;
+
+readMoreBtn.addEventListener('click', () => {
+    if (isExpanded) {
+        // Nếu đang mở rộng, thu lại lại với chiều cao tối đa
+        contentElement.style.maxHeight = '650px';
+        readMoreBtn.textContent = 'Đọc thêm';
+    } else {
+        // Nếu không mở rộng, mở rộng hết chiều cao
+        contentElement.style.maxHeight = contentElement.scrollHeight + 'px';
+        readMoreBtn.textContent = 'Thu gọn';
+    }
+
+    // Chuyển đổi trạng thái
+    isExpanded = !isExpanded;
+}); 
+
+
+const ndBtn = document.getElementsByClassName('.nd-nd');
+const click = document.getElementById('click');
+
+let isExpandeds = false;
+
+
+click.addEventListener('click', () => {
+    if (isExpandeds) {
+        // Nếu đang mở rộng, thu lại lại với chiều cao tối đa
+        ndBtnElement.style.maxHeight = '650px';
+        click.textContent = click;
+    } else {
+        // Nếu không mở rộng, mở rộng hết chiều cao
+        ndBtnElement.style.maxHeight =  ndBtnElement.scrollHeight + 'px';
+        click.textContent =click;
+    }
+
+    // Chuyển đổi trạng thái
+    isExpandeds = !isExpanded;
+}); 
+
+console.log(ndBtn);
+
+
+

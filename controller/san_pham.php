@@ -50,6 +50,11 @@ function loaisp($id)
     return pdo_query($sql);
 }
 
+// function oneDM($id){
+//     $sql="SELECT * FROM danh_muc.name join on san_pham WHERE danhmuc.id=san_pham.category_id".$id;
+//     return pdo_query_one($sql);
+// }
+
 function one_in_sp()
 {
     $sql = "SELECT * FROM san_pham WHERE id IN (".implode(",", array_keys($_SESSION['mycart'])).")";
