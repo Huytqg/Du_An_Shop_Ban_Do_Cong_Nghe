@@ -28,11 +28,9 @@ include "./headercts.php";
             <div class="hea"></div>
             <div class="m-jc">
                 <div class="m-js ">
-                    <a href="index.php">
-                        Trang chủ
-                    </a>
+                    <a href="index.php">Trang chủ</a>
                     <span>/</span>
-                    <a href="index.php" name="name"></a>
+                    <a href="index.php?act=loaisp&id=<?= $nameDm['id'] ?>" name="name"><?= $nameDm['dmname'] ?></a>
                     <span>/</span>
                     <a href="#"><?= $name ?></a>
 
@@ -571,7 +569,7 @@ include "./headercts.php";
                         <div class="line"></div>
                         <div class="nd-nd">
                             <h6>
-                                <i class="fa-solid fa-circle-question"style="color:black;"></i>
+                                <i class="fa-solid fa-circle-question" style="color:black;"></i>
                                 Chip xử lý của iPhone 14 Pro max có gì đặc biệt
                                 <i class="fa-solid fa-circle-plus" id="left" style="color:black;"></i>
                             </h6>
@@ -601,7 +599,7 @@ include "./headercts.php";
 
     </form>
     <script src="view/js/product_details.js"></script>
-</script>
+    </script>
 
 </body>
 <script>
