@@ -98,10 +98,8 @@ if (isset($_GET['act'])) {
                 $listctsp = one_sp($id);
                 // $nameDm=oneDM($_GET['id']);
             }
-            header("location:product_details.php");
-            die;
             include "view/product_details.php";
-
+            break;
         case 'buynow':
             if (isset($_POST['buynow']) && ($_POST['buynow'])) {
                 update_cart(true);
