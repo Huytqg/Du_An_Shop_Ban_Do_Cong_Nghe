@@ -31,7 +31,7 @@ include "./headercts.php";
                 <div class="m-js ">
                     <a href="index.php">Trang chủ</a>
                     <span>/</span>
-                    <a href="index.php" name="name"><?=$oneDM['name']?></a>
+                    <a href="index.php?act=loaisp&id=<?= $nameDm['id'] ?>" name="name"><?= $nameDm['name'] ?></a>
                     <span>/</span>
                     <a href="#"><?= $name ?></a>
 
@@ -562,11 +562,11 @@ include "./headercts.php";
                     <div class="nd-chtg">
                         <div class="nd-nd" id="nd-nd">
                             <div class="tieude">
-                            <h6>
-                            <i class="fa-solid fa-circle-question" style="color:black;"></i>
-                                Chip xử lý của iPhone 14 Pro max có gì đặc biệt
-                            </h6>
-                            <i class="fa-solid fa-circle-plus " id="click" style="color:black;"></i>
+                                <h6>
+                                    <i class="fa-solid fa-circle-question" style="color:black;"></i>
+                                    Chip xử lý của iPhone 14 Pro max có gì đặc biệt
+                                </h6>
+                                <i class="fa-solid fa-circle-plus " id="click" style="color:black;"></i>
                             </div>
                             <p>iPhone 14 Pro Max chạy chip A16 Bionic. Con chip thế hệ mới của Apple tập hợp 16 tỷ bóng bán dẫn, bao gồm 6 lõi CPU và 5 lõi GPU, giúp sản phẩm xử lý được khối lượng thông tin khổng lồ một cách chuyên nghiệp. Ngoài ra, A16 Bionic giúp thiết bị tiết kiệm pin tối đa, thực hiện các tác vụ đồ họa phức tạp để chạy mượt mọi tựa game.</p>
                         </div>
