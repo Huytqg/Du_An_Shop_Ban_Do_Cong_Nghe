@@ -174,9 +174,14 @@ h1 {
 }
 
 .line {
-    width: 98%;
+    width: 100%;
     margin-top: 10px;
+    margin-bottom: 8px;
     border-bottom: 1px solid #Ccc;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
 }
 
 .giasp {
@@ -499,67 +504,173 @@ td:first-child {
 
 
 .cauhoithuonggap{
-    width: 1200px;
-    height: 350px;
+    max-width: 1200px;
+    height: 230px;
    background-color: #FFF;
    border-radius: 8px;
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   padding: 0 20px;
 }
 
-.nd-content{
-    padding: 20px;
+.nd_ct{
+
+}
+ 
+
+
+h3{
+    padding: 10px 40px;
+}
+
+.tieude{
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    
-}
-
-.nd-content h3{
-    margin-bottom: 20px;
+    padding: 10px 40px;
     font-size: 20px;
-}
-
-.nd-chtg{
-  
-}
-
-.nd-chtg .nd-nd{
-    margin: 15px 0;
-    width: 100%;
-    height: 27px;
-    overflow: hidden;
-}
-
-.nd-chtg .nd-nd h6{
-    display: flex;
-    flex:1 0 0;
-    font-size: 18px;
-    margin-top: 5px;
-}
-
-.nd-chtg .nd-nd h6 i{
-    /* margin-top: 5px; */
-    margin-left: 5px;
-    font-size: 20px;
+    font-weight: 700;
     color: black;
-    padding-right: 10px;
+    background-color: #Ccc;
     cursor: pointer;
+   
 }
 
-
-.fa-circle-plus{
-  position: relative;
-  left: 50%;
+.nd_ct .content_p{
+    font-size: 16px;
+    padding: 10px 30px;
+    text-align: justify;
+    display: none;
+    background-color: #c6c7c8;
 }
 
-.item{
+.nd_ct.actives .tieude{
+    background-color: #ECEFF1;
+}
+
+.add{
+    transition:all 10s ease-in;
+}
+
+/* .binhluansp{
+    max-width: 1200px;
+    height: auto;
+    background-color: #fff;
+    margin: 40px 0;
+}
+
+.Tb_dg{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    left: 4%;
+}
+
+.dgsp3{
+    text-align: center;
+}
+.dgsp3 p{
+    font-size: 16px;
+    color: black;
+    padding-bottom: 20px;
+}
+
+.dgsp3 button{
+    width: 150px;
+    line-height: 40px;
+    outline: none;
+    border: none;
+    background-color: red;
+    color: #fff;
+    border-radius: 10px;
+}
+
+.dgsp2 .dg2{
     display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 0 10px;
 }
 
-#cick i{
-    margin-right:300px;
-    font-size: 20px;
-    cursor: pointer;
+.dg1{
+    text-align: center;
+   position: relative;
+   right: 80px;
+} */
+
+.hoidap{
+    width: 1200px;
+    height: auto;
+    background-color: #fff;
+    margin: 20px 0px;
 }
 
+h2{
+    padding: 10px 20px;
+}
+.nhapbinhluan{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nhapbinhluan .input{
+    width: 1200px;
+    margin: 0 auto;
+    height: 60px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    position: relative;
+    left: 5%;
+    margin: 10px 0;
+    margin-bottom: 20px;
+}
 
+.nhapbinhluan .submit{
+    position: relative;
+    width: 120px;
+    height: 40px;
+    outline: none;
+    border: none;
+    background-color: red;
+    color: #fff;
+    border-radius: 8px;
+    right: 6%;
+}
 
+.tsl{
+    width: 1200px;
+    height: 40px;
+    background-color: #ccc;
+}
+
+.hienthibinhluan{
+    display: flex;
+   justify-content:flex-start;
+   align-items: flex-start;
+   margin: 20px 20px;
+}
+
+.name{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+   
+}
+.name p{
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.ngaybl{
+    margin: 10px 0;
+}

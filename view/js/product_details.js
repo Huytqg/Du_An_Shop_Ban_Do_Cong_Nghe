@@ -114,28 +114,14 @@ readMoreBtn.addEventListener('click', () => {
 }); 
 
 
-const ndBtn = document.getElementsByClassName('.nd-nd');
-const click = document.getElementById('click');
 
-let isExpandeds = false;
-
-
-click.addEventListener('click', () => {
-    if (isExpandeds) {
-        // Nếu đang mở rộng, thu lại lại với chiều cao tối đa
-        ndBtnElement.style.maxHeight = '650px';
-        click.textContent = click;
-    } else {
-        // Nếu không mở rộng, mở rộng hết chiều cao
-        ndBtnElement.style.maxHeight =  ndBtnElement.scrollHeight + 'px';
-        click.textContent =click;
-    }
-
-    // Chuyển đổi trạng thái
-    isExpandeds = !isExpanded;
-}); 
-
-console.log(ndBtn);
+$(document).ready(function(){
+    // $('.nd_ct.actives .content_p').slideDown();
+   $('.tieude').click(function() {
+    $(this).parent().toggleClass('actives');
+    $(this).parent().children('.content_p').slideToggle();
+   });
+})
 
 
 
