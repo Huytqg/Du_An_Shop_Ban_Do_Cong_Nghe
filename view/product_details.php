@@ -28,19 +28,6 @@ include "./headercts.php";
 ?>
 
 <body>
-<<<<<<< HEAD
-    <form action="index.php?act=ctsp" method="post" enctype="multipart/form-data">
-        <div class="container">
-            <div class="hea"></div>
-            <div class="m-jc">
-                <div class="m-js ">
-                    <a href="index.php">Trang chủ</a>
-                    <span>/</span>
-                    <a href="index.php?act=loaisp&id=<?= $nameDm['id'] ?>" name="name"><?= $nameDm['name'] ?></a>
-                    <span>/</span>
-                    <a href="#"><?= $name ?></a>
-                </div>
-=======
     <!-- <form action="index.php?act=ctsp" method="post" enctype="multipart/form-data"> -->
     <div class="container">
         <div class="hea"></div>
@@ -52,7 +39,6 @@ include "./headercts.php";
                 <span>/</span>
                 <a href="#"><?= $name ?></a>
 
->>>>>>> 3ada0b52bae82991b991264cd5c2e65c7db30aeb
             </div>
         </div>
         <div class="fullscren">
