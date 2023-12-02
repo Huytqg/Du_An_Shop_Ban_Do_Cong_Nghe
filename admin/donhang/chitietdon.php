@@ -17,7 +17,7 @@
         <td><?= $chitietdon[0]['name'] ?></td>
         <td><?= $chitietdon[0]['address'] ?></td>
         <td><?= $chitietdon[0]['phone'] ?> </td>
-        <td><?= date("H:i d/m/Y", $chitietdon[0]['date_order'])  ?></td>
+        <td><?= date( $chitietdon[0]['date_order'])  ?></td>
     </tr>
 
 

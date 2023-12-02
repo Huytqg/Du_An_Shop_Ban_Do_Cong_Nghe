@@ -2,9 +2,9 @@
 
 <table border="1px solid black" style="width: 100%;text-align: center;">
     <tr>
+        <th>HÌNH ẢNH</th>
         <th>ID SẢN PHẨM</th>
         <th>TÊN SẢN PHẨM</th>
-        <th>SỐ ĐIỆN THOẠI</th>
         <th>GIÁ TIỀN</th>
         <th>GIÁ CŨ</th>
         <th>SỐ LƯỢNG</th>
@@ -14,9 +14,9 @@
     </tr>
     <?php foreach ($listsp as $sp) : ?>
         <tr>
+            <td><img style="width: 50px;" src="../images/<?= $sp['image'] ?>"></td>
             <td><?= $sp['id'] ?></td>
             <td><?= $sp['name'] ?></td>
-            <td><img style="width: 50px;" src="../images/<?= $sp['image'] ?>"></td>
             <td><?= $sp['price'] ?></td>
             <td><?= $sp['price_new'] ?></td>
             <td><?= $sp['quantity'] ?></td>
