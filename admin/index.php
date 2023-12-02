@@ -1,12 +1,11 @@
 <?php
-session_start();
+// session_start();
 include "../controller/pdo.php";
 include "../controller/danh_muc.php";
 include "../controller/san_pham.php";
 include "../controller/khach_hang.php";
 include "../controller/users.php";
 include "../controller/don_hang.php";
-
 include "header.php";
 
 if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {

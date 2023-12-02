@@ -654,28 +654,20 @@ include "./headercts.php";
 
             <div class="hoidap">
                 <h2>Bình luận</h2>
+                <!-- <div class="cmt">
+                <iframe src="controller/binhluan.php?idsp=<?= $_GET['id'] ?>" width="100%" height="400px" frameborder="0"></iframe>
+               </div> -->
                 <!-- <form action="index.php?act=binhluan" method="post">
-                <div class="nhapbinhluan">
-                    <input type="text" class="input" name="" placeholder="Nhập bình luận của bạn" width="1200px">
-                    <input type="submit" value="Gửi bình luận" class="submit" name="guibinhluan">
-                </div>
-                </form> -->
-                <div class="box_footer sear_box">
-                    <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
-                        <input type="hidden" name="idpro" value="<?= $idpro ?>">
-                        <input type="text" name="noidung">
-                        <input type="submit" name="guibinhluan" value="GỬI BÌNH LUẬN">
-                    </form>
-                    <?php
-                    if (isset($_POST['guibinhluan']) && ($_POST['guibinhluan'])) {
-                        $noidung = $_POST['noidung'];
-                        $idpro = $_POST['idpro'];
-                        $iduser = $_SESSION['user']['id'];
-                        $ngaybinhluan = date('h:i:sa d/m/Y');
-                        insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan);
-                        header("location: " . $_SERVER['HTTP_REFERER']);
-                    }
-                    ?>
+                    Name:
+                    <input type="text" name="name"><br>
+                    <input type="hidden" name="id">
+                    Nhap noi dung:
+                    <input type="text" name="noidung" id=""><br>
+                    <input type="hidden" name="ngaybinhluan" id=""><br>
+                    <input type="button" value="Gui binh luan" name="guibinhluan">
+                 </form> -->
+                <div class="row">
+                    <iframe src="view/binhluan/binhluanform.php?idpro=<?= $id ?>" frameborder="0" width="100%" height="300px"></iframe>
                 </div>
                 <div class="tsl">
 
