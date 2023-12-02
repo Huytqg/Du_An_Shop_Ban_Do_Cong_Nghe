@@ -6,6 +6,7 @@ include "controller/san_pham.php";
 include "controller/users.php";
 include "controller/gio_hang.php";
 include "controller/don_hang.php";
+include "controller/binhluan.php";
 // include "header.php";
 if (!isset($_SESSION['mycart'])) {
     $_SESSION['mycart'] = [];
@@ -200,8 +201,21 @@ if (isset($_GET['act'])) {
             include "view/product_details.php";
             die;
             break;
-        case '':
-            break;
+        // case 'binhluan':
+        //     if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
+        //         $noidung = $_POST['noidung'];
+        //         $idpro = $_POST['idpro'];
+        //         $iduser = $_SESSION['user']['id'];
+        //         $ngaybinhluan = date('h:i:sa d/m/Y');
+        //         insert_binhluan($noidung,$iduser,$idpro,$ngaybinhluan);
+        //         header("location: ".$_SERVER['HTTP_REFERER']);
+        //     }
+        //     break;
+
+        case 'loadbl':
+            if(isset($_GET['id'])&& ($_GET['id'])>0){
+
+            }
     }
 }
 $list_dm = alldm();

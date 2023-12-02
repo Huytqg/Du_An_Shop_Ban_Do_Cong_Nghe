@@ -7,6 +7,7 @@
     <title>product details</title>
     <link rel="stylesheet" href="./css/product_details.css">
     <link rel="stylesheet" href="../fontawesome-free-6.4.2-web/css/all.css">
+    
 </head> -->
 <?php
 if (is_array($listctsp) && isset($listctsp)) {
@@ -18,6 +19,10 @@ if (isset($_GET['id']) && ($_GET['id'] > 0)) {
     $nameDm = oneDM($_GET['id']);
 }
 // var_dump($nameDm);  
+// die;
+
+
+
 
 include "./headercts.php";
 ?>
@@ -500,6 +505,7 @@ include "./headercts.php";
 
                 </div>
             </div>
+<<<<<<< HEAD
             <div class="Real_specifications">
                 <table>
                     <tr>
@@ -599,7 +605,147 @@ include "./headercts.php";
         </div>
         <div class="binhluansp"></div>
     </div>
+=======
+            <div id="readMoreBtn">Đọc thêm</div>
+            <div class="cauhoithuonggap">
+                <h3>Câu hỏi thường gặp</h3>
+                <div class="line"></div>
+                <div class="nd_ct actives">
+                    <div class="tieude">
+                        <h6><i class="fa-solid fa-circle-question" style="color:black;"></i>
+                            Chip xử lí của iPhone 14 Pro max có gì đặc biệt ?</h6>
+                        <i class="add fa-solid fa-circle-plus" id="left" style="color:black;"></i>
+                    </div>
+                    <div class="content_p">
+                        <p>iPhone 14 Pro Max chạy chip A16 Bionic. Con chip thế hệ mới của Apple tập hợp 16 tỷ bóng bán dẫn, bao gồm 6 lõi CPU và 5 lõi GPU, giúp sản phẩm xử lý được khối lượng thông tin khổng lồ một cách chuyên nghiệp. Ngoài ra, A16 Bionic giúp thiết bị tiết kiệm pin tối đa, thực hiện các tác vụ đồ họa phức tạp để chạy mượt mọi tựa game.</p>
 
+                    </div>
+                </div>
+>>>>>>> 610469bb5203dddde44f52ee2ad9efe741c671b8
+
+                <div class="nd_ct actives">
+                    <div class="tieude">
+                        <h6><i class="fa-solid fa-circle-question" style="color:black;"></i>
+                            Chip xử lí của iPhone 14 Pro max có gì đặc biệt ?</h6>
+                        <i class="add fa-solid fa-circle-plus" id="left" style="color:black;"></i>
+                    </div>
+                    <div class="content_p">
+                        <p>iPhone 14 Pro Max chạy chip A16 Bionic. Con chip thế hệ mới của Apple tập hợp 16 tỷ bóng bán dẫn, bao gồm 6 lõi CPU và 5 lõi GPU, giúp sản phẩm xử lý được khối lượng thông tin khổng lồ một cách chuyên nghiệp. Ngoài ra, A16 Bionic giúp thiết bị tiết kiệm pin tối đa, thực hiện các tác vụ đồ họa phức tạp để chạy mượt mọi tựa game.</p>
+
+                    </div>
+                </div>
+                <div class="nd_ct actives">
+                    <div class="tieude">
+                        <h6><i class="fa-solid fa-circle-question" style="color:black;"></i>
+                            Chip xử lí của iPhone 14 Pro max có gì đặc biệt ?</h6>
+                        <i class="add fa-solid fa-circle-plus" id="left" style="color:black;"></i>
+                    </div>
+                    <div class="content_p">
+                        <p>iPhone 14 Pro Max chạy chip A16 Bionic. Con chip thế hệ mới của Apple tập hợp 16 tỷ bóng bán dẫn, bao gồm 6 lõi CPU và 5 lõi GPU, giúp sản phẩm xử lý được khối lượng thông tin khổng lồ một cách chuyên nghiệp. Ngoài ra, A16 Bionic giúp thiết bị tiết kiệm pin tối đa, thực hiện các tác vụ đồ họa phức tạp để chạy mượt mọi tựa game.</p>
+
+                    </div>
+                </div>
+
+
+
+
+            </div>
+            <!-- <div class="binhluansp">
+                <h4>Đánh giá sản phẩm</h4>
+                    <div class="line"></div>
+                    <div class="Tb_dg">
+                        <div class="dg1">
+                            <h6>Đánh giá trung bình</h6>
+                            <h2>5/5</h2>
+                            <div class="icon">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="dgsp2">
+                            <div class="dg2 ">
+                                <div class="number " style="margin-right:  10px;">5</div> 
+                                 <div class="underline" style="width: 100px; height: 5px;background-color: red;border-radius: 9px; margin-right: 10px;"></div>
+                                 <i class="fa-solid fa-star"></i><br>
+                            </div>
+                            <div class="dg2 ">
+                                <div class="number " style="margin-right:  10px;">4</div> 
+                                 <div class="underline" style="width: 80px; height: 5px;background-color: red;border-radius: 9px; margin-right: 10px;"></div>
+                                 <i class="fa-solid fa-star"></i><br>
+                            </div>
+                            <div class="dg2 ">
+                                <div class="number " style="margin-right:  10px;">3</div> 
+                                 <div class="underline" style="width: 60px; height: 5px;background-color: red;border-radius: 9px; margin-right: 10px;"></div>
+                                 <i class="fa-solid fa-star"></i><br>
+                            </div>
+                            <div class="dg2 ">
+                                <div class="number " style="margin-right:  10px;">2</div> 
+                                 <div class="underline" style="width: 40px; height: 5px;background-color: red;border-radius: 9px; margin-right: 10px;"></div>
+                                 <i class="fa-solid fa-star"></i><br>
+                            </div>
+                            <div class="dg2 ">
+                                <div class="number " style="margin-right:  10px;">1</div> 
+                                 <div class="underline" style="width: 20px; height: 5px;background-color: red;border-radius: 9px; margin-right: 10px;"></div>
+                                 <i class="fa-solid fa-star"></i><br>
+                            </div>
+                            
+                        </div>
+                        <div class="dgsp3">
+                            <p>Bạn đã dùng sản phẩm này ?</p>
+                             <button class="btn">Gửi bình luận </button>
+                        </div>
+                    </div>
+
+            </div> -->
+
+            <div class="hoidap">
+                <h2>Bình luận</h2>
+                <!-- <form action="index.php?act=binhluan" method="post">
+                <div class="nhapbinhluan">
+                    <input type="text" class="input" name="" placeholder="Nhập bình luận của bạn" width="1200px">
+                    <input type="submit" value="Gửi bình luận" class="submit" name="guibinhluan">
+                </div>
+                </form> -->
+                <div class="box_footer sear_box">
+                    <form action="<?= $_SERVER['PHP_SELF']; ?>" method="post">
+                        <input type="hidden" name="idpro" value="<?= $idpro ?>">
+                        <input type="text" name="noidung">
+                        <input type="submit" name="guibinhluan" value="GỬI BÌNH LUẬN">
+                    </form>
+                    <?php
+                    if (isset($_POST['guibinhluan']) && ($_POST['guibinhluan'])) {
+                        $noidung = $_POST['noidung'];
+                        $idpro = $_POST['idpro'];
+                        $iduser = $_SESSION['user']['id'];
+                        $ngaybinhluan = date('h:i:sa d/m/Y');
+                        insert_binhluan($noidung, $iduser, $idpro, $ngaybinhluan);
+                        header("location: " . $_SERVER['HTTP_REFERER']);
+                    }
+                    ?>
+                </div>
+                <div class="tsl">
+
+                </div>
+
+                <div class="hienthibinhluan">
+                    <div class="name">
+                        <p>Kiennv</p>
+
+                    </div>
+                    <div class="nd_bl">
+
+                        <p>Bàn Văn Linh</p>
+                        <p>Hello ưm </p>
+                        <div class="ngaybl">
+                            1/1/2023
+                        </div>
+                    </div>
+
+                </div>
+            </div>
     </form>
     <script src="view/js/product_details.js"></script>
     </script>
