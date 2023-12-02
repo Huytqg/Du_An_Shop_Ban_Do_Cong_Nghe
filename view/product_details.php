@@ -38,7 +38,6 @@ include "./headercts.php";
                     <a href="index.php?act=loaisp&id=<?= $nameDm['id'] ?>" name="name"><?= $nameDm['name'] ?></a>
                     <span>/</span>
                     <a href="#"><?= $name ?></a>
-
                 </div>
             </div>
             <div class="fullscren">
