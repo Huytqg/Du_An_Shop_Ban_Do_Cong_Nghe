@@ -155,7 +155,7 @@ if (isset($_GET['act'])) {
                     $phone = $_POST['phone'];
                     $address = $_POST['address'];
                     $desc_order = $_POST['desc_order'];
-                    $date_order = time();
+                    $date_order = date('Y-m-d');
                     if (isset($_SESSION['username'])) {
                         $user_id = $_SESSION['username']['id'];
                         // $one_user = one_user($user_id);
@@ -175,7 +175,8 @@ if (isset($_GET['act'])) {
                     }
                     insert_shopping_cart_item($array);
                 }
-                header("location:index.php");
+                header("location:index.php?act=chitietdon&id=$one_order_id");
+                die;
             }
             include "header.php";
             include "view/payment.php";
@@ -191,7 +192,7 @@ if (isset($_GET['act'])) {
             if (isset($_GET['id']) && ($_GET['id'] > 0)) {
                 $id = $_GET['id'];
                 $listctsp = one_sp($id);
-                $nameDm=oneDM($id); 
+                $nameDm = oneDM($id);
                 // var_dump($nameDm['id']);
                 // die;
                 // header("location:index.php?act=ctsp");
@@ -238,7 +239,7 @@ if (isset($_GET['act'])) {
 
             break;
         case '':
-
+           
             break;
 
 

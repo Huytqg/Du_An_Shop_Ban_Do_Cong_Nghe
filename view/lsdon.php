@@ -17,7 +17,7 @@
             <!-- <td><img style="width: 50px;" src="../images/<?= $donhang['image'] ?>"></td> -->
             <td><?= $donhang['address'] ?></td>
             <td><?= $donhang['phone'] ?></td>
-            <td><?= date('H:i - d/m/Y ', $donhang['date_order'])  ?></td>
+            <td><?= date( $donhang['date_order'])  ?></td>
             <td><?php if ($donhang['trang_thai'] == 1) {
                     echo "Chưa xử lí";
                 } elseif ($donhang['trang_thai'] == 2) {
