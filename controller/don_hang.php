@@ -14,7 +14,7 @@ function all_donhang($key, $trang_thai)
 
 function joindonhang($id)
 {
-    $sql = "SELECT shop_order.id as shop_order_id ,shop_order.name,shop_order.address,shop_order.phone,shop_order.date_order,shop_order.trang_thai,shopping_cart_item.*,san_pham.name as product_name,san_pham.id   FROM shop_order 
+    $sql = "SELECT shop_order.id as shop_order_id ,shop_order.name,shop_order.address,shop_order.phone,shop_order.date_order,shop_order.trang_thai,shopping_cart_item.*,san_pham.name as product_name,san_pham.id,san_pham.image   FROM shop_order 
     INNER JOIN shopping_cart_item ON shop_order.id=shopping_cart_item.order_id 
     INNER JOIN san_pham ON san_pham.id=shopping_cart_item.product_id WHERE shop_order.id=$id";
     return pdo_query($sql);

@@ -185,7 +185,13 @@ if (isset($_GET['act'])) {
             die;
             break;
 
-        case '':
+        case 'updatedonhang':
+            $id = $_GET['id'];
+            $trang_thai = $_GET['trang_thai'];
+            updatedonhang($id, $trang_thai);
+            header("location:index.php?act=lichsudon");
+            die;
+            include "view/lsdon.php";
             break;
         case '':
             break;
@@ -201,20 +207,19 @@ if (isset($_GET['act'])) {
             include "view/product_details.php";
             die;
             break;
-        // case 'binhluan':
-        //     if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
-        //         $noidung = $_POST['noidung'];
-        //         $idpro = $_POST['idpro'];
-        //         $iduser = $_SESSION['user']['id'];
-        //         $ngaybinhluan = date('h:i:sa d/m/Y');
-        //         insert_binhluan($noidung,$iduser,$idpro,$ngaybinhluan);
-        //         header("location: ".$_SERVER['HTTP_REFERER']);
-        //     }
-        //     break;
+            // case 'binhluan':
+            //     if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
+            //         $noidung = $_POST['noidung'];
+            //         $idpro = $_POST['idpro'];
+            //         $iduser = $_SESSION['user']['id'];
+            //         $ngaybinhluan = date('h:i:sa d/m/Y');
+            //         insert_binhluan($noidung,$iduser,$idpro,$ngaybinhluan);
+            //         header("location: ".$_SERVER['HTTP_REFERER']);
+            //     }
+            //     break;
 
         case 'loadbl':
-            if(isset($_GET['id'])&& ($_GET['id'])>0){
-
+            if (isset($_GET['id']) && ($_GET['id']) > 0) {
             }
     }
 }
@@ -253,7 +258,7 @@ if (isset($_GET['act'])) {
 
             break;
         case '':
-           
+
             break;
 
 
