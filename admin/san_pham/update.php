@@ -7,7 +7,7 @@
     <div class="row">
         <input type="hidden" name="image" value="<?= $one_sp['image']?>">
         <input  type="file" name="image">
-        <img src="../images/<?= $one_sp['image']?>" width="70">
+        <img src="../images/<?= $one_sp['image']?>" width="70px">
     </div>
     <div class="row">
         <input required type="number" name="price" id="" placeholder="Nhập giá sản phẩm *" value="<?= $one_sp['price'] ?>">
