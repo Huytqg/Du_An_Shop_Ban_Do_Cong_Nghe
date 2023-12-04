@@ -649,6 +649,7 @@ h2{
 
 .hienthibinhluan{
     display: flex;
+    flex-direction: column;
    justify-content:flex-start;
    align-items: flex-start;
    margin: 20px 20px;
@@ -660,6 +661,7 @@ h2{
     border-radius: 100%;
     background-color: #ccc;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-right: 20px;
@@ -673,4 +675,14 @@ h2{
 
 .ngaybl{
     margin: 10px 0;
+}
+
+.nd_bl{
+    position: relative;
+    left: 7%;
+    bottom: 50px;
+}
+
+.cmt{
+    height: 300px;
 }

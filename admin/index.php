@@ -1,10 +1,6 @@
 <?php
-<<<<<<< HEAD
-// session_start();
-=======
 session_start();
 date_default_timezone_set('Asia/Ho_Chi_Minh');
->>>>>>> 3ada0b52bae82991b991264cd5c2e65c7db30aeb
 include "../controller/pdo.php";
 include "../controller/danh_muc.php";
 include "../controller/bien_the.php";
@@ -12,11 +8,8 @@ include "../controller/san_pham.php";
 include "../controller/khach_hang.php";
 include "../controller/users.php";
 include "../controller/don_hang.php";
-<<<<<<< HEAD
-=======
 include "../controller/thongke.php";
 
->>>>>>> 3ada0b52bae82991b991264cd5c2e65c7db30aeb
 include "header.php";
 if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
     if (isset($_GET['act'])) {

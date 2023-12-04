@@ -2,14 +2,12 @@
     session_start();
     include "../../controller/pdo.php";
     include "../../controller/binhluan.php";
-    // $id = $_REQUEST['id'];
-    // $dsbl = loadall_binhluan($id);
-if(isset($listbinhluan)){
-    extract($listbinhluan);
-}
+    $dsbl = loadall_binhluan();
 
-var_dump($listbinhluan);
-die;
+
+
+// var_dump($dsbl);
+// die;
 ?>
 
 <!DOCTYPE html>
@@ -27,37 +25,44 @@ die;
             font-size: 1.5vw;
             color: #333;
         }
+
+        .box_footer{
+            height: 80px;
+        }
     </style>
 </head>
 <body>
     <div class="row mb">
-        <div class="box_title">BÌNH LUẬN</div>
+        <!-- <div class="box_title">BÌNH LUẬN</div> -->
         <div class="box_content2 binhluan">
             <table>
-                <tr>
+                <!-- <tr>
                     <th>NỘI DUNG</th>
                     <th>ID USER</th>
                     <th>NGÀY BÌNH LUẬN</th>
-                </tr>
+                </tr> -->
 
-                <td><?=$name?></td>
+          
                 <?php
                     
-                    // foreach ($listbinhluan as $bl) {
+                    // foreach ( $dsbl as $bl) {
                     //     extract($bl);
-                    //     $linkdm = "index.php?act=sanpham&iddm=".$id;
                     //     echo '<tr><td>'.$noidung.'</td>';
-                    //     echo '<td>'.$iduser.'</td>';
-                    //     echo '<td>'.$ngaybinhluan.'</td></tr>';
+                    //     // echo '<td>'.$iduser.'</td>';
+                    //     echo '<td>'.$name.'</td>';
+                    //     // echo '<td>'.$ngaybinhluan.'</td></tr>';
                     // }
                 ?>
             </table>
         </div>
         <div class="box_footer sear_box">
             <form action="<?=$_SERVER['PHP_SELF'];?>" method="post">
-                <input type="hidden" name="id" value="<?= $id?>">
-                <input type="text" name="noidung" >
-                <input type="text" name="name" >
+                <input type="hidden" name="id" value="<?= $id?>"><br>
+                Name: <br>
+                <input type="text" name="name" style="outline: none ;"><br>
+                Nội dung bình luận: <br>
+                <input type="text" name="noidung" style="width: 400px;
+                height: 80px; outline:none;border-radius: 8px;"><br><br>
                 <input type="submit" name="guibinhluan" value="GỬI BÌNH LUẬN">
             </form>
         </div>
@@ -75,6 +80,7 @@ die;
         }
         
     ?>
+    <a href="../../signin_gia_huy.php"></a>
 </body>
 </html>
 
