@@ -9,8 +9,18 @@ include "../controller/khach_hang.php";
 include "../controller/users.php";
 include "../controller/don_hang.php";
 include "../controller/thongke.php";
-
-include "header.php";
+include "../admin/validate.php";
+// function validateName($name)
+// {
+//     $oneName = Onedm_name($name);
+//     if (empty($name)) {
+//         return "Tên không được bỏ trống!";
+//     } elseif($name=$oneName){
+//         return"Ten da ton tai";
+//     }
+//     return "";
+// }
+include "header.php";    
 if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
     if (isset($_GET['act'])) {
         $act = $_GET['act'];
@@ -18,12 +28,17 @@ if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
             case 'adddm':
                 if (isset($_POST['add_dm']) && ($_POST['add_dm'])) {
                     $name = $_POST['name'];
+                    $nameErr = validateName($name);
                     $oneName = Onedm_name($name);
-                    if ($name == $oneName['name']) {
-                        $err = "Danh mục đã tồn tại";
-                        header("location:index.php?act=adddm&err=" . $err);
-                        die;
-                    } else {
+                    // var_dump($oneName);die;
+                    // if ($name == $oneName['name']) {
+                    //     $err = "Danh mục đã tồn tại";
+                    //     // header("location:index.php?act=adddm&err=" . $err);
+                    //     // die;
+                    // } 
+                    // var_dump($_POST);die;
+
+                    if (empty($nameErr)){
                         insertdm($name);
                         $thong_bao = "Thêm thành công";
                         header("location:index.php?act=listdm&thong_bao=" . $thong_bao);
@@ -320,7 +335,7 @@ if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
                     $sql = "SELECT * FROM bien_the";
                     return pdo_query($sql);
                 }
-$listbt = all_bienThe();
+                $listbt = all_bienThe();
                 include "bien_the/list.php";
                 break;
             case '':
