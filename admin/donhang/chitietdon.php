@@ -17,7 +17,7 @@
         <td><?= $chitietdon[0]['name'] ?></td>
         <td><?= $chitietdon[0]['address'] ?></td>
         <td><?= $chitietdon[0]['phone'] ?> </td>
-        <td><?= date($chitietdon[0]['date_order'])  ?></td>
+        <td><?= date("H:i d/m/Y", $chitietdon[0]['date_order'])  ?></td>
     </tr>
 
 
@@ -32,7 +32,6 @@
 
     <tr>
         <th>ID SẢN PHẨM</th>
-        <th>HÌNH ẢNH</th>
         <th>TÊN SẢN PHẨM</th>
         <th>SỐ LƯỢNG</th>
         <th>GIÁ TIỀN</th>
@@ -48,9 +47,8 @@
         $total += $ttien;
         ?>
 
-        <tr >
+        <tr>
             <td><?= $ctdon['id'] ?></td>
-            <td><img style="width: 100px;" src="images/<?= $ctdon['image'] ?>" > </td>
             <td><?= $ctdon['product_name'] ?></td>
             <td><?= $ctdon['quantity'] ?></td>
             <td><?= $ctdon['price'] ?></td>

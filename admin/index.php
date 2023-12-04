@@ -1,16 +1,14 @@
 <?php
 session_start();
-date_default_timezone_set('Asia/Ho_Chi_Minh');
 include "../controller/pdo.php";
 include "../controller/danh_muc.php";
-include "../controller/bien_the.php";
 include "../controller/san_pham.php";
 include "../controller/khach_hang.php";
 include "../controller/users.php";
 include "../controller/don_hang.php";
-include "../controller/thongke.php";
 
 include "header.php";
+
 if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
     if (isset($_GET['act'])) {
         $act = $_GET['act'];
@@ -72,30 +70,6 @@ if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
                     header("location:index.php?act=listdm&thong_bao=" . $thong_bao);
                 }
                 include "danh_muc/update.php";
-                break;
-            case 'addbienthe':
-                if (isset($_POST['add_bienthe']) && ($_POST['add_bienthe'])) {
-                    $name = $_POST['name'];
-                    $category_id = $_POST['category_id'];
-                    // $oneNamebt = Onebienthe_name($name);
-                    // // var_dump($name);
-                    // var_dump($oneNamebt);
-                    // die;
-                    // if ($name == $oneNamebt['name']) {
-                    //     $err = "Biến thể đã tồn tại";
-                    //     header("location:index.php?act=addbienthe&err=" . $err);
-                    //     die;
-                    // } else {
-                    //     var_dump($name);
-                    //     var_dump($oneNamebt['name']);
-                    insertbienthe($name, $category_id);
-                    $thong_bao = "Thêm thành công";
-                    // header("location:index.php?act=listbienthe&thong_bao=" . $thong_bao);
-                    die;
-                    // }
-                }
-                $all_dm = alldm();
-                include "bien_the/add.php";
                 break;
 
             case 'addsp':
@@ -226,17 +200,17 @@ if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
                 include "khach_hang/listkh.php";
                 break;
             case 'listdonhang':
-                if (isset($_POST['timkiem']) && ($_POST['timkiem'])) {
+                if (isset($_POST['timkiem']) && ($_POST['timkiem']) ) {
                     $key = $_POST['key'];
-                } else {
+                } else{
                     $key = "";
                 }
-                if (isset($_POST['loc']) && ($_POST['loc'])) {
+                if (isset($_POST['loc']) && ($_POST['loc']) ) {
                     $trang_thai = $_POST['trang_thai'];
-                } else {
+                } else{
                     $trang_thai = 0;
                 }
-
+                
                 $listdonhang = all_donhang($key, $trang_thai);
                 include "donhang/list.php";
                 break;
@@ -259,87 +233,16 @@ if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
                     $id = $_POST['id'];
                     $trang_thai = $_POST['trang_thai'];
                     updatedonhang($id, $trang_thai);
-                    if ($_POST['trang_thai'] == 3) {
-                        $now = date('Y-m-d');
-                        $listorder = lietkeOrder();
-                        $thongke = thongke($now);
-                        $soluongmua = 0;
-                        $doanhthu = 0;
-                        foreach ($listorder as $lietke) {
-                            $soluongmua += $lietke['quantity'];
-                            $doanhthu += $lietke['price'];
-                        }
-                        // var_dump($soluongmua,$doanhthu);die;
-                        if (count($thongke) == 0) {
-                            $soluongban = $soluongmua;
-                            $doanhthu = $doanhthu;
-                            $donhang = 1;
-                            insertthongke($now, $donhang, $doanhthu, $soluongban);
-                        } elseif (count($thongke) != 0) {
-                            foreach ($thongke as $thongke) {
-                                $soluongban =  $soluongmua;
-                                $doanhthu =  $doanhthu;
-                                $donhang = $thongke['don_hang'] + 1;
-                                // var_dump($soluongban,$doanhthu);die;
-                                updatethongke($now, $donhang, $doanhthu, $soluongban);
-                            }
-                        }
-                        header("location:index.php?act=listdonhang");
-                        die;
-                    };
-                    // $now = date('Y-m-d');
-                    // $listorder = lietkeOrder();
-                    // $thongke = thongke($now);
-                    // $soluongmua = 0;
-                    // $doanhthu = 0;
-                    // foreach ($listorder as $lietke) {
-                    //     $soluongmua += $lietke['quantity'];
-                    //     $doanhthu += $lietke['price'];
-                    // }
-                    // if (count($thongke) == 0) {
-                    //     $soluongban = $soluongmua;
-                    //     $doanhthu = $doanhthu;
-                    //     $donhang = 1;
-                    //     insertthongke($now, $donhang, $doanhthu, $soluongban);
-                    // } elseif (count($thongke) != 0) {
-                    //     foreach ($thongke as $thongke) {
-                    //         $soluongban = $thongke['so_luong_ban'] + $soluongmua;
-                    //         $doanhthu = $thongke['doanh_thu'] + $doanhthu;
-                    //         $donhang = $thongke['don_hang'] + 1;
-                    //         updatethongke($now, $donhang, $doanhthu, $soluongban);
-                    //     }
-                    // }
-                    // header("location:index.php?act=listdonhang");
-                    // die;
+                    header("location:index.php?act=listdonhang");
+                    die;
                 }
-                header("location:index.php?act=listdonhang");
                 include "khach_hang/listkh.php";
-            case 'listbienthe':
-                function all_bienThe()
-                {
-                    $sql = "SELECT * FROM bien_the";
-                    return pdo_query($sql);
-                }
-$listbt = all_bienThe();
-                include "bien_the/list.php";
-                break;
-            case '':
-                break;
-            case '':
-                break;
-            case '':
-                break;
-
-
 
             default:
 
                 break;
         }
     } else {
-        $now = date('Y-m-d');
-        $thongke = thongke($now);
-        $allthongke = allthongke();
         include "main.php";
     }
     include "footer.php";

@@ -7,7 +7,6 @@
     <title>product details</title>
     <link rel="stylesheet" href="./css/product_details.css">
     <link rel="stylesheet" href="../fontawesome-free-6.4.2-web/css/all.css">
-    
 </head> -->
 <?php
 if (is_array($listctsp) && isset($listctsp)) {
@@ -16,28 +15,24 @@ if (is_array($listctsp) && isset($listctsp)) {
 }
 if (isset($_GET['id']) && ($_GET['id'] > 0)) {
     // print_r($listctsp);die;
-    $nameDm = oneDM($_GET['id']);
+    $nameDm = nameDm($_GET['id']);
 }
 // var_dump($nameDm);  
-// die;
 
 
-
-
-include "./headercts.php";
-
-$dsbl = loadall_binhluan();
 ?>
 
 <body>
-    <form action="index.php?act=ctsp" method="post" enctype="multipart/form-data">
+    <form action="index.php?act=ctsp" method="post">
         <div class="container">
             <div class="hea"></div>
             <div class="m-jc">
                 <div class="m-js ">
-                    <a href="index.php">Trang chủ</a>
+                    <a href="index.php">
+                        Trang chủ
+                    </a>
                     <span>/</span>
-                    <a href="index.php?act=loaisp&id=<?= $nameDm['id'] ?>" name="name"><?= $nameDm['name'] ?></a>
+                    <a href="index.php" name="name"><?= $nameDm['name'] ?></a>
                     <span>/</span>
                     <a href="#"><?= $name ?></a>
 
@@ -562,136 +557,51 @@ $dsbl = loadall_binhluan();
             </div>
             <div id="readMoreBtn">Đọc thêm</div>
             <div class="cauhoithuonggap">
-                <h3>Câu hỏi thường gặp</h3>
-                <div class="line"></div>
-                <div class="nd_ct actives">
-                    <div class="tieude">
-                        <h6><i class="fa-solid fa-circle-question" style="color:black;"></i>
-                            Chip xử lí của iPhone 14 Pro max có gì đặc biệt ?</h6>
-                        <i class="add fa-solid fa-circle-plus" id="left" style="color:black;"></i>
-                    </div>
-                    <div class="content_p">
-                        <p>iPhone 14 Pro Max chạy chip A16 Bionic. Con chip thế hệ mới của Apple tập hợp 16 tỷ bóng bán dẫn, bao gồm 6 lõi CPU và 5 lõi GPU, giúp sản phẩm xử lý được khối lượng thông tin khổng lồ một cách chuyên nghiệp. Ngoài ra, A16 Bionic giúp thiết bị tiết kiệm pin tối đa, thực hiện các tác vụ đồ họa phức tạp để chạy mượt mọi tựa game.</p>
-
-                    </div>
-                </div>
-
-                <div class="nd_ct actives">
-                    <div class="tieude">
-                        <h6><i class="fa-solid fa-circle-question" style="color:black;"></i>
-                            Chip xử lí của iPhone 14 Pro max có gì đặc biệt ?</h6>
-                        <i class="add fa-solid fa-circle-plus" id="left" style="color:black;"></i>
-                    </div>
-                    <div class="content_p">
-                        <p>iPhone 14 Pro Max chạy chip A16 Bionic. Con chip thế hệ mới của Apple tập hợp 16 tỷ bóng bán dẫn, bao gồm 6 lõi CPU và 5 lõi GPU, giúp sản phẩm xử lý được khối lượng thông tin khổng lồ một cách chuyên nghiệp. Ngoài ra, A16 Bionic giúp thiết bị tiết kiệm pin tối đa, thực hiện các tác vụ đồ họa phức tạp để chạy mượt mọi tựa game.</p>
-
-                    </div>
-                </div>
-                <div class="nd_ct actives">
-                    <div class="tieude">
-                        <h6><i class="fa-solid fa-circle-question" style="color:black;"></i>
-                            Chip xử lí của iPhone 14 Pro max có gì đặc biệt ?</h6>
-                        <i class="add fa-solid fa-circle-plus" id="left" style="color:black;"></i>
-                    </div>
-                    <div class="content_p">
-                        <p>iPhone 14 Pro Max chạy chip A16 Bionic. Con chip thế hệ mới của Apple tập hợp 16 tỷ bóng bán dẫn, bao gồm 6 lõi CPU và 5 lõi GPU, giúp sản phẩm xử lý được khối lượng thông tin khổng lồ một cách chuyên nghiệp. Ngoài ra, A16 Bionic giúp thiết bị tiết kiệm pin tối đa, thực hiện các tác vụ đồ họa phức tạp để chạy mượt mọi tựa game.</p>
-
-                    </div>
-                </div>
-
-
-
-
-            </div>
-            <!-- <div class="binhluansp">
-                <h4>Đánh giá sản phẩm</h4>
+                <div class="nd-content">
+                    <h3>Câu hỏi thường gặp</h3>
                     <div class="line"></div>
-                    <div class="Tb_dg">
-                        <div class="dg1">
-                            <h6>Đánh giá trung bình</h6>
-                            <h2>5/5</h2>
-                            <div class="icon">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
+                    <div class="nd-chtg">
+                        <div class="nd-nd" id="nd-nd">
+                            <h6><i class="fa-solid fa-circle-question" style="color:black;"></i>
+                                Chip xử lý của iPhone 14 Pro max có gì đặc biệt
+                                <i class="fa-solid fa-circle-plus " id="click" style="color:black;"></i>
+                            </h6>
+                            <p>iPhone 14 Pro Max chạy chip A16 Bionic. Con chip thế hệ mới của Apple tập hợp 16 tỷ bóng bán dẫn, bao gồm 6 lõi CPU và 5 lõi GPU, giúp sản phẩm xử lý được khối lượng thông tin khổng lồ một cách chuyên nghiệp. Ngoài ra, A16 Bionic giúp thiết bị tiết kiệm pin tối đa, thực hiện các tác vụ đồ họa phức tạp để chạy mượt mọi tựa game.</p>
                         </div>
-                        <div class="dgsp2">
-                            <div class="dg2 ">
-                                <div class="number " style="margin-right:  10px;">5</div> 
-                                 <div class="underline" style="width: 100px; height: 5px;background-color: red;border-radius: 9px; margin-right: 10px;"></div>
-                                 <i class="fa-solid fa-star"></i><br>
-                            </div>
-                            <div class="dg2 ">
-                                <div class="number " style="margin-right:  10px;">4</div> 
-                                 <div class="underline" style="width: 80px; height: 5px;background-color: red;border-radius: 9px; margin-right: 10px;"></div>
-                                 <i class="fa-solid fa-star"></i><br>
-                            </div>
-                            <div class="dg2 ">
-                                <div class="number " style="margin-right:  10px;">3</div> 
-                                 <div class="underline" style="width: 60px; height: 5px;background-color: red;border-radius: 9px; margin-right: 10px;"></div>
-                                 <i class="fa-solid fa-star"></i><br>
-                            </div>
-                            <div class="dg2 ">
-                                <div class="number " style="margin-right:  10px;">2</div> 
-                                 <div class="underline" style="width: 40px; height: 5px;background-color: red;border-radius: 9px; margin-right: 10px;"></div>
-                                 <i class="fa-solid fa-star"></i><br>
-                            </div>
-                            <div class="dg2 ">
-                                <div class="number " style="margin-right:  10px;">1</div> 
-                                 <div class="underline" style="width: 20px; height: 5px;background-color: red;border-radius: 9px; margin-right: 10px;"></div>
-                                 <i class="fa-solid fa-star"></i><br>
-                            </div>
-                            
+                        <div class="line"></div>
+                        <div class="nd-nd">
+                            <h6>
+                                <i class="fa-solid fa-circle-question"style="color:black;"></i>
+                                Chip xử lý của iPhone 14 Pro max có gì đặc biệt
+                                <i class="fa-solid fa-circle-plus" id="left" style="color:black;"></i>
+                            </h6>
+                            <p>iPhone 14 Pro Max chạy chip A16 Bionic. Con chip thế hệ mới của Apple tập hợp 16 tỷ bóng bán dẫn, bao gồm 6 lõi CPU và 5 lõi GPU, giúp sản phẩm xử lý được khối lượng thông tin khổng lồ một cách chuyên nghiệp. Ngoài ra, A16 Bionic giúp thiết bị tiết kiệm pin tối đa, thực hiện các tác vụ đồ họa phức tạp để chạy mượt mọi tựa game.</p>
                         </div>
-                        <div class="dgsp3">
-                            <p>Bạn đã dùng sản phẩm này ?</p>
-                             <button class="btn">Gửi bình luận </button>
+                        <div class="line"></div>
+                        <div class="nd-nd">
+                            <h6><i class="fa-solid fa-circle-question" style="color:black;"></i>
+                                Chip xử lý của iPhone 14 Pro max có gì đặc biệt
+                                <i class="fa-solid fa-circle-plus" style="color:black;"></i>
+                            </h6>
+                            <p>iPhone 14 Pro Max chạy chip A16 Bionic. Con chip thế hệ mới của Apple tập hợp 16 tỷ bóng bán dẫn, bao gồm 6 lõi CPU và 5 lõi GPU, giúp sản phẩm xử lý được khối lượng thông tin khổng lồ một cách chuyên nghiệp. Ngoài ra, A16 Bionic giúp thiết bị tiết kiệm pin tối đa, thực hiện các tác vụ đồ họa phức tạp để chạy mượt mọi tựa game.</p>
+                        </div>
+                        <div class="line"></div>
+                        <div class="nd-nd">
+                            <h6><i class="fa-solid fa-circle-question" style="color:black;"></i>
+                                Chip xử lý của iPhone 14 Pro max có gì đặc biệt
+                                <i class="fa-solid fa-circle-plus" style="color:black;"></i>
+                            </h6>
+                            <p>iPhone 14 Pro Max chạy chip A16 Bionic. Con chip thế hệ mới của Apple tập hợp 16 tỷ bóng bán dẫn, bao gồm 6 lõi CPU và 5 lõi GPU, giúp sản phẩm xử lý được khối lượng thông tin khổng lồ một cách chuyên nghiệp. Ngoài ra, A16 Bionic giúp thiết bị tiết kiệm pin tối đa, thực hiện các tác vụ đồ họa phức tạp để chạy mượt mọi tựa game.</p>
                         </div>
                     </div>
-
-            </div> -->
-
-            <div class="hoidap">
-                <h2>Bình luận</h2>
-                <div class="cmt">
-                    <iframe src="view/binhluan/binhluanform.php?act=ctsp&id=<?=$_GET['id']?>" width="100%" height="400px" frameborder="0"></iframe>
                 </div>
-
-                <div class="tsl">
-
-                </div>
-
-                <div class="hienthibinhluan">
-                    <?php
-                    foreach ($dsbl as $bl) {
-                        extract($bl);
-                    ?>
-                        <div class="name">
-                            <p><?= $bl['name'] ?></p>
-
-                        </div>
-                        <div class="nd_bl">
-
-                            <p><?= $bl['name'] ?></p>
-                            <p><?= $bl['noidung'] ?></p>
-                            <div class="ngaybl">
-                                <?= $bl['postdate'] ?>
-                            </div>
-                        </div>
-                    <?php
-                    }
-                    ?>
-
-
-                </div>
-
             </div>
+            <div class="binhluansp"></div>
+        </div>
+
     </form>
     <script src="view/js/product_details.js"></script>
-    </script>
+</script>
 
 </body>
 <script>

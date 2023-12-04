@@ -5,8 +5,6 @@ include "controller/danh_muc.php";
 include "controller/san_pham.php";
 include "controller/users.php";
 include "controller/gio_hang.php";
-include "controller/don_hang.php";
-include "controller/binhluan.php";
 // include "header.php";
 if (!isset($_SESSION['mycart'])) {
     $_SESSION['mycart'] = [];
@@ -64,7 +62,8 @@ if (isset($_GET['act'])) {
                         header("location:admin/index.php");
                         die;
                     }
-                } else {
+                }
+                else {
                     $err = "Tài khoản hoặc mật khẩu không đúng !";
                     header("location:signin_gia_huy.php");
                     die;
@@ -92,14 +91,15 @@ if (isset($_GET['act'])) {
             }
             include "./quenmk.php";
             break;
-        case 'addtocart':
-            if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
-                update_cart(true);
+           
+        case 'ctsp':
+            if(isset($_GET['id'])&&($_GET['id']>0)){
+                $id=$_GET['id'];    
+                $listctsp=one_sp($id);
             }
             header("location:index.php");
             include "main.php";
             break;
-
         case 'buynow':
             if (isset($_POST['buynow']) && ($_POST['buynow'])) {
                 update_cart(true);
@@ -128,6 +128,14 @@ if (isset($_GET['act'])) {
             } elseif (isset($_POST['order_click']) && ($_POST['order_click'])) {
                 include "header.php";
                 update_cart();
+                // $quantity = $_POST['quantity'];
+                // $price = $_POST['price'];
+
+
+                // $one_sp=one_sp_order();
+                // $id = $one_sp['id'] + 1;
+                // var_dump($id); exit;
+                // insert_shopping_cart_item($id,$quantity,$price,$product_id,$shopping_cart_id);
                 include "view/payment.php";
                 include "footer.php";
                 die;
@@ -145,7 +153,10 @@ if (isset($_GET['act'])) {
                 } elseif (empty($_POST['select'])) {
                     $err = "Vui lòng chọn phương thức thanh toán";
                 } else {
+                    // var_dump($_POST['phone']);
+                    // die;
                     $pro = one_in_sp();
+                    // var_dump($pro);exit;
                     $total = 0;
                     $orderProducts = array();
                     foreach ($pro as $cart) {
@@ -156,15 +167,9 @@ if (isset($_GET['act'])) {
                     $phone = $_POST['phone'];
                     $address = $_POST['address'];
                     $desc_order = $_POST['desc_order'];
-                    $date_order = date('Y-m-d');
-                    if (isset($_SESSION['username'])) {
-                        $user_id = $_SESSION['username']['id'];
-                        // $one_user = one_user($user_id);
-                    } else {
-                        $user_id = 0;
-                    }
-                    // var_dump( $_SESSION['username']); die;
-                    insert_shop_order($name, $phone, $address, $desc_order, $total, $date_order, $user_id);
+                    $date_order = time();
+                    insert_shop_order($name, $phone, $address, $desc_order, $total, $date_order);
+
                     $one_order = one_sp_order();
                     $one_order_id = $one_order['id'];
                     $array = "";
@@ -174,55 +179,24 @@ if (isset($_GET['act'])) {
                             $array .= ",";
                         }
                     }
+                    // var_dump($array); exit;
                     insert_shopping_cart_item($array);
                 }
-                header("location:index.php?act=chitietdon&id=$one_order_id");
-                die;
             }
+            // header("location:index.php");
             include "header.php";
             include "view/payment.php";
             include "footer.php";
             die;
             break;
-
-        case 'updatedonhang':
-            $id = $_GET['id'];
-            $trang_thai = $_GET['trang_thai'];
-            updatedonhang($id, $trang_thai);
-            header("location:index.php?act=lichsudon");
-            die;
-            include "view/lsdon.php";
+        case '':
             break;
         case '':
             break;
-        case 'ctsp':
-            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
-                $id = $_GET['id'];
-                $listctsp = one_sp($id);
-                $nameDm = oneDM($id);
-                // var_dump($nameDm['id']);
-                // die;
-                // header("location:index.php?act=ctsp");
-            }
-            include "view/product_details.php";
-            die;
+        case '':
             break;
-        // case 'binhluan':
-        //     if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
-        //         $noidung = $_POST['noidung'];
-        //         $id = $_POST['id'];
-        //         $ngaybinhluan = date('h:i:sa d/m/Y');
-        //         $name=$_POST['name'];
-        //         insert_binhluan($noidung,$id,$ngaybinhluan,$name);
-        //         header("location: ".$_SERVER['HTTP_REFERER']);
-        //     }
-        //     include "view/product_details.php";
-        //     break;
-
-        case 'loadbl':
-            $listbinhluan=loadall_binhluan($id);
-        include "./view/binhluan/binhluanform.php";
-        break;
+        case '':
+            break;
     }
 }
 $list_dm = alldm();
@@ -238,24 +212,9 @@ if (isset($_GET['act'])) {
             }
             include "view/loaisp.php";
             break;
-        case 'lichsudon':
-            if (isset($_SESSION['username'])) {
-                $user_id = $_SESSION['username']['id'];
-                $listdonhang = lsdonhang($user_id);
-            }
-            // include "admin/donhang/chitietdon.php";
-            include "view/lsdon.php";
+        case '':
+
             break;
-
-
-        case 'chitietdon':
-            if (isset($_GET['id']) && $_GET['id'] > 0) {
-                $id = $_GET['id'];
-                $chitietdon = joindonhang($id);
-            }
-            include "admin/donhang/chitietdon.php";
-            break;
-
         case '':
 
             break;
