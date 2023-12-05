@@ -74,7 +74,7 @@
             $id = $_POST['id'];
             $name=$_POST['name'];
             // $iduser = $_SESSION['user']['id'];
-            $ngaybinhluan = date('h:i:sa d/m/Y');
+            $ngaybinhluan = date(' d/m/Y ');
             insert_binhluan($id,$name,$noidung,$ngaybinhluan);
             header("location: ".$_SERVER['HTTP_REFERER']);
         }
