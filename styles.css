@@ -219,13 +219,13 @@ header .icons #menu-bars{
     background: var(--green);
 }
 
-.dishes .box-container{
+.phone .box-container{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
     gap: 1.5rem;
 }
 
-.dishes .box-container .box{
+.phone .box-container .box{
     padding: 2.5rem;
     background: #fff;
     border-radius: .5rem;
@@ -236,8 +236,8 @@ header .icons #menu-bars{
     text-align: center;
 }
 
-.dishes .box-container .box .fa-heart,
-.dishes .box-container .box .fa-eye{
+.phone .box-container .box .fa-heart,
+.phone .box-container .box .fa-eye{
     position: absolute;
     top: 1.5rem;
     background: #eee;
@@ -249,49 +249,49 @@ header .icons #menu-bars{
     color: var(--black);
 }
 
-.dishes .box-container .box .fa-heart:hover,
-.dishes .box-container .box .fa-eye:hover{
+.phone .box-container .box .fa-heart:hover,
+.phone .box-container .box .fa-eye:hover{
     background: var(--green);
     color: #fff;
 }
 
-.dishes .box-container .box .fa-heart{
+.phone .box-container .box .fa-heart{
     right: -15rem;
 }
 
-.dishes .box-container .box .fa-eye{
+.phone .box-container .box .fa-eye{
     left: -15rem;
 }
 
-.dishes .box-container .box:hover .fa-heart{
+.phone .box-container .box:hover .fa-heart{
     right: 1.5rem;
 }
 
-.dishes .box-container .box:hover .fa-eye{
+.phone .box-container .box:hover .fa-eye{
     left: 1.5rem;
 }
 
-.dishes .box-container .box img{
+.phone .box-container .box img{
     height: 17rem;
     margin: 1rem 0;
 }
 
-.dishes .box-container .box h3{
+.phone .box-container .box h3{
     color: var(--black);
     font-size: 2.5rem;
 }
 
-.dishes .box-container .box .stars{
+.phone .box-container .box .stars{
     padding: 1rem 0;
 }
 
 
-.dishes .box-container .box .stars i{
+.phone .box-container .box .stars i{
     font-size: 1.7rem;
     color: var(--green);
 }
 
-.dishes .box-container .box span{
+.phone .box-container .box span{
     color: var(--green);
     font-weight: bolder;
     margin-right: 1rem;

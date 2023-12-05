@@ -17,7 +17,7 @@
         <a href="index.php" class="logo"><img src="Logo team 13/logo_2_2.png" alt="" style="width: 100px;"></a>
         <nav class="navbar">
             <a class="active" href="#home">home</a>
-            <a href="#dishes">Dishes</a>
+            <a href="#phone">Phone</a>
             <a href="#about">About</a>
             <a href="#menu">Menu</a>
             <a href="#review">Review</a>
