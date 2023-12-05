@@ -13,9 +13,9 @@
 </head>
 
 <body>
-    <header>
-        <h1>logo</h1>
-    </header>
+    <div style="width: 100%; height: 50px; text-align: center;">
+        <h1><img src="../images/Logo team 13/logo_2_2.png" alt="" style="width: 200px;"></h1>
+    </div>
     <section class="admin-content">
         <div class="admin-content-left">
             <ul>
