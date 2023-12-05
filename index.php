@@ -55,7 +55,7 @@ if (isset($_GET['act'])) {
                 if ($check_user['role'] == "user") {
                     if (is_array($check_user)) {
                         $_SESSION['username'] = $check_user;
-                        header("location:index.php");
+                        header("location:admin/index.php");
                         die;
                     }
                 } elseif ($check_user['role'] == "admin") {
@@ -207,7 +207,6 @@ if (isset($_GET['act'])) {
             include "view/product_details.php";
             die;
             break;
-<<<<<<< HEAD
         // case 'binhluan':
         //     if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
         //         $noidung = $_POST['noidung'];
@@ -224,22 +223,6 @@ if (isset($_GET['act'])) {
             $listbinhluan=loadall_binhluan($id);
         include "./view/binhluan/binhluanform.php";
         break;
-=======
-            // case 'binhluan':
-            //     if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
-            //         $noidung = $_POST['noidung'];
-            //         $idpro = $_POST['idpro'];
-            //         $iduser = $_SESSION['user']['id'];
-            //         $ngaybinhluan = date('h:i:sa d/m/Y');
-            //         insert_binhluan($noidung,$iduser,$idpro,$ngaybinhluan);
-            //         header("location: ".$_SERVER['HTTP_REFERER']);
-            //     }
-            //     break;
-
-        case 'loadbl':
-            if (isset($_GET['id']) && ($_GET['id']) > 0) {
-            }
->>>>>>> 215406dc7241cd8ce24d38fb8919b9c34c0e467d
     }
 }
 $list_dm = alldm();

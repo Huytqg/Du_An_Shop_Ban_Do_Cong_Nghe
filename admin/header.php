@@ -10,7 +10,6 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
-
 </head>
 
 <body>
@@ -44,6 +43,7 @@
                 <ul>
                     <li><a href="index.php?act=listdonhang">Quản lí đơn hàng</a></li>
                 </ul>
+                <li><a href="../index.php">Trang chủ khách hàng</a></li>
                 <li><a href="../index.php?act=thoat">Đăng xuất</a></li>
 
             </ul>
