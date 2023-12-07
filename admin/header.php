@@ -10,13 +10,12 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 
-
 </head>
 
 <body>
-    <header>
-        <h1>logo</h1>
-    </header>
+    <div style="width: 100%; height: 50px; text-align: center;">
+        <h1><img src="../images/Logo team 13/logo_2_2.png" alt="" style="width: 200px;"></h1>
+    </div>
     <section class="admin-content">
         <div class="admin-content-left">
             <ul>
@@ -44,6 +43,7 @@
                 <ul>
                     <li><a href="index.php?act=listdonhang">Quản lí đơn hàng</a></li>
                 </ul>
+                <li><a href="../index.php">Trang chủ khách hàng</a></li>
                 <li><a href="../index.php?act=thoat">Đăng xuất</a></li>
 
             </ul>
