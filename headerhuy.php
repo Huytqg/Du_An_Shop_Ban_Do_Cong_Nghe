@@ -1,3 +1,25 @@
+<?php
+include_once('controller/connect.php');
+
+
+$sql = 'SELECT danh_muc.name
+        FROM danh_muc';
+
+$result = $conn->query($sql);
+$hang = '';
+if ($result) {
+    $listnamedanhmuc = $result->fetchAll(PDO::FETCH_ASSOC);
+    if ($listnamedanhmuc) {
+        foreach ($listnamedanhmuc as $key => $item) {
+            $hang .= '
+                <tr>
+                    <td>'. $item["name"] . '</td>
+                </tr>
+            ';
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,9 +39,16 @@
         <a href="index.php" class="logo"><img src="Logo team 13/logo_2_2.png" alt="" style="width: 100px;"></a>
         <nav class="navbar">
             <a class="active" href="#home">home</a>
-            <a href="#phone">Phone</a>
+            <a href="#dishes">Dishes</a>
             <a href="#about">About</a>
-            <a href="#menu">Menu</a>
+            <div class="dropdown">
+                <button class="dropbtn"><a href="#menu">Menu</a></button>
+                <div class="dropdown-content">
+                    <a href="#"><?= $hang ?></a>
+                    <!-- <a href="#">Link 2</a>
+                    <a href="#">Link 3</a> -->
+                </div>
+            </div>
             <a href="#review">Review</a>
             <a href="#order">Order</a>
         </nav>
