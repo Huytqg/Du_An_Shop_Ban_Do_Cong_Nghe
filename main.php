@@ -24,6 +24,21 @@
             </div>
         </div>
     </div><br>
+    <!-- Tìm kiếm sản phẩm -->
+    <div class="container-xxl">
+    <table border="1">
+            <tr>
+                <th colspan="3" style="text-align:center;">Kết quả tìm kiếm</th>
+            </tr>
+            <tr>
+                <td><?php echo'<img src="./images/' . $row->image . '" alt="" style="width:150px">'?></td>
+                <td><?php echo $row->name; ?></td>
+                <td><?php echo $row->price; ?></td>
+            </tr>
+
+        </table>
+    </div>
+    <!-- Hết tìm kiếm sản phẩm -->
     <!-- Shop -->
     <section class="shop container">
         <h2 class="section-title">Sản phẩm bán chạy</h2>
