@@ -4,14 +4,14 @@
     <tr>
         <th>ID </th>
         <th>TÊN </th>
-        <th>CATEGORY_ID</th>
+        <!-- <th>PRODUCT_ID</th> -->
         <th>TÙY BIẾN</th>
     </tr>
     <?php foreach ($listbt as $bt) : ?>
         <tr>
             <td><?= $bt['id'] ?></td>
             <td><?= $bt['name'] ?></td>
-            <td><?= $bt['category_id'] ?></td>
+            <!-- <td><?= $bt['product_id'] ?></td> -->
             <td><a href="index.php?act=editbt&&id=<?= $bt['id'] ?>"><i class='bx bx-edit'></i></a> -
                 <a onclick="return confirm('Bạn có muốn xóa không?')" href="index.php?act=deletebt&&id=<?= $bt['id'] ?>"><i class='bx bx-trash'></i></a>
             </td>

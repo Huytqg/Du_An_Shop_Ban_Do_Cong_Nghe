@@ -94,25 +94,12 @@ if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
             case 'addbienthe':
                 if (isset($_POST['add_bienthe']) && ($_POST['add_bienthe'])) {
                     $name = $_POST['name'];
-                    $category_id = $_POST['category_id'];
-                    // $oneNamebt = Onebienthe_name($name);
-                    // // var_dump($name);
-                    // var_dump($oneNamebt);
-                    // die;
-                    // if ($name == $oneNamebt['name']) {
-                    //     $err = "Biến thể đã tồn tại";
-                    //     header("location:index.php?act=addbienthe&err=" . $err);
-                    //     die;
-                    // } else {
-                    //     var_dump($name);
-                    //     var_dump($oneNamebt['name']);
-                    insertbienthe($name, $category_id);
+                    insertbienthe($name);
                     $thong_bao = "Thêm thành công";
-                    // header("location:index.php?act=listbienthe&thong_bao=" . $thong_bao);
+                    header("location:index.php?act=listbienthe&thong_bao=" . $thong_bao);
                     die;
-                    // }
                 }
-                $all_dm = alldm();
+                // $all_dm = alldm();
                 include "bien_the/add.php";
                 break;
 
@@ -311,11 +298,6 @@ if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
                 header("location:index.php?act=listdonhang");
                 include "khach_hang/listkh.php";
             case 'listbienthe':
-                function all_bienThe()
-                {
-                    $sql = "SELECT * FROM bien_the";
-                    return pdo_query($sql);
-                }
                 $listbt = all_bienThe();
                 include "bien_the/list.php";
                 break;

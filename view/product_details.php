@@ -12,7 +12,8 @@ include "./headercts.php";
 ?>
 
 <body>
-    <form action="index.php?act=ctsp" method="post" enctype="multipart/form-data">
+    <form action="index.php?act=buynow" method="post">
+
         <div class="container">
             <div class="hea"></div>
             <div class="m-jc">
@@ -29,7 +30,6 @@ include "./headercts.php";
                 <div class="row" sty>
 
                     <!-- ================================================ -->
-
                     <div class="slideshow">
                         <div class="main box-sadow">
                             <img src="images/<?= $image ?>" class="img_feature">
@@ -153,22 +153,16 @@ include "./headercts.php";
                         </div>
 
 
-
+                        <input type="number" value="1" min="1" name="quantity[<?= $id ?>]" id="">
                         <!-- <div class="line"></div> -->
-
                         <div class="button_gh">
                             <div class="button1 box-sadow">
-                                <button>
-                                    <a href="#">Mua ngay</a></button>
-                            </div>
-                            <div class="button2 box-sadow ri">
-                                <button>
-                                    <a href="#">Thêm vào giỏ hàng</a>
-                                </button>
+                                <input class="button2 box-sadow ri" type="submit" name="buynow" value="Mua ngay">
                             </div>
                         </div>
 
                     </div>
+                    <form>
                 </div>
             </div>
 
