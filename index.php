@@ -55,7 +55,7 @@ if (isset($_GET['act'])) {
                 if ($check_user['role'] == "user") {
                     if (is_array($check_user)) {
                         $_SESSION['username'] = $check_user;
-                        header("location:admin/index.php");
+                        header("location:index.php");
                         die;
                     }
                 } elseif ($check_user['role'] == "admin") {
@@ -200,9 +200,6 @@ if (isset($_GET['act'])) {
                 $id = $_GET['id'];
                 $listctsp = one_sp($id);
                 $nameDm = oneDM($id);
-                // var_dump($nameDm['id']);
-                // die;
-                // header("location:index.php?act=ctsp");
             }
             include "view/product_details.php";
             die;

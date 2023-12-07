@@ -1,14 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>product details</title>
-    <link rel="stylesheet" href="./css/product_details.css">
-    <link rel="stylesheet" href="../fontawesome-free-6.4.2-web/css/all.css">
-    
-</head> -->
 <?php
 if (is_array($listctsp) && isset($listctsp)) {
     extract($listctsp);
@@ -18,15 +7,8 @@ if (isset($_GET['id']) && ($_GET['id'] > 0)) {
     // print_r($listctsp);die;
     $nameDm = oneDM($_GET['id']);
 }
-// var_dump($nameDm);  
-// die;
-
-
-
-
 include "./headercts.php";
-
-$dsbl = loadall_binhluan();
+// $dsbl = loadall_binhluan();
 ?>
 
 <body>
@@ -54,18 +36,6 @@ $dsbl = loadall_binhluan();
                             <div class="control prev"><i class="fa-solid fa-circle-chevron-left"></i></div>
                             <div class="control next"><i class="fa-solid fa-circle-chevron-right"></i></div>
                         </div>
-                        <!-- <div class="list_img box-sadow  " style="width: 200px;">
-                            <div><img src="images/"></div>
-                        <div><img src="./image/anh2.jpg" alt=""></div>
-                        <div ><img src="./image/anh3.jpg" alt=""></div>
-                        <div><img src="./image/anh5.jpg" alt=""></div>
-                        <div><img src="./image/anh5.jpg" alt=""></div>
-                        <div><img src="./image/anh5.jpg" alt=""></div>
-                        <div><img src="./image/anh5.jpg" alt=""></div>
-                        <div><img src="./image/anh6.jpg" alt=""></div>
-                        <div><img src="./image/anh6.jpg" alt=""></div>
-
-                        </div> -->
                         <div class="thongsokythuat">
                             <div class="thongso">
                                 <div class="manhing mr20 i"><i class="fa-solid fa-mobile "></i>6.7 inch, OLED, Super Retina XDR, 2796 x 1290 Pixels</div>
@@ -111,21 +81,6 @@ $dsbl = loadall_binhluan();
                         }
 
                         ?>
-                        <!-- <div class="tt_sp">
-                    <span>
-                        <div class="giasp">
-                            <div class="giakm_sp">
-                            </div>
-                            <div class="giathat_sp"></div>
-                        </div>
-                        <div class="tragop_sp">Trả góp chỉ từ <br>
-                            <strong>2.033.000</strong>₫/tháng
-                        </div>
-                    </span>
-
-
-                </div>
-             -->
                         <div class="dungluong_s">
                             <div class="GB ">
                                 <span><input type="radio" name="dungluong"> 128Gb </span>
@@ -603,88 +558,23 @@ $dsbl = loadall_binhluan();
 
 
             </div>
-            <!-- <div class="binhluansp">
-                <h4>Đánh giá sản phẩm</h4>
-                    <div class="line"></div>
-                    <div class="Tb_dg">
-                        <div class="dg1">
-                            <h6>Đánh giá trung bình</h6>
-                            <h2>5/5</h2>
-                            <div class="icon">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                        </div>
-                        <div class="dgsp2">
-                            <div class="dg2 ">
-                                <div class="number " style="margin-right:  10px;">5</div> 
-                                 <div class="underline" style="width: 100px; height: 5px;background-color: red;border-radius: 9px; margin-right: 10px;"></div>
-                                 <i class="fa-solid fa-star"></i><br>
-                            </div>
-                            <div class="dg2 ">
-                                <div class="number " style="margin-right:  10px;">4</div> 
-                                 <div class="underline" style="width: 80px; height: 5px;background-color: red;border-radius: 9px; margin-right: 10px;"></div>
-                                 <i class="fa-solid fa-star"></i><br>
-                            </div>
-                            <div class="dg2 ">
-                                <div class="number " style="margin-right:  10px;">3</div> 
-                                 <div class="underline" style="width: 60px; height: 5px;background-color: red;border-radius: 9px; margin-right: 10px;"></div>
-                                 <i class="fa-solid fa-star"></i><br>
-                            </div>
-                            <div class="dg2 ">
-                                <div class="number " style="margin-right:  10px;">2</div> 
-                                 <div class="underline" style="width: 40px; height: 5px;background-color: red;border-radius: 9px; margin-right: 10px;"></div>
-                                 <i class="fa-solid fa-star"></i><br>
-                            </div>
-                            <div class="dg2 ">
-                                <div class="number " style="margin-right:  10px;">1</div> 
-                                 <div class="underline" style="width: 20px; height: 5px;background-color: red;border-radius: 9px; margin-right: 10px;"></div>
-                                 <i class="fa-solid fa-star"></i><br>
-                            </div>
-                            
-                        </div>
-                        <div class="dgsp3">
-                            <p>Bạn đã dùng sản phẩm này ?</p>
-                             <button class="btn">Gửi bình luận </button>
-                        </div>
-                    </div>
-
-            </div> -->
-
             <div class="hoidap">
-                <h2>Bình luận</h2>
-                <div class="cmt">
-                    <iframe src="view/binhluan/binhluanform.php?act=ctsp&id=<?=$_GET['id']?>" width="100%" height="400px" frameborder="0"></iframe>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+                <script>
+                    $(document).ready(function() {
+                        $("#binhluan").load("view/binhluan/binhluanform.php", {
+                            product_id: <?= $id ?>
+                        });
+                    });;
+                </script>
+                <div class="row mb " id="binhluan">
+                    <div class="boxtitle">BÌNH LUẬN</div>
+                    <div class="boxcontent">
+
+                    </div>
                 </div>
 
                 <div class="tsl">
-
-                </div>
-
-                <div class="hienthibinhluan">
-                    <?php
-                    foreach ($dsbl as $bl) {
-                        extract($bl);
-                    ?>
-                        <div class="name">
-                            <p><?= $bl['name'] ?></p>
-
-                        </div>
-                        <div class="nd_bl">
-
-                            <p><?= $bl['name'] ?></p>
-                            <p><?= $bl['noidung'] ?></p>
-                            <div class="ngaybl">
-                                <?= $bl['postdate'] ?>
-                            </div>
-                        </div>
-                    <?php
-                    }
-                    ?>
-
 
                 </div>
 
