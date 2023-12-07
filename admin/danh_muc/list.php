@@ -16,3 +16,42 @@
         </tr>
     <?php endforeach ?>
 </table>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+<div id="myChart" style="width:100%; max-width:600px; height:500px;">
+</div>
+
+<script>
+    google.charts.load('current', {
+        'packages': ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart() {
+        const data = google.visualization.arrayToDataTable([
+            ['Contry', 'Mhl'],
+
+            <?php
+
+            $dmjoinsp = dmjoinsp();
+            // var_dump($allthongke);die;
+            foreach ($dmjoinsp as $sp) { ?>['<?php echo $sp['dmname']; ?>', <?php echo $sp['countsp']; ?>],
+            <?php } ?>
+        ]);
+        // ['Italy', 54.8],
+        // ['France', 48.6],
+        // ['Spain', 44.4],
+        // ['USA', 23.9],
+        // ['Argentina', 14.5]
+
+
+        const options = {
+            title: 'Thống kê số sản phẩm trong danh mục'
+        };
+
+        const chart = new google.visualization.PieChart(document.getElementById('myChart'));
+        chart.draw(data, options);
+    }
+</script>

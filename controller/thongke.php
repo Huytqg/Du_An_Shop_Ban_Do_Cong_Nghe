@@ -16,11 +16,13 @@ function updatethongke($now, $donhang, $doanhthu, $soluongban){
 
 function lietkeOrder()
 {
-    $sql = "SELECT * FROM shop_order JOIN shopping_cart_item ON shopping_cart_item.order_id=shop_order.id WHERE shopping_cart_item.order_id=shop_order.id AND shop_order.trang_thai=3 ";
+    $sql = "SELECT * FROM shop_order JOIN shopping_cart_item ON shopping_cart_item.order_id=shop_order.id WHERE shopping_cart_item.order_id=shop_order.id AND shop_order.trang_thai=3";
     return pdo_query($sql);
 }
 
 function allthongke(){
-    $sql = "SELECT ngay_dat,doanh_thu,don_hang FROM thong_ke ORDER BY ngay_dat ASC";
+    $sql = "SELECT ngay_dat,doanh_thu,don_hang,so_luong_ban FROM thong_ke ORDER BY ngay_dat ASC";
     return pdo_query($sql);
 }
+
+

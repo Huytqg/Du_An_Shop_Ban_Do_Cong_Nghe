@@ -17,6 +17,11 @@ function alldm(){
     return pdo_query($sql);
 }
 
+function dmjoinsp(){
+    $sql = "SELECT danh_muc.name as dmname, count(san_pham.id) as countsp FROM san_pham JOIN danh_muc ON danh_muc.id=san_pham.category_id  GROUP BY danh_muc.id order by danh_muc.id DESC";
+    return pdo_query($sql);
+}
+
 function one_dm_id($id){
     $sql = "SELECT * FROM danh_muc WHERE id='$id'";
     return pdo_query_one($sql);

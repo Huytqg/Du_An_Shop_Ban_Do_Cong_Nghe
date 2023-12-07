@@ -35,6 +35,9 @@ if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
 
             case 'listdm':
                 $list_dm = alldm();
+                $dmjoinsp = dmjoinsp();
+                // echo "<pre>";
+                // var_dump($dmjoinsp);die;
                 include "danh_muc/list.php";
                 break;
             case 'editdm':
@@ -267,9 +270,8 @@ if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
                         $doanhthu = 0;
                         foreach ($listorder as $lietke) {
                             $soluongmua += $lietke['quantity'];
-                            $doanhthu += $lietke['price'];
+                            $doanhthu += $lietke['total_price'] ;
                         }
-                        // var_dump($soluongmua,$doanhthu);die;
                         if (count($thongke) == 0) {
                             $soluongban = $soluongmua;
                             $doanhthu = $doanhthu;
@@ -284,33 +286,12 @@ if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
                                 updatethongke($now, $donhang, $doanhthu, $soluongban);
                             }
                         }
+                        // echo "<pre>";
+                        // var_dump($thongke, $doanhthu);
+                        // die;
                         header("location:index.php?act=listdonhang");
                         die;
                     };
-                    // $now = date('Y-m-d');
-                    // $listorder = lietkeOrder();
-                    // $thongke = thongke($now);
-                    // $soluongmua = 0;
-                    // $doanhthu = 0;
-                    // foreach ($listorder as $lietke) {
-                    //     $soluongmua += $lietke['quantity'];
-                    //     $doanhthu += $lietke['price'];
-                    // }
-                    // if (count($thongke) == 0) {
-                    //     $soluongban = $soluongmua;
-                    //     $doanhthu = $doanhthu;
-                    //     $donhang = 1;
-                    //     insertthongke($now, $donhang, $doanhthu, $soluongban);
-                    // } elseif (count($thongke) != 0) {
-                    //     foreach ($thongke as $thongke) {
-                    //         $soluongban = $thongke['so_luong_ban'] + $soluongmua;
-                    //         $doanhthu = $thongke['doanh_thu'] + $doanhthu;
-                    //         $donhang = $thongke['don_hang'] + 1;
-                    //         updatethongke($now, $donhang, $doanhthu, $soluongban);
-                    //     }
-                    // }
-                    // header("location:index.php?act=listdonhang");
-                    // die;
                 }
                 header("location:index.php?act=listdonhang");
                 include "khach_hang/listkh.php";
@@ -320,7 +301,7 @@ if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
                     $sql = "SELECT * FROM bien_the";
                     return pdo_query($sql);
                 }
-$listbt = all_bienThe();
+                $listbt = all_bienThe();
                 include "bien_the/list.php";
                 break;
             case '':

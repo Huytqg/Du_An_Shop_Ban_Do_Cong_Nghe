@@ -42,8 +42,10 @@ if (!empty($err)) { ?>
                                     Thanh toán khi nhận hàng
                                 </div>
                                 <div class="select">
-                                    <input type="radio" id="ATM" name="select" value="ATM">
-                                    Thanh toán chuyển khoản
+                                    <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="../momo/thanhtoanmomo.php">
+                                        <input type="submit"  name="select" value="Thanh toán qua momo">
+                                        
+                                    </form>
                                 </div>
                             </div>
                         </div>
