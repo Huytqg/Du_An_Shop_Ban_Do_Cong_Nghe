@@ -143,8 +143,6 @@ if (isset($_GET['act'])) {
                     $err = "Vui lòng nhập số điện thoại";
                 } elseif (empty($_POST['address'])) {
                     $err = "Vui lòng nhập địa chỉ";
-                } elseif (empty($_POST['select'])) {
-                    $err = "Vui lòng chọn phương thức thanh toán";
                 } else {
                     $pro = one_in_sp();
                     $total = 0;
@@ -158,6 +156,7 @@ if (isset($_GET['act'])) {
                     $address = $_POST['address'];
                     $desc_order = $_POST['desc_order'];
                     $date_order = date('Y-m-d');
+                    $hinh_thuc = "Khi nhận hàng";
                     if (isset($_SESSION['username'])) {
                         $user_id = $_SESSION['username']['id'];
                         // $one_user = one_user($user_id);
@@ -165,7 +164,7 @@ if (isset($_GET['act'])) {
                         $user_id = 0;
                     }
                     // var_dump( $_SESSION['username']); die;
-                    insert_shop_order($name, $phone, $address, $desc_order, $total, $date_order, $user_id);
+                    insert_shop_order($name, $phone, $address, $desc_order, $total, $date_order, $user_id, $hinh_thuc);
                     $one_order = one_sp_order();
                     $one_order_id = $one_order['id'];
                     $array = "";
@@ -179,6 +178,40 @@ if (isset($_GET['act'])) {
                 }
                 header("location:index.php?act=chitietdon&id=$one_order_id");
                 die;
+            
+            } elseif (isset($_GET['partnerCode'])) {
+                $pro = one_in_sp();
+                $total = 0;
+                $orderProducts = array();
+                foreach ($pro as $cart) {
+                    $orderProducts[] = $cart;
+                    $total += $cart['price'] * $_SESSION['mycart'][$cart['id']];
+                }
+                $name = $_POST['name'];
+                $phone = $_POST['phone'];
+                $address = $_POST['address'];
+                $desc_order = $_POST['desc_order'];
+                $date_order = date('Y-m-d');
+                $hinh_thuc = "ATM Momo";
+                if (isset($_SESSION['username'])) {
+                    $user_id = $_SESSION['username']['id'];
+                    // $one_user = one_user($user_id);
+                } else {
+                    $user_id = 0;
+                }
+                // var_dump( $_SESSION['username']); die;
+                insert_shop_order($name, $phone, $address, $desc_order, $total, $date_order, $user_id,$hinh_thuc);
+                $one_order = one_sp_order();
+                $one_order_id = $one_order['id'];
+                $array = "";
+                foreach ($orderProducts as $key => $order) {
+                    $array .= "('" . $_SESSION['mycart'][$order['id']] . "','" . $order['id'] . "','" . $one_order_id . "', '" . $order['price'] . "')";
+                    if ($key != count($orderProducts) - 1) {
+                        $array .= ",";
+                    }
+                }
+                insert_shopping_cart_item($array);
+                header("location:index.php?act=chitietdon&id=$one_order_id");
             }
             include "header.php";
             include "view/payment.php";
@@ -189,7 +222,7 @@ if (isset($_GET['act'])) {
         case 'updatedonhang':
             $id = $_GET['id'];
             $trang_thai = $_GET['trang_thai'];
-            updatedonhang($id, $trang_thai,$now);
+            updatedonhang($id, $trang_thai, $now);
             header("location:index.php?act=lichsudon");
             die;
             include "view/lsdon.php";
@@ -206,20 +239,20 @@ if (isset($_GET['act'])) {
             include "view/product_details.php";
             die;
             break;
-        // case 'binhluan':
-        //     if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
-        //         $noidung = $_POST['noidung'];
-        //         $id = $_POST['id'];
-        //         $ngaybinhluan = date('h:i:sa d/m/Y');
-        //         $name=$_POST['name'];
-        //         insert_binhluan($noidung,$id,$ngaybinhluan,$name);
-        //         header("location: ".$_SERVER['HTTP_REFERER']);
-        //     }
-        //     include "view/product_details.php";
-        //     break;
+            // case 'binhluan':
+            //     if(isset($_POST['guibinhluan'])&&($_POST['guibinhluan'])){
+            //         $noidung = $_POST['noidung'];
+            //         $id = $_POST['id'];
+            //         $ngaybinhluan = date('h:i:sa d/m/Y');
+            //         $name=$_POST['name'];
+            //         insert_binhluan($noidung,$id,$ngaybinhluan,$name);
+            //         header("location: ".$_SERVER['HTTP_REFERER']);
+            //     }
+            //     include "view/product_details.php";
+            //     break;
 
 
-        break;
+            break;
     }
 }
 $list_dm = alldm();

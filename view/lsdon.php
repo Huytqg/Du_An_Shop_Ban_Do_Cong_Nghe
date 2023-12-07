@@ -9,6 +9,7 @@
             <th>ĐIỆN THOẠI </th>
             <th>NGÀY MUA</th>
             <th>TRẠNG THÁI</th>
+            <th>HÌNH THỨC</th>
             <th>OPTION</th>
         </tr>
         <?php foreach ($listdonhang as $donhang) : ?>
@@ -28,13 +29,13 @@
                     } elseif ($donhang['trang_thai'] == 4) {
                         echo "Đã hủy đơn";
                     } ?></td>
+                <td><?= $donhang['hinh_thuc'] ?></td>
                 <td>
-
                     <?php if ($donhang['trang_thai'] == 3 or $donhang['trang_thai'] == 4) { ?>
                         <a href="index.php?act=chitietdon&id=<?= $donhang['id'] ?>">xem</i></a>
                     <?php } else { ?>
                         <a href="index.php?act=chitietdon&id=<?= $donhang['id'] ?>">xem</i></a> -
-                        <a onclick="return confirm('Bạn chắc chắn muốn hủy đơn?')"  href="index.php?act=updatedonhang&id=<?= $donhang['id'] ?>&trang_thai=4">Hủy đơn</i></a>
+                        <a onclick="return confirm('Bạn chắc chắn muốn hủy đơn?')" href="index.php?act=updatedonhang&id=<?= $donhang['id'] ?>&trang_thai=4">Hủy đơn</i></a>
                     <?php } ?>
                 </td>
             </tr>

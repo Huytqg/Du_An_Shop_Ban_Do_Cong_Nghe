@@ -1,30 +1,28 @@
 <?php
 if (!empty($err)) { ?>
-
     <div style="min-height: 500px; margin-top: 10px;" id="notify-msg">
         <?= $err ?>. <a href="index.php?act=thanhtoan">Quay lại</a>
     </div>
 <?php } else { ?>
-    <form action="index.php?act=thanhtoan" method="post">
 
-        <input type="hidden" name="id" value="">
 
-        <section>
-            <div class="container">
+    <section>
+        <div class="container">
+
+            <form action="index.php?act=thanhtoan" method="post">
+                <input type="hidden" name="id" value="">
                 <div class="wrapper">
                     <div class="box-left">
                         <div class="box-left-row">
                             <label for="name">Tên người nhận</label>
-                            <input type="text" name="name" id="" value="<?php if (isset($_SESSION['username'])) {
-                                                                            echo "" . $_SESSION['username']['name'];
-                                                                        }  ?>">
+                            <input type="text" name="name" id="" placeholder="tên người nhận" value="<?php if (isset($_SESSION['username'])) {
+                                                                                                            echo $_SESSION['username']['name'];
+                                                                                                        }  ?>">
                         </div>
 
                         <div class="box-left-row">
                             <label for="phone">Số điện thoại</label>
-                            <input type="text" name="phone" id="" placeholder="Số điện thoại" value="<?php if (isset($_SESSION['username'])) {
-                                                                                                            echo "" . $_SESSION['username']['phone'];
-                                                                                                        }  ?>">
+
                         </div>
 
                         <div class="box-left-row">
@@ -34,18 +32,6 @@ if (!empty($err)) { ?>
                                                                                                     }  ?>">
                         </div>
 
-                        <div class="box-left-row">
-                            <div class="row-select">
-                                <label for="select">Phương thức thanh toán</label>
-                                <div class="select">
-                                    <input type="radio" id="COD" name="select" value="COD">
-                                    Thanh toán khi nhận hàng
-                                </div>
-                                <div class="select">
-
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="box-left-row">
                             <label for="desc_order">Ghi chú</label>
@@ -83,22 +69,26 @@ if (!empty($err)) { ?>
                             <div class="total-price price"><?= number_format($total, 0, ",", ".") ?> VND</div>
                         </div>
                         <input type="submit" class="btn-buy" name="thanhtoan" value="Thanh toán">
+            </form>
+            <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="momo/thanhtoanmomo.php">
+                <input type="hidden" name="tongtien" value="<?php echo $total ?>">
+                <input type="submit" class="btn-buy" name="momo" value="Thanh toán qua momo">
+            </form>
 
-                        <!-- <button type="button" class="btn-buy">Gửi</button> -->
-                    </div>
-                </div>
-            </div>
-        </section>
-    </form>
-    <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="momo/thanhtoanmomo.php">
-        <input type="hidden" name="tongtien" value="<?php echo $total ?>">
+            <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="momo/thanhtoanmomo_atm.php">
+   
+                <input type="hidden" name="tongtien" value="<?php echo $total ?>">
+                <input type="hidden" name="name" value="<?php echo $_SESSION['username']['name'] ?>">
+                <input type="hidden" name="phone" value="<?php echo $_SESSION['username']['phone'] ?>">
+                <input type="hidden" name="address" value="<?php echo $_SESSION['username']['address'] ?>">
+                <input type="submit" class="btn-buy" name="momo" value="Thanh toán qua momo ATM">
+            </form>
+        </div>
+        </div>
+        </div>
+    </section>
 
-        <input type="submit" name="momo" value="Thanh toán qua momo">
-    </form>
 
-    <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="momo/thanhtoanmomo_atm.php">
-        <input type="hidden" name="tongtien" value="<?php echo $total ?>">
-        <input type="submit" name="momo" value="Thanh toán qua momo ATM">
-    </form>
+
 
 <?php } ?>
