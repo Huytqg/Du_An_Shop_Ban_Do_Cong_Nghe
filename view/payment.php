@@ -42,10 +42,7 @@ if (!empty($err)) { ?>
                                     Thanh toán khi nhận hàng
                                 </div>
                                 <div class="select">
-                                    <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="../momo/thanhtoanmomo.php">
-                                        <input type="submit"  name="select" value="Thanh toán qua momo">
-                                        
-                                    </form>
+
                                 </div>
                             </div>
                         </div>
@@ -86,10 +83,22 @@ if (!empty($err)) { ?>
                             <div class="total-price price"><?= number_format($total, 0, ",", ".") ?> VND</div>
                         </div>
                         <input type="submit" class="btn-buy" name="thanhtoan" value="Thanh toán">
+
                         <!-- <button type="button" class="btn-buy">Gửi</button> -->
                     </div>
                 </div>
             </div>
         </section>
     </form>
+    <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="momo/thanhtoanmomo.php">
+        <input type="hidden" name="tongtien" value="<?php echo $total ?>">
+
+        <input type="submit" name="momo" value="Thanh toán qua momo">
+    </form>
+
+    <form class="" method="POST" target="_blank" enctype="application/x-www-form-urlencoded" action="momo/thanhtoanmomo_atm.php">
+        <input type="hidden" name="tongtien" value="<?php echo $total ?>">
+        <input type="submit" name="momo" value="Thanh toán qua momo ATM">
+    </form>
+
 <?php } ?>

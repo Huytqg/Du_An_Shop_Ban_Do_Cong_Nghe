@@ -68,26 +68,25 @@ include "./headercts.php";
                         <div class="line"></div>
 
                         <?php
-                        if (isset($price_new)) {
-                            echo " <div class='giasp'>
-                            <div class='giakm_sp'>$price đ
+                        if (isset($price_new) && $price_new != 0) { ?>
+                            <div class='giasp'>
+                                <div class='giakm_sp'> <?= number_format($price, 0, ',', '.') ?> đ</div>
+                                <div class='giathat_sp'> <?= number_format($price_new, 0, ',', '.') ?> đ</div>
                             </div>
-                            <div class='giathat_sp'>$price_new đ</div>
-                        </div>";
-                        } else {
-                            echo " <div class='giasp'>
-                            <div class='giakm_sp'><?=$price?></div>
-                        </div>";
-                        }
-
-                        ?>
+                        <?php } else { ?>
+                            <div class='giasp'>
+                                <div class='giakm_sp'><?= number_format($price, 0, ',', '.') ?></div>
+                            </div>
+                        <?php } ?>
                         <div class="dungluong_s">
-                            <div class="GB ">
-                                <span><input type="radio" name="dungluong"> 128Gb </span>
-                                <div class="gia">27.190.000 đ </div>
-                            </div>
-                            <div class="lineX"></div>
-                            <div class="GB">
+                            <?php foreach ($listbt as $bt) : ?>
+                                <div class="GB ">
+                                    <span><input type="radio" name="dungluong" value="<?= $bt['id'] ?>"> <?= $bt['name'] ?> </span>
+                                    <!-- <div class="gia">27.190.000 đ </div> -->
+                                </div>
+                                <div class="lineX"></div>
+                            <?php endforeach ?>
+                            <!-- <div class="GB">
                                 <span><input type="radio" name="dungluong"> 256Gb </span>
                                 <div class="gia">27.190.000 đ</div>
                             </div>
@@ -100,7 +99,7 @@ include "./headercts.php";
                             <div class="GB">
                                 <span><input type="radio" name="dungluong"> 1T </span>
                                 <div class="gia">27.190.000 đ</div>
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="mau_bonho">

@@ -7,6 +7,7 @@ include "controller/users.php";
 include "controller/gio_hang.php";
 include "controller/don_hang.php";
 include "controller/binhluan.php";
+include "controller/bien_the.php";
 // include "header.php";
 if (!isset($_SESSION['mycart'])) {
     $_SESSION['mycart'] = [];
@@ -201,6 +202,7 @@ if (isset($_GET['act'])) {
                 $listctsp = one_sp($id);
                 $nameDm = oneDM($id);
             }
+            $listbt = all_bienThe();
             include "view/product_details.php";
             die;
             break;
@@ -216,9 +218,7 @@ if (isset($_GET['act'])) {
         //     include "view/product_details.php";
         //     break;
 
-        case 'loadbl':
-            $listbinhluan=loadall_binhluan($id);
-        include "./view/binhluan/binhluanform.php";
+
         break;
     }
 }
