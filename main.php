@@ -7,6 +7,7 @@
             <?php
             foreach($banner as $key){
                 extract($key);
+                $banner = SQL_banner();
                 $image = $banner.$image;
                 echo "
             <div class='swiper-slide slide'>

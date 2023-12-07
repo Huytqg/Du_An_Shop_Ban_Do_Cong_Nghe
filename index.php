@@ -8,8 +8,6 @@ include "controller/gio_hang.php";
 include "controller/don_hang.php";
 include "controller/binhluan.php";
 // include "header.php";
-
-$banner = SQL_banner();
 if (!isset($_SESSION['mycart'])) {
     $_SESSION['mycart'] = [];
 }
