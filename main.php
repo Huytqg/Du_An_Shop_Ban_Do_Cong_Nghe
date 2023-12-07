@@ -3,39 +3,26 @@
 
     <div class="swiper mySwiper home-slider">
         <div class="swiper-wrapper wrapper">
-            <div class="swiper-slide slide">
-                <div class="content">
+
+            <?php
+            foreach($banner as $key){
+                extract($key);
+                $image = $banner.$image;
+                echo "
+            <div class='swiper-slide slide'>
+                <div class='content'>
                     <span>Chiếc điện thoại đặt biệt</span>
-                    <h3>Xiaomi Redmi Note 10</h3>
+                    <h3>'.$name.'</h3>
                     <p>Thiết kế đẹp mắt, sang trọng đến từng chi tiết, Màn hình siêu lớn</p>
-                    <a href="#" class="btn">Mua ngay</a>
+                    <a href='#' class='btn'>Mua ngay</a>
                 </div>
-                <div class="image">
-                    <img src="img/img1.png" alt="" style="width: 480px; margin-left: 20px">
+                <div class='image'>
+                    <img src='.$image.' alt='' style='width: 480px; margin-left: 20px'>
                 </div>
             </div>
-            <div class="swiper-slide slide">
-                <div class="content">
-                    <span>Chiếc điện thoại đặt biệt</span>
-                    <h3>Iphone 13 Pro Max</h3>
-                    <p>Thiết kế đẹp mắt, sang trọng đến từng chi tiết, Màn hình siêu lớn</p>
-                    <a href="#" class="btn">Mua ngay</a>
-                </div>
-                <div class="image">
-                    <img src="img/img2.png" alt="" style="width: 320px; margin-left: 20px">
-                </div>
-            </div>
-            <div class="swiper-slide slide">
-                <div class="content">
-                    <span>Chiếc điện thoại đặt biệt</span>
-                    <h3>Asus Gaming Phone 4</h3>
-                    <p>Thiết kế đẹp mắt, sang trọng đến từng chi tiết, Màn hình siêu lớn</p>
-                    <a href="#" class="btn">Mua ngay</a>
-                </div>
-                <div class="image">
-                    <img src="img/img3.png" alt="" style="width: 230px; margin-left: 20px">
-                </div>
-            </div>
+            ";
+            }
+            ?>
         </div>
         <div class="swiper-pagination"></div>
     </div>

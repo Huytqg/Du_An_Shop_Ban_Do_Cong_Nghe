@@ -8,6 +8,8 @@ include "controller/gio_hang.php";
 include "controller/don_hang.php";
 include "controller/binhluan.php";
 // include "header.php";
+
+$banner = SQL_banner();
 if (!isset($_SESSION['mycart'])) {
     $_SESSION['mycart'] = [];
 }
@@ -256,7 +258,12 @@ if (isset($_GET['act'])) {
             include "admin/donhang/chitietdon.php";
             break;
 
-        case '':
+        case 'banner':
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                $id = $_GET['id'];
+                $show_banner = SQL_banner($id);
+            }
+            include "main.php";
 
             break;
         case '':
