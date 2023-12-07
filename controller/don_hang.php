@@ -34,9 +34,9 @@ function one_don($id)
     return pdo_query_one($sql);
 }
 
-function updatedonhang($id, $trang_thai)
+function updatedonhang($id, $trang_thai,$now)
 {
-    $sql = "UPDATE shop_order SET trang_thai='$trang_thai' WHERE id=$id";
+    $sql = "UPDATE shop_order SET trang_thai='$trang_thai',update_order='$now' WHERE id=$id";
     pdo_execute($sql);
 }
 

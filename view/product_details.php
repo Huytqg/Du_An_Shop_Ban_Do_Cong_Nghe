@@ -70,9 +70,9 @@ include "./headercts.php";
                         <?php
                         if (isset($price_new)) {
                             echo " <div class='giasp'>
-                            <div class='giakm_sp'>$price_new đ
+                            <div class='giakm_sp'>$price đ
                             </div>
-                            <div class='giathat_sp'>$price đ</div>
+                            <div class='giathat_sp'>$price_new đ</div>
                         </div>";
                         } else {
                             echo " <div class='giasp'>

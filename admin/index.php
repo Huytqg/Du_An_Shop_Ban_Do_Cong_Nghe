@@ -20,7 +20,7 @@ include "../admin/validate.php";
 //     }
 //     return "";
 // }
-include "header.php";    
+include "header.php";
 if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
     if (isset($_GET['act'])) {
         $act = $_GET['act'];
@@ -38,7 +38,7 @@ if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
                     // } 
                     // var_dump($_POST);die;
 
-                    if (empty($nameErr)){
+                    if (empty($nameErr)) {
                         insertdm($name);
                         $thong_bao = "Thêm thành công";
                         header("location:index.php?act=listdm&thong_bao=" . $thong_bao);
@@ -263,16 +263,23 @@ if (isset($_SESSION['username']) && $_SESSION['username']['role'] == "admin") {
                 if (isset($_POST['updatedonhang']) && ($_POST['updatedonhang'])) {
                     $id = $_POST['id'];
                     $trang_thai = $_POST['trang_thai'];
-                    updatedonhang($id, $trang_thai);
+                    $now = date('Y-m-d');
+                    updatedonhang($id, $trang_thai, $now);
+                    $key = "";
+                    $trang_thai = 0;
                     if ($_POST['trang_thai'] == 3) {
                         $now = date('Y-m-d');
-                        $listorder = lietkeOrder();
+                        $listorder = lietkeOrder($now);
+                        // echo "<pre>";
+                        // var_dump($listorder);
+                        // die;
                         $thongke = thongke($now);
                         $soluongmua = 0;
                         $doanhthu = 0;
                         foreach ($listorder as $lietke) {
+                            // $doanhthu = 0;
                             $soluongmua += $lietke['quantity'];
-                            $doanhthu += $lietke['total_price'] ;
+                            $doanhthu += ($lietke['price'] * $lietke['quantity']);
                         }
                         if (count($thongke) == 0) {
                             $soluongban = $soluongmua;

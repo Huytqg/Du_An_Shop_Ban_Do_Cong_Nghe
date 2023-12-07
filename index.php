@@ -188,7 +188,7 @@ if (isset($_GET['act'])) {
         case 'updatedonhang':
             $id = $_GET['id'];
             $trang_thai = $_GET['trang_thai'];
-            updatedonhang($id, $trang_thai);
+            updatedonhang($id, $trang_thai,$now);
             header("location:index.php?act=lichsudon");
             die;
             include "view/lsdon.php";
