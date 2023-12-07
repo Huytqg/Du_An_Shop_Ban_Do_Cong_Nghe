@@ -253,7 +253,12 @@ if (isset($_GET['act'])) {
             include "admin/donhang/chitietdon.php";
             break;
 
-        case '':
+        case 'banner':
+            if (isset($_GET['id']) && $_GET['id'] > 0) {
+                $id = $_GET['id'];
+                $show_banner = SQL_banner($id);
+            }
+            include "main.php";
 
             break;
         case '':
